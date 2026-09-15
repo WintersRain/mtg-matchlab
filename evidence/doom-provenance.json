@@ -1,0 +1,14 @@
+{
+  "source": "/tmp/doom-midrange-arena.txt",
+  "identity": "Exact supplied Doctor Doom artifact-midrange recommendation; no substitutions",
+  "main_count": 60,
+  "sideboard_count": 0,
+  "sideboard_note": "No sideboard was supplied; no sideboard invented",
+  "legality": {
+    "status": "prior-review-claim-not-independently-rechecked",
+    "evidence": "/tmp/doom-midrange-review.md lines 3-4, 41-42",
+    "quoted_claim": "Standard/Arena card records checked. ... Recounted 60 cards, copy limits, current Standard/Arena records",
+    "limitation": "The supplied review claims checks, but this repository does not contain a fresh per-card Scryfall or official legality audit for Doom. Forge script existence is NOT Standard legality or proof of correct implementation."
+  },
+  "hash_reference": "../../decks.json:doom.sha256"
+}

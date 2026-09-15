@@ -1,0 +1,890 @@
+{
+  "retrieved_at": "2026-09-15T17:55:01.345952+00:00",
+  "endpoint": "https://api.scryfall.com/cards/collection",
+  "unique_requested_names": 106,
+  "missing": [],
+  "decks": {
+    "aggro": {
+      "counts": {
+        "main": 60,
+        "sideboard": 15
+      },
+      "not_standard_legal": [],
+      "copy_limit_violations": [],
+      "arena_absent_from_returned_printing": [
+        "Fabled Passage"
+      ],
+      "cards": [
+        {
+          "requested_name": "Ba Sing Se",
+          "scryfall_name": "Ba Sing Se",
+          "id": "bdf3b2be-d0cd-4a3c-a10e-82d32c12d3bd",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tla/266/ba-sing-se?utm_source=api"
+        },
+        {
+          "requested_name": "Bristly Bill, Spine Sower",
+          "scryfall_name": "Bristly Bill, Spine Sower",
+          "id": "52eef0d6-24b7-40b7-8403-e8e863d0cd55",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/otj/157/bristly-bill-spine-sower?utm_source=api"
+        },
+        {
+          "requested_name": "Earthbender Ascension",
+          "scryfall_name": "Earthbender Ascension",
+          "id": "590a58ab-5e98-4031-8aa6-ce396dc1429f",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tla/175/earthbender-ascension?utm_source=api"
+        },
+        {
+          "requested_name": "Escape Tunnel",
+          "scryfall_name": "Escape Tunnel",
+          "id": "5df90940-15ea-418c-8547-6c75d69ec6d3",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tmt/184/escape-tunnel?utm_source=api"
+        },
+        {
+          "requested_name": "Esper Origins",
+          "scryfall_name": "Esper Origins // Summon: Esper Maduin",
+          "id": "0f503360-216a-4629-89b2-d32072850aef",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/fin/185/esper-origins-summon:-esper-maduin?utm_source=api"
+        },
+        {
+          "requested_name": "Fabled Passage",
+          "scryfall_name": "Fabled Passage",
+          "id": "62ef854d-ec9e-443d-a4ba-4b2875ed3fe7",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/msc/242/fabled-passage?utm_source=api"
+        },
+        {
+          "requested_name": "Forest",
+          "scryfall_name": "Forest",
+          "id": "dce15387-4114-4b3e-91aa-5b42b45c44ac",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/trk/325/forest?utm_source=api"
+        },
+        {
+          "requested_name": "Icetill Explorer",
+          "scryfall_name": "Icetill Explorer",
+          "id": "d9482aab-6ddf-48e1-84fa-b13d5ff81e69",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/eoe/192/icetill-explorer?utm_source=api"
+        },
+        {
+          "requested_name": "Keen-Eyed Curator",
+          "scryfall_name": "Keen-Eyed Curator",
+          "id": "8cf33d80-0704-4dc4-8e8d-1dcbcbc35add",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/blb/181/keen-eyed-curator?utm_source=api"
+        },
+        {
+          "requested_name": "Llanowar Elves",
+          "scryfall_name": "Llanowar Elves",
+          "id": "6a0b230b-d391-4998-a3f7-7b158a0ec2cd",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/fdn/227/llanowar-elves?utm_source=api"
+        },
+        {
+          "requested_name": "Lumbering Worldwagon",
+          "scryfall_name": "Lumbering Worldwagon",
+          "id": "9f989c59-7b2a-4036-9ea2-cd0c7e85c15b",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/dft/168/lumbering-worldwagon?utm_source=api"
+        },
+        {
+          "requested_name": "Mightform Harmonizer",
+          "scryfall_name": "Mightform Harmonizer",
+          "id": "f32302f1-b54f-4489-9d0b-9b771e59da06",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/eoe/200/mightform-harmonizer?utm_source=api"
+        },
+        {
+          "requested_name": "Sapling Nursery",
+          "scryfall_name": "Sapling Nursery",
+          "id": "3199bea9-fef7-45fe-8777-2103d84a9347",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/ecl/192/sapling-nursery?utm_source=api"
+        },
+        {
+          "requested_name": "Sazh's Chocobo",
+          "scryfall_name": "Sazh's Chocobo",
+          "id": "dda6b4d0-1b60-46b0-b321-b9ffe15afff4",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/fin/200/sazhs-chocobo?utm_source=api"
+        },
+        {
+          "requested_name": "Surrak, Elusive Hunter",
+          "scryfall_name": "Surrak, Elusive Hunter",
+          "id": "e4775a26-0b66-40e9-8f64-41d9308ca032",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tdm/161/surrak-elusive-hunter?utm_source=api"
+        },
+        {
+          "requested_name": "Gigantic Big Bear",
+          "scryfall_name": "Gigantic Big Bear",
+          "id": "7d6ece3d-8e7a-41ad-974f-3c9748de4825",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/hob/126/gigantic-big-bear?utm_source=api"
+        },
+        {
+          "requested_name": "Meltstrider's Resolve",
+          "scryfall_name": "Meltstrider's Resolve",
+          "id": "53c08af4-b975-4d9d-baba-73e6727f2778",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/eoe/199/meltstriders-resolve?utm_source=api"
+        },
+        {
+          "requested_name": "Mossborn Hydra",
+          "scryfall_name": "Mossborn Hydra",
+          "id": "7054a0d7-396f-40b4-ab24-db591c3b08f0",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/fdn/107/mossborn-hydra?utm_source=api"
+        },
+        {
+          "requested_name": "Torpor Orb",
+          "scryfall_name": "Torpor Orb",
+          "id": "dbf02a38-d10d-463e-ab99-e7fd848a1bd3",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/big/27/torpor-orb?utm_source=api"
+        }
+      ]
+    },
+    "midrange": {
+      "counts": {
+        "main": 60,
+        "sideboard": 15
+      },
+      "not_standard_legal": [],
+      "copy_limit_violations": [],
+      "arena_absent_from_returned_printing": [
+        "Bitter Triumph"
+      ],
+      "cards": [
+        {
+          "requested_name": "Bitter Triumph",
+          "scryfall_name": "Bitter Triumph",
+          "id": "c5333556-eea2-41ae-833e-007b9d540700",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tdc/173/bitter-triumph?utm_source=api"
+        },
+        {
+          "requested_name": "Dream Beavers",
+          "scryfall_name": "Dream Beavers",
+          "id": "600e3bc1-9777-4057-a11e-4f61582636c6",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tmt/62/dream-beavers?utm_source=api"
+        },
+        {
+          "requested_name": "Enduring Curiosity",
+          "scryfall_name": "Enduring Curiosity",
+          "id": "8616629e-08f9-41ad-bfec-f86c8096f1cb",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/dsk/51/enduring-curiosity?utm_source=api"
+        },
+        {
+          "requested_name": "Floodpits Drowner",
+          "scryfall_name": "Floodpits Drowner",
+          "id": "a6a62aa3-8edb-4000-8ebd-15ec4b00eed7",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/dsk/59/floodpits-drowner?utm_source=api"
+        },
+        {
+          "requested_name": "Gloomlake Verge",
+          "scryfall_name": "Gloomlake Verge",
+          "id": "83f510b7-4cbd-4883-9c26-c8824bc668ac",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/dsk/260/gloomlake-verge?utm_source=api"
+        },
+        {
+          "requested_name": "Hidden Lair",
+          "scryfall_name": "Hidden Lair",
+          "id": "0742ddb6-71ed-444e-91ad-84f876725a4a",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/msh/269/hidden-lair?utm_source=api"
+        },
+        {
+          "requested_name": "Island",
+          "scryfall_name": "Island",
+          "id": "f3cc07cd-cc79-4745-b0b7-eade60175cc3",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/trk/319/island?utm_source=api"
+        },
+        {
+          "requested_name": "Kaito, Bane of Nightmares",
+          "scryfall_name": "Kaito, Bane of Nightmares",
+          "id": "55a14f30-4ff9-4472-90a6-c3139f1c18e5",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/dsk/220/kaito-bane-of-nightmares?utm_source=api"
+        },
+        {
+          "requested_name": "Requiting Hex",
+          "scryfall_name": "Requiting Hex",
+          "id": "f21b0fb7-91b6-403f-a81a-562665961276",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/ecl/116/requiting-hex?utm_source=api"
+        },
+        {
+          "requested_name": "Restless Reef",
+          "scryfall_name": "Restless Reef",
+          "id": "8a8121c9-2480-419c-aa9c-5b8b55f65014",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/lci/282/restless-reef?utm_source=api"
+        },
+        {
+          "requested_name": "Shoot the Sheriff",
+          "scryfall_name": "Shoot the Sheriff",
+          "id": "180d6528-c524-4bb8-8a72-b3775cd2c177",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/otj/106/shoot-the-sheriff?utm_source=api"
+        },
+        {
+          "requested_name": "Soulstone Sanctuary",
+          "scryfall_name": "Soulstone Sanctuary",
+          "id": "642553a7-6d0f-483d-a873-3a703786db42",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/fdn/133/soulstone-sanctuary?utm_source=api"
+        },
+        {
+          "requested_name": "Spell Pierce",
+          "scryfall_name": "Spell Pierce",
+          "id": "8dd4374f-0301-4b2e-bc99-2cd19568cb3b",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/dft/64/spell-pierce?utm_source=api"
+        },
+        {
+          "requested_name": "Spell Snare",
+          "scryfall_name": "Spell Snare",
+          "id": "b7551b61-656e-4f37-b9da-73174db983b7",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/ecl/71/spell-snare?utm_source=api"
+        },
+        {
+          "requested_name": "Spyglass Siren",
+          "scryfall_name": "Spyglass Siren",
+          "id": "41e54343-95e5-4dc4-9f18-e4a415fe5e0a",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/lci/78/spyglass-siren?utm_source=api"
+        },
+        {
+          "requested_name": "Strategic Betrayal",
+          "scryfall_name": "Strategic Betrayal",
+          "id": "95617742-548d-464a-bb89-a858ffa9018f",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tdm/94/strategic-betrayal?utm_source=api"
+        },
+        {
+          "requested_name": "Swamp",
+          "scryfall_name": "Swamp",
+          "id": "b7387103-1df1-4fd0-9e91-1544509792c7",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/trk/321/swamp?utm_source=api"
+        },
+        {
+          "requested_name": "The Wondrous Wasp",
+          "scryfall_name": "The Wondrous Wasp",
+          "id": "484e80a4-1d5f-4c27-98a8-ee2ef9d6cbdc",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/msh/84/the-wondrous-wasp?utm_source=api"
+        },
+        {
+          "requested_name": "Tishana's Tidebinder",
+          "scryfall_name": "Tishana's Tidebinder",
+          "id": "907b3d1d-8c85-4707-80b5-c4d832df9846",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/lci/81/tishanas-tidebinder?utm_source=api"
+        },
+        {
+          "requested_name": "Wan Shi Tong, Librarian",
+          "scryfall_name": "Wan Shi Tong, Librarian",
+          "id": "e20da6b5-1057-4a28-9e85-07de714e262f",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tla/78/wan-shi-tong-librarian?utm_source=api"
+        },
+        {
+          "requested_name": "Watery Grave",
+          "scryfall_name": "Watery Grave",
+          "id": "5525d6a6-e532-4047-9da4-bfae7927fecc",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/trk/306/watery-grave?utm_source=api"
+        },
+        {
+          "requested_name": "We Say Thee Nay!",
+          "scryfall_name": "We Say Thee Nay!",
+          "id": "13b70321-75bd-4d44-b9f6-5f062a5dda0f",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/msh/82/we-say-thee-nay!?utm_source=api"
+        },
+        {
+          "requested_name": "Annul",
+          "scryfall_name": "Annul",
+          "id": "4feeebea-aa55-4599-ab5a-4e41a54d0dfd",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/eoe/46/annul?utm_source=api"
+        },
+        {
+          "requested_name": "Day of Black Sun",
+          "scryfall_name": "Day of Black Sun",
+          "id": "d0e24797-3e45-4c2b-b4b0-1ef44d42eaee",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tla/94/day-of-black-sun?utm_source=api"
+        },
+        {
+          "requested_name": "Disdainful Stroke",
+          "scryfall_name": "Disdainful Stroke",
+          "id": "588c6217-c460-417e-98bf-de5475780baf",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/woe/47/disdainful-stroke?utm_source=api"
+        },
+        {
+          "requested_name": "Duress",
+          "scryfall_name": "Duress",
+          "id": "34c3a894-ee75-4db9-a69f-711bb3cc150a",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/fdn/606/duress?utm_source=api"
+        },
+        {
+          "requested_name": "Faebloom Trick",
+          "scryfall_name": "Faebloom Trick",
+          "id": "0c3bee8f-f5be-4404-a696-c902637799c3",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/fdn/38/faebloom-trick?utm_source=api"
+        },
+        {
+          "requested_name": "Ghost Vacuum",
+          "scryfall_name": "Ghost Vacuum",
+          "id": "8ac39c01-127f-4471-bc74-11a90c48e306",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/dsk/248/ghost-vacuum?utm_source=api"
+        }
+      ]
+    },
+    "control": {
+      "counts": {
+        "main": 60,
+        "sideboard": 15
+      },
+      "not_standard_legal": [],
+      "copy_limit_violations": [],
+      "arena_absent_from_returned_printing": [
+        "Abrade"
+      ],
+      "cards": [
+        {
+          "requested_name": "Abrade",
+          "scryfall_name": "Abrade",
+          "id": "1add1757-c1f8-448a-b279-c6940fb7ad5f",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/soc/234/abrade?utm_source=api"
+        },
+        {
+          "requested_name": "Consult the Star Charts",
+          "scryfall_name": "Consult the Star Charts",
+          "id": "a16a6555-2e3a-4587-aacd-0307d696b26c",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/eoe/51/consult-the-star-charts?utm_source=api"
+        },
+        {
+          "requested_name": "Cori Mountain Monastery",
+          "scryfall_name": "Cori Mountain Monastery",
+          "id": "9312821a-2059-4f44-9b20-c9522b827e38",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tdm/252/cori-mountain-monastery?utm_source=api"
+        },
+        {
+          "requested_name": "Day of Judgment",
+          "scryfall_name": "Day of Judgment",
+          "id": "96e84bdc-8a9a-4c58-ba8b-9f052fd60069",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/fdn/140/day-of-judgment?utm_source=api"
+        },
+        {
+          "requested_name": "Emeritus of Ideation",
+          "scryfall_name": "Emeritus of Ideation // Ancestral Recall",
+          "id": "75961d36-acf6-425f-9698-0bf52af74f31",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/sos/45/emeritus-of-ideation-ancestral-recall?utm_source=api"
+        },
+        {
+          "requested_name": "Erode",
+          "scryfall_name": "Erode",
+          "id": "32e670da-7563-4f6a-a7db-4c126a440eb8",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/sos/15/erode?utm_source=api"
+        },
+        {
+          "requested_name": "Firebending Lesson",
+          "scryfall_name": "Firebending Lesson",
+          "id": "fa940e68-010e-4b68-be8a-555d7068f7b4",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tla/138/firebending-lesson?utm_source=api"
+        },
+        {
+          "requested_name": "Floodfarm Verge",
+          "scryfall_name": "Floodfarm Verge",
+          "id": "d53ed0db-1199-44b3-8eda-8189dfcf53d1",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/dsk/259/floodfarm-verge?utm_source=api"
+        },
+        {
+          "requested_name": "Gloomlake Verge",
+          "scryfall_name": "Gloomlake Verge",
+          "id": "83f510b7-4cbd-4883-9c26-c8824bc668ac",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/dsk/260/gloomlake-verge?utm_source=api"
+        },
+        {
+          "requested_name": "Godless Shrine",
+          "scryfall_name": "Godless Shrine",
+          "id": "8fbd1ae0-3d4c-492a-a1ea-85a95fa3d7b6",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/trk/285/godless-shrine?utm_source=api"
+        },
+        {
+          "requested_name": "Great Hall of the Biblioplex",
+          "scryfall_name": "Great Hall of the Biblioplex",
+          "id": "42d92674-2664-411c-b9c5-b04da7c845f4",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/sos/257/great-hall-of-the-biblioplex?utm_source=api"
+        },
+        {
+          "requested_name": "Hallowed Fountain",
+          "scryfall_name": "Hallowed Fountain",
+          "id": "b7285986-7e08-4969-86ef-452dc5bfdd9f",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/trk/286/hallowed-fountain?utm_source=api"
+        },
+        {
+          "requested_name": "Ill-Timed Explosion",
+          "scryfall_name": "Ill-Timed Explosion",
+          "id": "0b5cdb01-eaa4-4a0a-b42a-332bcf4d6fff",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/mkm/207/ill-timed-explosion?utm_source=api"
+        },
+        {
+          "requested_name": "Inevitable Defeat",
+          "scryfall_name": "Inevitable Defeat",
+          "id": "9d677980-b608-407e-9f17-790a81263f15",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tdm/194/inevitable-defeat?utm_source=api"
+        },
+        {
+          "requested_name": "Island",
+          "scryfall_name": "Island",
+          "id": "f3cc07cd-cc79-4745-b0b7-eade60175cc3",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/trk/319/island?utm_source=api"
+        },
+        {
+          "requested_name": "Jeskai Revelation",
+          "scryfall_name": "Jeskai Revelation",
+          "id": "3cac0ad3-5107-4ed6-a688-d44bbd65e407",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tdm/196/jeskai-revelation?utm_source=api"
+        },
+        {
+          "requested_name": "Lightning Helix",
+          "scryfall_name": "Lightning Helix",
+          "id": "4101e3fe-b0e7-4f0f-b9ac-9b61a4d628b3",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/mkm/218/lightning-helix?utm_source=api"
+        },
+        {
+          "requested_name": "Mistrise Village",
+          "scryfall_name": "Mistrise Village",
+          "id": "d44bccbf-6fab-46e4-8ddb-6577e27ec6e8",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tdm/261/mistrise-village?utm_source=api"
+        },
+        {
+          "requested_name": "Mountain",
+          "scryfall_name": "Mountain",
+          "id": "2a844b96-6616-4c39-8f4f-5d14a3b2bd55",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/trk/323/mountain?utm_source=api"
+        },
+        {
+          "requested_name": "Multiversal Passage",
+          "scryfall_name": "Multiversal Passage",
+          "id": "f5fb426a-5618-4dd4-9c51-0cc847be8c1d",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/spm/180/multiversal-passage?utm_source=api"
+        },
+        {
+          "requested_name": "Negate",
+          "scryfall_name": "Negate",
+          "id": "52d58fe4-6070-4022-9cd7-c35a11b44525",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tmt/47/negate?utm_source=api"
+        },
+        {
+          "requested_name": "No More Lies",
+          "scryfall_name": "No More Lies",
+          "id": "1e0c695d-62f9-4805-9e2f-7032e8464136",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/mkm/221/no-more-lies?utm_source=api"
+        },
+        {
+          "requested_name": "North Wind Avatar",
+          "scryfall_name": "North Wind Avatar",
+          "id": "41439cfe-bb3e-42f3-9d81-de9db537ce68",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tmt/162/north-wind-avatar?utm_source=api"
+        },
+        {
+          "requested_name": "Plains",
+          "scryfall_name": "Plains",
+          "id": "8ab0f4c0-b331-4c57-b68f-2e24bb5ba06c",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/trk/317/plains?utm_source=api"
+        },
+        {
+          "requested_name": "Riverpyre Verge",
+          "scryfall_name": "Riverpyre Verge",
+          "id": "57a93a71-d77c-417f-85d0-cd420f573331",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/dft/260/riverpyre-verge?utm_source=api"
+        },
+        {
+          "requested_name": "Sacred Foundry",
+          "scryfall_name": "Sacred Foundry",
+          "id": "a7758cc6-4e18-48a5-8720-5f42b5cd9d31",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/trk/295/sacred-foundry?utm_source=api"
+        },
+        {
+          "requested_name": "Sear",
+          "scryfall_name": "Sear",
+          "id": "aeb4612c-758b-4492-ba03-eb6741b4176e",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/ecl/154/sear?utm_source=api"
+        },
+        {
+          "requested_name": "Steam Vents",
+          "scryfall_name": "Steam Vents",
+          "id": "a83903c7-fd51-4526-aed2-359e946fea36",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/trk/298/steam-vents?utm_source=api"
+        },
+        {
+          "requested_name": "Stock Up",
+          "scryfall_name": "Stock Up",
+          "id": "0a786855-6eb4-42c0-a528-4842db46809d",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/dft/67/stock-up?utm_source=api"
+        },
+        {
+          "requested_name": "Sunbillow Verge",
+          "scryfall_name": "Sunbillow Verge",
+          "id": "94ed132f-b818-4dbf-9b4a-e5acb067e0a4",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/dft/264/sunbillow-verge?utm_source=api"
+        },
+        {
+          "requested_name": "Tablet of Discovery",
+          "scryfall_name": "Tablet of Discovery",
+          "id": "13059664-a940-4a66-8100-0c90b884bab4",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/sos/132/tablet-of-discovery?utm_source=api"
+        },
+        {
+          "requested_name": "The Vision",
+          "scryfall_name": "The Vision",
+          "id": "2961cf20-33c8-4e66-9d0f-6daca8ea7880",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/msh/255/the-vision?utm_source=api"
+        },
+        {
+          "requested_name": "Together as One",
+          "scryfall_name": "Together as One",
+          "id": "ac2a8a66-e38c-42ab-83e1-d2d99ee48861",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/sos/4/together-as-one?utm_source=api"
+        },
+        {
+          "requested_name": "Ancient Vendetta",
+          "scryfall_name": "Ancient Vendetta",
+          "id": "230301f2-f288-4b13-9f62-e649ad8357bb",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/dft/75/ancient-vendetta?utm_source=api"
+        },
+        {
+          "requested_name": "Flashfreeze",
+          "scryfall_name": "Flashfreeze",
+          "id": "91e37a7e-6093-4ef5-b6e4-4aa800ddfc1b",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/fdn/590/flashfreeze?utm_source=api"
+        },
+        {
+          "requested_name": "Pinnacle Starcage",
+          "scryfall_name": "Pinnacle Starcage",
+          "id": "b1f40c4c-a955-4d9c-8225-251fa4159124",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/eoe/27/pinnacle-starcage?utm_source=api"
+        },
+        {
+          "requested_name": "Rest in Peace",
+          "scryfall_name": "Rest in Peace",
+          "id": "d108c2b1-236e-4b8d-8445-d9749ccc4fea",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/big/4/rest-in-peace?utm_source=api"
+        },
+        {
+          "requested_name": "Riverchurn Monument",
+          "scryfall_name": "Riverchurn Monument",
+          "id": "e66ff696-fd39-49ad-9ee5-c0868167df37",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/dft/57/riverchurn-monument?utm_source=api"
+        },
+        {
+          "requested_name": "Settle the Wreckage",
+          "scryfall_name": "Settle the Wreckage",
+          "id": "31a7a5e2-4cb8-48fc-8351-18344b4a7560",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/hob/26/settle-the-wreckage?utm_source=api"
+        },
+        {
+          "requested_name": "Sphinx of the Final Word",
+          "scryfall_name": "Sphinx of the Final Word",
+          "id": "6071239e-0b85-4c54-bef8-d9456eb8d8fc",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/fdn/747/sphinx-of-the-final-word?utm_source=api"
+        },
+        {
+          "requested_name": "Strategic Betrayal",
+          "scryfall_name": "Strategic Betrayal",
+          "id": "95617742-548d-464a-bb89-a858ffa9018f",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tdm/94/strategic-betrayal?utm_source=api"
+        },
+        {
+          "requested_name": "Ultima",
+          "scryfall_name": "Ultima",
+          "id": "39504a0e-f63f-4907-afd7-c4492f6b8a3b",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/fin/38/ultima?utm_source=api"
+        }
+      ]
+    },
+    "combo": {
+      "counts": {
+        "main": 60,
+        "sideboard": 15
+      },
+      "not_standard_legal": [],
+      "copy_limit_violations": [],
+      "arena_absent_from_returned_printing": [
+        "Bovine Intervention"
+      ],
+      "cards": [
+        {
+          "requested_name": "Aang, Swift Savior",
+          "scryfall_name": "Aang, Swift Savior // Aang and La, Ocean's Fury",
+          "id": "82866a0e-485a-4f7e-8c49-f7d9ff3f4ad4",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tla/204/aang-swift-savior-aang-and-la-oceans-fury?utm_source=api"
+        },
+        {
+          "requested_name": "Aang, at the Crossroads",
+          "scryfall_name": "Aang, at the Crossroads // Aang, Destined Savior",
+          "id": "fea89ca0-8070-4f28-9851-994314f9d248",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tla/203/aang-at-the-crossroads-aang-destined-savior?utm_source=api"
+        },
+        {
+          "requested_name": "Airbender Ascension",
+          "scryfall_name": "Airbender Ascension",
+          "id": "99a90d13-891c-45cc-b1d5-6080ebae5862",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tla/6/airbender-ascension?utm_source=api"
+        },
+        {
+          "requested_name": "Appa, Steadfast Guardian",
+          "scryfall_name": "Appa, Steadfast Guardian",
+          "id": "829d91e9-4878-4e55-a262-ac0d55b65d4e",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tla/10/appa-steadfast-guardian?utm_source=api"
+        },
+        {
+          "requested_name": "Bramble Familiar",
+          "scryfall_name": "Bramble Familiar // Fetch Quest",
+          "id": "475d7e9a-759d-4523-a5cd-2a6e0d1b14ea",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/woe/164/bramble-familiar-fetch-quest?utm_source=api"
+        },
+        {
+          "requested_name": "Breeding Pool",
+          "scryfall_name": "Breeding Pool",
+          "id": "63e4dc07-c742-41bd-8301-861637908fd1",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/trk/279/breeding-pool?utm_source=api"
+        },
+        {
+          "requested_name": "Cavern of Souls",
+          "scryfall_name": "Cavern of Souls",
+          "id": "3aad15a2-8a1b-4460-9b06-e85863081878",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/lci/269/cavern-of-souls?utm_source=api"
+        },
+        {
+          "requested_name": "Doc Aurlock, Grizzled Genius",
+          "scryfall_name": "Doc Aurlock, Grizzled Genius",
+          "id": "6fc27b30-8c8e-434c-a72c-e1d409efc1ae",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/otj/201/doc-aurlock-grizzled-genius?utm_source=api"
+        },
+        {
+          "requested_name": "Floodfarm Verge",
+          "scryfall_name": "Floodfarm Verge",
+          "id": "d53ed0db-1199-44b3-8eda-8189dfcf53d1",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/dsk/259/floodfarm-verge?utm_source=api"
+        },
+        {
+          "requested_name": "Hallowed Fountain",
+          "scryfall_name": "Hallowed Fountain",
+          "id": "b7285986-7e08-4969-86ef-452dc5bfdd9f",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/trk/286/hallowed-fountain?utm_source=api"
+        },
+        {
+          "requested_name": "Hushwood Verge",
+          "scryfall_name": "Hushwood Verge",
+          "id": "ec288d76-c1f5-471b-8a53-504f88469c1b",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/dsk/261/hushwood-verge?utm_source=api"
+        },
+        {
+          "requested_name": "Interdimensional Web Watch",
+          "scryfall_name": "Interdimensional Web Watch",
+          "id": "87a8e112-e72f-413f-88a3-e7ce72c2ec53",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/spm/165/interdimensional-web-watch?utm_source=api"
+        },
+        {
+          "requested_name": "Jennifer Walters",
+          "scryfall_name": "Jennifer Walters // The Sensational She-Hulk",
+          "id": "61237530-ad49-469c-a952-67c92315708e",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/msh/18/jennifer-walters-the-sensational-she-hulk?utm_source=api"
+        },
+        {
+          "requested_name": "Llanowar Elves",
+          "scryfall_name": "Llanowar Elves",
+          "id": "6a0b230b-d391-4998-a3f7-7b158a0ec2cd",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/fdn/227/llanowar-elves?utm_source=api"
+        },
+        {
+          "requested_name": "Michelangelo's Technique",
+          "scryfall_name": "Michelangelo's Technique",
+          "id": "3a63c06a-7c59-4b72-b916-e5b6ad78c684",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tmt/122/michelangelos-technique?utm_source=api"
+        },
+        {
+          "requested_name": "Plains",
+          "scryfall_name": "Plains",
+          "id": "8ab0f4c0-b331-4c57-b68f-2e24bb5ba06c",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/trk/317/plains?utm_source=api"
+        },
+        {
+          "requested_name": "Spider Manifestation",
+          "scryfall_name": "Spider Manifestation",
+          "id": "99223677-b8a5-48f1-8009-e8475eada7db",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/spm/148/spider-manifestation?utm_source=api"
+        },
+        {
+          "requested_name": "Starting Town",
+          "scryfall_name": "Starting Town",
+          "id": "fc7d1912-7e27-49ef-bd98-375d975a42b0",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/fin/289/starting-town?utm_source=api"
+        },
+        {
+          "requested_name": "Temple Garden",
+          "scryfall_name": "Temple Garden",
+          "id": "b9b0589d-f327-46a7-8bac-06b7654c547a",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/trk/301/temple-garden?utm_source=api"
+        },
+        {
+          "requested_name": "The Mind Stone",
+          "scryfall_name": "The Mind Stone",
+          "id": "87f1e69a-6d74-4982-afda-82613637799a",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/msh/21/the-mind-stone?utm_source=api"
+        },
+        {
+          "requested_name": "Aven Interrupter",
+          "scryfall_name": "Aven Interrupter",
+          "id": "d3ca43a4-d194-440f-8099-f1fa103a108d",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/otj/4/aven-interrupter?utm_source=api"
+        },
+        {
+          "requested_name": "Bovine Intervention",
+          "scryfall_name": "Bovine Intervention",
+          "id": "9fe4ad5a-3337-467a-b857-7297085da11f",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/msc/123/bovine-intervention?utm_source=api"
+        },
+        {
+          "requested_name": "Negate",
+          "scryfall_name": "Negate",
+          "id": "52d58fe4-6070-4022-9cd7-c35a11b44525",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tmt/47/negate?utm_source=api"
+        },
+        {
+          "requested_name": "Oko, Lorwyn Liege",
+          "scryfall_name": "Oko, Lorwyn Liege // Oko, Shadowmoor Scion",
+          "id": "1dab370a-1067-4d94-be1f-10362d4abf5a",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/ecl/61/oko-lorwyn-liege-oko-shadowmoor-scion?utm_source=api"
+        },
+        {
+          "requested_name": "Rest in Peace",
+          "scryfall_name": "Rest in Peace",
+          "id": "d108c2b1-236e-4b8d-8445-d9749ccc4fea",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/big/4/rest-in-peace?utm_source=api"
+        },
+        {
+          "requested_name": "Seam Rip",
+          "scryfall_name": "Seam Rip",
+          "id": "9d298847-2d02-4593-b4d3-c5b722edac1e",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/eoe/34/seam-rip?utm_source=api"
+        },
+        {
+          "requested_name": "Settle the Wreckage",
+          "scryfall_name": "Settle the Wreckage",
+          "id": "31a7a5e2-4cb8-48fc-8351-18344b4a7560",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/hob/26/settle-the-wreckage?utm_source=api"
+        },
+        {
+          "requested_name": "Surrak, Elusive Hunter",
+          "scryfall_name": "Surrak, Elusive Hunter",
+          "id": "e4775a26-0b66-40e9-8f64-41d9308ca032",
+          "standard": "legal",
+          "scryfall_uri": "https://scryfall.com/card/tdm/161/surrak-elusive-hunter?utm_source=api"
+        }
+      ]
+    }
+  },
+  "arena_followup": {
+    "path": "/tmp/mtg-opponents/scryfall-arena-alternates.json",
+    "resolved_names": [
+      "Abrade",
+      "Bitter Triumph",
+      "Bovine Intervention",
+      "Fabled Passage"
+    ],
+    "all_requested_names_have_arena_printings": true,
+    "note": "Printing games is not card-wide availability. Arena import itself was not tested."
+  }
+}

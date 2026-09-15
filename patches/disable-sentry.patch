@@ -1,0 +1,12 @@
+diff --git a/forge-gui-desktop/src/main/java/forge/view/Main.java b/forge-gui-desktop/src/main/java/forge/view/Main.java
+index ebe7d398..234b3cef 100644
+--- a/forge-gui-desktop/src/main/java/forge/view/Main.java
++++ b/forge-gui-desktop/src/main/java/forge/view/Main.java
+@@ -64,6 +64,7 @@ public final class Main {
+
+         Sentry.init(options -> {
+             options.setEnableExternalConfiguration(true);
++            options.setEnabled(false); // Matchlab: never transmit simulation diagnostics.
+             options.setRelease(BuildInfo.getVersionString());
+             options.setEnvironment(System.getProperty("os.name"));
+             options.setTag("Java Version", System.getProperty("java.version"));

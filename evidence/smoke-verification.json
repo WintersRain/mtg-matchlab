@@ -1,0 +1,252 @@
+{
+  "date": "2026-09-15",
+  "purpose": "Execution smoke checks, not matchup estimates",
+  "unit_tests": 15,
+  "runs": [
+    {
+      "seed": 42,
+      "seats": [
+        "doom",
+        "aggro"
+      ],
+      "status": "completed",
+      "winner": "doom",
+      "engine_pin": "b88dbd3ebd78b6aebfb2839cbbffee3102d59e30",
+      "jar_sha256": "8e231031a70f9d81769b37ffb70e5a6e2293b15bec5abf389cfe657225c2ac61",
+      "java_version": "openjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nOpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)",
+      "raw_sha256": "35ff3914b55306f901df16135467b6ce62205909f3e09daf943c07ce85563d18",
+      "normalized_log_sha256": "757f50a183e4b72ad82ef900910217dac4c13416faa2af287c46bcd759ce807b",
+      "outcomes": [
+        "Game Outcome: Turn 9",
+        "Game Outcome: Ai(1)-doom has won because all opponents have lost",
+        "Game Outcome: Ai(2)-aggro has lost because life total reached 0"
+      ],
+      "event_counts": {
+        "Combat": 16,
+        "Damage": 27,
+        "Add To Stack": 30,
+        "Resolve Stack": 32,
+        "Zone Change": 3
+      }
+    },
+    {
+      "seed": 42,
+      "seats": [
+        "doom",
+        "aggro"
+      ],
+      "status": "completed",
+      "winner": "doom",
+      "engine_pin": "b88dbd3ebd78b6aebfb2839cbbffee3102d59e30",
+      "jar_sha256": "8e231031a70f9d81769b37ffb70e5a6e2293b15bec5abf389cfe657225c2ac61",
+      "java_version": "openjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nOpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)",
+      "raw_sha256": "39ccb761c00d38453d4db1eef1e96d8551b2b6c048cbd854fda5ccb960818d70",
+      "normalized_log_sha256": "027a23f516bef36596fbf47f2c28ea0d21a26fc35dc63536b706cd468495e4be",
+      "outcomes": [
+        "Game Outcome: Turn 9",
+        "Game Outcome: Ai(1)-doom has won because all opponents have lost",
+        "Game Outcome: Ai(2)-aggro has lost because life total reached 0"
+      ],
+      "event_counts": {
+        "Combat": 16,
+        "Damage": 27,
+        "Add To Stack": 30,
+        "Resolve Stack": 32,
+        "Zone Change": 3
+      }
+    },
+    {
+      "seed": 42,
+      "seats": [
+        "aggro",
+        "doom"
+      ],
+      "status": "completed",
+      "winner": "aggro",
+      "engine_pin": "b88dbd3ebd78b6aebfb2839cbbffee3102d59e30",
+      "jar_sha256": "8e231031a70f9d81769b37ffb70e5a6e2293b15bec5abf389cfe657225c2ac61",
+      "java_version": "openjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nOpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)",
+      "raw_sha256": "a7d1a7efa8c6eb2d1bcd80281b39c3be172eadaa6b8de7a8f8c9debac1e65657",
+      "normalized_log_sha256": "abd03118c5733b532d7379416317b6e2986eb25b7fdedf4722082cd87e6e3454",
+      "outcomes": [
+        "Game Outcome: Turn 8",
+        "Game Outcome: Ai(1)-aggro has won because all opponents have lost",
+        "Game Outcome: Ai(2)-doom has lost because life total reached 0"
+      ],
+      "event_counts": {
+        "Combat": 8,
+        "Damage": 8,
+        "Add To Stack": 24,
+        "Resolve Stack": 26,
+        "Zone Change": 5
+      }
+    },
+    {
+      "seed": 42,
+      "seats": [
+        "doom",
+        "midrange"
+      ],
+      "status": "completed",
+      "winner": "midrange",
+      "engine_pin": "b88dbd3ebd78b6aebfb2839cbbffee3102d59e30",
+      "jar_sha256": "8e231031a70f9d81769b37ffb70e5a6e2293b15bec5abf389cfe657225c2ac61",
+      "java_version": "openjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nOpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)",
+      "raw_sha256": "accdce2bfcd0a7daddb67afec5b0bfa20c6a2f8f5e42c4828b9b457b567537ee",
+      "normalized_log_sha256": "7147fcbaff9c5409b9ef1f2be87a1541375d29a69c16ad82b67d8705127c32f2",
+      "outcomes": [
+        "Game Outcome: Turn 7",
+        "Game Outcome: Ai(1)-doom has lost because life total reached 0",
+        "Game Outcome: Ai(2)-midrange has won because all opponents have lost"
+      ],
+      "event_counts": {
+        "Combat": 12,
+        "Damage": 11,
+        "Add To Stack": 26,
+        "Resolve Stack": 30,
+        "Zone Change": 2
+      }
+    },
+    {
+      "seed": 42,
+      "seats": [
+        "doom",
+        "control"
+      ],
+      "status": "completed",
+      "winner": "control",
+      "engine_pin": "b88dbd3ebd78b6aebfb2839cbbffee3102d59e30",
+      "jar_sha256": "8e231031a70f9d81769b37ffb70e5a6e2293b15bec5abf389cfe657225c2ac61",
+      "java_version": "openjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nOpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)",
+      "raw_sha256": "ce3b3d55e2b1065efa391532b9f11765f91b1618c9e773e4c53646fa38ff3079",
+      "normalized_log_sha256": "aa45fd98e64ba14991aa476ab5fec16fab645e1a0d1e14b560e22fa2c293c540",
+      "outcomes": [
+        "Game Outcome: Turn 10",
+        "Game Outcome: Ai(1)-doom has lost because life total reached 0",
+        "Game Outcome: Ai(2)-control has won because all opponents have lost"
+      ],
+      "event_counts": {
+        "Combat": 14,
+        "Damage": 10,
+        "Add To Stack": 31,
+        "Resolve Stack": 31,
+        "Zone Change": 5
+      }
+    },
+    {
+      "seed": 42,
+      "seats": [
+        "doom",
+        "combo"
+      ],
+      "status": "completed",
+      "winner": "combo",
+      "engine_pin": "b88dbd3ebd78b6aebfb2839cbbffee3102d59e30",
+      "jar_sha256": "8e231031a70f9d81769b37ffb70e5a6e2293b15bec5abf389cfe657225c2ac61",
+      "java_version": "openjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nOpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)",
+      "raw_sha256": "a6561755fc04da20ca78ff320bb371c6aac9ce18e262c4006e6af6041cd64b38",
+      "normalized_log_sha256": "bf6f0fa122d97082311967b73aab894eea341fef07cadfea9016c3d2b9d8fbc1",
+      "outcomes": [
+        "Game Outcome: Turn 9",
+        "Game Outcome: Ai(1)-doom has lost because life total reached 0",
+        "Game Outcome: Ai(2)-combo has won because all opponents have lost"
+      ],
+      "event_counts": {
+        "Combat": 18,
+        "Damage": 33,
+        "Add To Stack": 34,
+        "Resolve Stack": 34,
+        "Zone Change": 6
+      }
+    },
+    {
+      "seed": 31415,
+      "seats": [
+        "doom",
+        "midrange"
+      ],
+      "status": "completed",
+      "winner": "midrange",
+      "engine_pin": "b88dbd3ebd78b6aebfb2839cbbffee3102d59e30",
+      "jar_sha256": "8e231031a70f9d81769b37ffb70e5a6e2293b15bec5abf389cfe657225c2ac61",
+      "java_version": "openjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nOpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)",
+      "raw_sha256": "f9e54b2f3cfb47ffdb3ca610ff6aea02d4f54b3997cb85ed559e0c2258c5f182",
+      "normalized_log_sha256": "757c84fc67d1f29fb3999e4e6562e5a1adb3275e60b6b5dd4907bb3c059150ab",
+      "outcomes": [
+        "Game Outcome: Turn 13",
+        "Game Outcome: Ai(1)-doom has lost because life total reached 0",
+        "Game Outcome: Ai(2)-midrange has won because all opponents have lost"
+      ],
+      "phase": "post-review final harness"
+    },
+    {
+      "seed": 31415,
+      "seats": [
+        "doom",
+        "control"
+      ],
+      "status": "completed",
+      "winner": "control",
+      "engine_pin": "b88dbd3ebd78b6aebfb2839cbbffee3102d59e30",
+      "jar_sha256": "8e231031a70f9d81769b37ffb70e5a6e2293b15bec5abf389cfe657225c2ac61",
+      "java_version": "openjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nOpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)",
+      "raw_sha256": "f8123a96c7108c546728ae203030243f43431e2cb4f953f378c63c8c228909de",
+      "normalized_log_sha256": "57f64086a17f3a83257995f666c4e20648c8ee910b33cae2f88608eb354d9a0d",
+      "outcomes": [
+        "Game Outcome: Turn 11",
+        "Game Outcome: Ai(1)-doom has lost because life total reached 0",
+        "Game Outcome: Ai(2)-control has won because all opponents have lost"
+      ],
+      "phase": "post-review final harness"
+    },
+    {
+      "seed": 31415,
+      "seats": [
+        "doom",
+        "aggro"
+      ],
+      "status": "completed",
+      "winner": "doom",
+      "engine_pin": "b88dbd3ebd78b6aebfb2839cbbffee3102d59e30",
+      "jar_sha256": "8e231031a70f9d81769b37ffb70e5a6e2293b15bec5abf389cfe657225c2ac61",
+      "java_version": "openjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nOpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)",
+      "raw_sha256": "19243f3758178fe921c6962cb4012f30dc1db3e5c280863d7a5ff614c9dcb7cc",
+      "normalized_log_sha256": "01fead6ccc40ff57117a5079fa51f9ef9f0cb768ed0b9c6c1a591f2eb8ce4371",
+      "outcomes": [
+        "Game Outcome: Turn 11",
+        "Game Outcome: Ai(1)-doom has won because all opponents have lost",
+        "Game Outcome: Ai(2)-aggro has lost because life total reached 0"
+      ],
+      "phase": "post-review final harness"
+    },
+    {
+      "seed": 31415,
+      "seats": [
+        "doom",
+        "combo"
+      ],
+      "status": "completed",
+      "winner": "doom",
+      "engine_pin": "b88dbd3ebd78b6aebfb2839cbbffee3102d59e30",
+      "jar_sha256": "8e231031a70f9d81769b37ffb70e5a6e2293b15bec5abf389cfe657225c2ac61",
+      "java_version": "openjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nOpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)",
+      "raw_sha256": "7611d00849dc101bd0ec700bfc183f96ee927551d1e9cdb0c7b4f8aea5479aeb",
+      "normalized_log_sha256": "a34a5554c3e522e6dc419bc596a9a6808ce0aaca51401696a649481f5bec2451",
+      "outcomes": [
+        "Game Outcome: Turn 9",
+        "Game Outcome: Ai(1)-doom has won because all opponents have lost",
+        "Game Outcome: Ai(2)-combo has lost because life total reached 0"
+      ],
+      "phase": "post-review final harness"
+    }
+  ],
+  "repeat_check": {
+    "same_seed_same_seats": true,
+    "full_normalized_logs_identical": false,
+    "difference": "Startup GuiBase wall-clock timestamps remain in normalization v1; game durations also differ in raw logs.",
+    "additional_comparison_with_startup_clock_removed_identical": true,
+    "scope": "Two aggro repeats only; not a universal determinism claim"
+  },
+  "combo_caveat": "Bant smoke game won via combat; combo loop execution and strategic recognition are not established.",
+  "raw_logs": "Retained locally under ignored runtime/runs; not published."
+}

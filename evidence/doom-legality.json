@@ -1,0 +1,117 @@
+{
+  "retrieved": "2026-09-15",
+  "source": "https://api.scryfall.com/cards/collection",
+  "not_found": [],
+  "cards": [
+    {
+      "name": "Ravenous Robots",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/tmt/106/ravenous-robots?utm_source=api"
+    },
+    {
+      "name": "Mechanized Ninja Cavalry",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/tmt/156/mechanized-ninja-cavalry?utm_source=api"
+    },
+    {
+      "name": "Iron Spider, Stark Upgrade",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/spm/166/iron-spider-stark-upgrade?utm_source=api"
+    },
+    {
+      "name": "Selfcraft Mechan",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/eoe/74/selfcraft-mechan?utm_source=api"
+    },
+    {
+      "name": "Interceptor Mechan",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/eoe/220/interceptor-mechan?utm_source=api"
+    },
+    {
+      "name": "M.O.D.O.K.",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/msh/106/modok?utm_source=api"
+    },
+    {
+      "name": "Doctor Doom",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/msh/95/doctor-doom?utm_source=api"
+    },
+    {
+      "name": "Krang, Master Mind",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/tmt/43/krang-master-mind?utm_source=api"
+    },
+    {
+      "name": "The Arkenstone // Seek the Heart",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/hob/170/the-arkenstone-seek-the-heart?utm_source=api"
+    },
+    {
+      "name": "Grim Bauble",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/dft/88/grim-bauble?utm_source=api"
+    },
+    {
+      "name": "Cryogen Relic",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/eoe/52/cryogen-relic?utm_source=api"
+    },
+    {
+      "name": "Bitter Triumph",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/tdc/173/bitter-triumph?utm_source=api"
+    },
+    {
+      "name": "Withering Torment",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/msc/162/withering-torment?utm_source=api"
+    },
+    {
+      "name": "Blood Crypt",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/trk/278/blood-crypt?utm_source=api"
+    },
+    {
+      "name": "Watery Grave",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/trk/306/watery-grave?utm_source=api"
+    },
+    {
+      "name": "Steam Vents",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/trk/298/steam-vents?utm_source=api"
+    },
+    {
+      "name": "Starting Town",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/fin/289/starting-town?utm_source=api"
+    },
+    {
+      "name": "Castle Doom",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/msh/263/castle-doom?utm_source=api"
+    },
+    {
+      "name": "Restless Vents",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/lci/284/restless-vents?utm_source=api"
+    },
+    {
+      "name": "Swamp",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/trk/321/swamp?utm_source=api"
+    },
+    {
+      "name": "Island",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/trk/319/island?utm_source=api"
+    },
+    {
+      "name": "Mountain",
+      "standard": "legal",
+      "scryfall_uri": "https://scryfall.com/card/trk/323/mountain?utm_source=api"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+/vendor/
+/.local/
+/runtime/
+__pycache__/
+*.py[cod]

@@ -1,0 +1,48 @@
+Deck
+1 Abrade
+3 Consult the Star Charts
+1 Cori Mountain Monastery
+1 Day of Judgment
+1 Emeritus of Ideation
+1 Erode
+2 Firebending Lesson
+1 Floodfarm Verge
+2 Gloomlake Verge
+2 Godless Shrine
+4 Great Hall of the Biblioplex
+2 Hallowed Fountain
+1 Ill-Timed Explosion
+3 Inevitable Defeat
+1 Island
+4 Jeskai Revelation
+2 Lightning Helix
+1 Mistrise Village
+1 Mountain
+1 Multiversal Passage
+1 Negate
+2 No More Lies
+1 North Wind Avatar
+1 Plains
+1 Riverpyre Verge
+3 Sacred Foundry
+1 Sear
+4 Steam Vents
+3 Stock Up
+2 Sunbillow Verge
+4 Tablet of Discovery
+1 The Vision
+1 Together as One
+
+Sideboard
+1 Ancient Vendetta
+2 Flashfreeze
+2 North Wind Avatar
+1 Pinnacle Starcage
+2 Rest in Peace
+1 Riverchurn Monument
+1 Sear
+1 Settle the Wreckage
+1 Sphinx of the Final Word
+1 Strategic Betrayal
+1 Together as One
+1 Ultima

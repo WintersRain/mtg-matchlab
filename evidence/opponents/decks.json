@@ -1,0 +1,526 @@
+{
+  "aggro": {
+    "main": [
+      {
+        "count": 3,
+        "name": "Ba Sing Se"
+      },
+      {
+        "count": 2,
+        "name": "Bristly Bill, Spine Sower"
+      },
+      {
+        "count": 4,
+        "name": "Earthbender Ascension"
+      },
+      {
+        "count": 4,
+        "name": "Escape Tunnel"
+      },
+      {
+        "count": 4,
+        "name": "Esper Origins"
+      },
+      {
+        "count": 4,
+        "name": "Fabled Passage"
+      },
+      {
+        "count": 15,
+        "name": "Forest"
+      },
+      {
+        "count": 4,
+        "name": "Icetill Explorer"
+      },
+      {
+        "count": 2,
+        "name": "Keen-Eyed Curator"
+      },
+      {
+        "count": 4,
+        "name": "Llanowar Elves"
+      },
+      {
+        "count": 2,
+        "name": "Lumbering Worldwagon"
+      },
+      {
+        "count": 4,
+        "name": "Mightform Harmonizer"
+      },
+      {
+        "count": 3,
+        "name": "Sapling Nursery"
+      },
+      {
+        "count": 4,
+        "name": "Sazh's Chocobo"
+      },
+      {
+        "count": 1,
+        "name": "Surrak, Elusive Hunter"
+      }
+    ],
+    "sideboard": [
+      {
+        "count": 2,
+        "name": "Gigantic Big Bear"
+      },
+      {
+        "count": 4,
+        "name": "Meltstrider's Resolve"
+      },
+      {
+        "count": 4,
+        "name": "Mossborn Hydra"
+      },
+      {
+        "count": 1,
+        "name": "Sapling Nursery"
+      },
+      {
+        "count": 2,
+        "name": "Surrak, Elusive Hunter"
+      },
+      {
+        "count": 2,
+        "name": "Torpor Orb"
+      }
+    ]
+  },
+  "midrange": {
+    "main": [
+      {
+        "count": 2,
+        "name": "Bitter Triumph"
+      },
+      {
+        "count": 4,
+        "name": "Dream Beavers"
+      },
+      {
+        "count": 4,
+        "name": "Enduring Curiosity"
+      },
+      {
+        "count": 4,
+        "name": "Floodpits Drowner"
+      },
+      {
+        "count": 4,
+        "name": "Gloomlake Verge"
+      },
+      {
+        "count": 3,
+        "name": "Hidden Lair"
+      },
+      {
+        "count": 4,
+        "name": "Island"
+      },
+      {
+        "count": 4,
+        "name": "Kaito, Bane of Nightmares"
+      },
+      {
+        "count": 3,
+        "name": "Requiting Hex"
+      },
+      {
+        "count": 2,
+        "name": "Restless Reef"
+      },
+      {
+        "count": 2,
+        "name": "Shoot the Sheriff"
+      },
+      {
+        "count": 2,
+        "name": "Soulstone Sanctuary"
+      },
+      {
+        "count": 1,
+        "name": "Spell Pierce"
+      },
+      {
+        "count": 1,
+        "name": "Spell Snare"
+      },
+      {
+        "count": 4,
+        "name": "Spyglass Siren"
+      },
+      {
+        "count": 1,
+        "name": "Strategic Betrayal"
+      },
+      {
+        "count": 4,
+        "name": "Swamp"
+      },
+      {
+        "count": 2,
+        "name": "The Wondrous Wasp"
+      },
+      {
+        "count": 1,
+        "name": "Tishana's Tidebinder"
+      },
+      {
+        "count": 2,
+        "name": "Wan Shi Tong, Librarian"
+      },
+      {
+        "count": 4,
+        "name": "Watery Grave"
+      },
+      {
+        "count": 2,
+        "name": "We Say Thee Nay!"
+      }
+    ],
+    "sideboard": [
+      {
+        "count": 1,
+        "name": "Annul"
+      },
+      {
+        "count": 2,
+        "name": "Day of Black Sun"
+      },
+      {
+        "count": 2,
+        "name": "Disdainful Stroke"
+      },
+      {
+        "count": 3,
+        "name": "Duress"
+      },
+      {
+        "count": 2,
+        "name": "Faebloom Trick"
+      },
+      {
+        "count": 1,
+        "name": "Ghost Vacuum"
+      },
+      {
+        "count": 1,
+        "name": "Requiting Hex"
+      },
+      {
+        "count": 1,
+        "name": "Spell Pierce"
+      },
+      {
+        "count": 2,
+        "name": "Strategic Betrayal"
+      }
+    ]
+  },
+  "control": {
+    "main": [
+      {
+        "count": 1,
+        "name": "Abrade"
+      },
+      {
+        "count": 3,
+        "name": "Consult the Star Charts"
+      },
+      {
+        "count": 1,
+        "name": "Cori Mountain Monastery"
+      },
+      {
+        "count": 1,
+        "name": "Day of Judgment"
+      },
+      {
+        "count": 1,
+        "name": "Emeritus of Ideation"
+      },
+      {
+        "count": 1,
+        "name": "Erode"
+      },
+      {
+        "count": 2,
+        "name": "Firebending Lesson"
+      },
+      {
+        "count": 1,
+        "name": "Floodfarm Verge"
+      },
+      {
+        "count": 2,
+        "name": "Gloomlake Verge"
+      },
+      {
+        "count": 2,
+        "name": "Godless Shrine"
+      },
+      {
+        "count": 4,
+        "name": "Great Hall of the Biblioplex"
+      },
+      {
+        "count": 2,
+        "name": "Hallowed Fountain"
+      },
+      {
+        "count": 1,
+        "name": "Ill-Timed Explosion"
+      },
+      {
+        "count": 3,
+        "name": "Inevitable Defeat"
+      },
+      {
+        "count": 1,
+        "name": "Island"
+      },
+      {
+        "count": 4,
+        "name": "Jeskai Revelation"
+      },
+      {
+        "count": 2,
+        "name": "Lightning Helix"
+      },
+      {
+        "count": 1,
+        "name": "Mistrise Village"
+      },
+      {
+        "count": 1,
+        "name": "Mountain"
+      },
+      {
+        "count": 1,
+        "name": "Multiversal Passage"
+      },
+      {
+        "count": 1,
+        "name": "Negate"
+      },
+      {
+        "count": 2,
+        "name": "No More Lies"
+      },
+      {
+        "count": 1,
+        "name": "North Wind Avatar"
+      },
+      {
+        "count": 1,
+        "name": "Plains"
+      },
+      {
+        "count": 1,
+        "name": "Riverpyre Verge"
+      },
+      {
+        "count": 3,
+        "name": "Sacred Foundry"
+      },
+      {
+        "count": 1,
+        "name": "Sear"
+      },
+      {
+        "count": 4,
+        "name": "Steam Vents"
+      },
+      {
+        "count": 3,
+        "name": "Stock Up"
+      },
+      {
+        "count": 2,
+        "name": "Sunbillow Verge"
+      },
+      {
+        "count": 4,
+        "name": "Tablet of Discovery"
+      },
+      {
+        "count": 1,
+        "name": "The Vision"
+      },
+      {
+        "count": 1,
+        "name": "Together as One"
+      }
+    ],
+    "sideboard": [
+      {
+        "count": 1,
+        "name": "Ancient Vendetta"
+      },
+      {
+        "count": 2,
+        "name": "Flashfreeze"
+      },
+      {
+        "count": 2,
+        "name": "North Wind Avatar"
+      },
+      {
+        "count": 1,
+        "name": "Pinnacle Starcage"
+      },
+      {
+        "count": 2,
+        "name": "Rest in Peace"
+      },
+      {
+        "count": 1,
+        "name": "Riverchurn Monument"
+      },
+      {
+        "count": 1,
+        "name": "Sear"
+      },
+      {
+        "count": 1,
+        "name": "Settle the Wreckage"
+      },
+      {
+        "count": 1,
+        "name": "Sphinx of the Final Word"
+      },
+      {
+        "count": 1,
+        "name": "Strategic Betrayal"
+      },
+      {
+        "count": 1,
+        "name": "Together as One"
+      },
+      {
+        "count": 1,
+        "name": "Ultima"
+      }
+    ]
+  },
+  "combo": {
+    "main": [
+      {
+        "count": 4,
+        "name": "Aang, Swift Savior"
+      },
+      {
+        "count": 2,
+        "name": "Aang, at the Crossroads"
+      },
+      {
+        "count": 1,
+        "name": "Airbender Ascension"
+      },
+      {
+        "count": 4,
+        "name": "Appa, Steadfast Guardian"
+      },
+      {
+        "count": 4,
+        "name": "Bramble Familiar"
+      },
+      {
+        "count": 4,
+        "name": "Breeding Pool"
+      },
+      {
+        "count": 1,
+        "name": "Cavern of Souls"
+      },
+      {
+        "count": 4,
+        "name": "Doc Aurlock, Grizzled Genius"
+      },
+      {
+        "count": 3,
+        "name": "Floodfarm Verge"
+      },
+      {
+        "count": 3,
+        "name": "Hallowed Fountain"
+      },
+      {
+        "count": 4,
+        "name": "Hushwood Verge"
+      },
+      {
+        "count": 4,
+        "name": "Interdimensional Web Watch"
+      },
+      {
+        "count": 2,
+        "name": "Jennifer Walters"
+      },
+      {
+        "count": 4,
+        "name": "Llanowar Elves"
+      },
+      {
+        "count": 3,
+        "name": "Michelangelo's Technique"
+      },
+      {
+        "count": 1,
+        "name": "Plains"
+      },
+      {
+        "count": 3,
+        "name": "Spider Manifestation"
+      },
+      {
+        "count": 4,
+        "name": "Starting Town"
+      },
+      {
+        "count": 4,
+        "name": "Temple Garden"
+      },
+      {
+        "count": 1,
+        "name": "The Mind Stone"
+      }
+    ],
+    "sideboard": [
+      {
+        "count": 1,
+        "name": "Aven Interrupter"
+      },
+      {
+        "count": 2,
+        "name": "Bovine Intervention"
+      },
+      {
+        "count": 2,
+        "name": "Negate"
+      },
+      {
+        "count": 1,
+        "name": "Oko, Lorwyn Liege"
+      },
+      {
+        "count": 3,
+        "name": "Rest in Peace"
+      },
+      {
+        "count": 2,
+        "name": "Seam Rip"
+      },
+      {
+        "count": 2,
+        "name": "Settle the Wreckage"
+      },
+      {
+        "count": 2,
+        "name": "Surrak, Elusive Hunter"
+      }
+    ]
+  }
+}
