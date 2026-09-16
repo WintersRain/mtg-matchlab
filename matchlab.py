@@ -265,8 +265,10 @@ def run(args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest='action', required=True)
-    sub.add_parser('audit')
-    runner = sub.add_parser('run')
+    from analysis_tools import add_commands, dispatch
+    add_commands(sub)
+    sub.add_parser('audit', help='Audit pinned Forge inputs (not legality or gameplay)')
+    runner = sub.add_parser('run', help='Run one full Forge Default-AI game')
     runner.add_argument('--opponent', choices=ROLES, required=True)
     runner.add_argument('--seed', type=int, required=True)
     runner.add_argument('--swap', action='store_true')
@@ -276,6 +278,10 @@ def main():
     if args.action == 'run':
         return run(args)
     try:
+        if args.action in ('tools', 'draw', 'mana'):
+            report = dispatch(args)
+            print(report if isinstance(report, str) else json.dumps(report, indent=2))
+            return 0
         report = audit()
         print(json.dumps({'status': 'audited', 'engine_pin': PIN, 'decks': {name: d['counts'] for name, d in report['decks'].items()}, 'report': str(ROOT / 'runtime/audit/audit.json')}, indent=2))
         return 0

@@ -1,4 +1,24 @@
-# MTG Matchlab — local Forge AI matches
+# MTG Matchlab — analysis tools and local Forge AI matches
+
+**Choose a tool: [docs/TOOLS.md](docs/TOOLS.md)** — exact draw probabilities,
+simplified isolated-target mana feasibility/comparison, Forge input audit, or
+full Forge AI games. Agents can start at [AGENTS.md](AGENTS.md) or run
+`python3 matchlab.py tools --json` for the machine-readable catalog.
+
+Offline, fresh-checkout examples (Python 3 stdlib, no Forge or network):
+
+```sh
+python3 matchlab.py tools
+python3 matchlab.py draw --deck-size 60 --sources 24 --draws 9 --at-least 3
+python3 matchlab.py mana examples/mana-basic.json --samples 500 --seed 42
+```
+
+`mana` is a bounded Monte Carlo **isolated-target** analysis with perfect-lookahead
+land sequencing, assumed target availability, no mulligans or prior spells.
+It is not a full curve/game simulator. See the guide for supported land models,
+JSON schema, actual zero-life feasibility, and unpaired comparison limitations.
+
+## Forge game harness
 
 Small Python 3 stdlib CLI for **one full Forge AI-versus-AI game per process**.
 This is not an LLM decision API. Forge's `Default` AI pilots both decks. Results

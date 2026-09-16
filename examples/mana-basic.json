@@ -1,0 +1,14 @@
+{
+  "deck_size": 60,
+  "opening_hand": 7,
+  "on_play": true,
+  "lands": [
+    {"name": "Blue basic", "count": 10, "model": "basic", "colors": ["U"], "types": ["Island"]},
+    {"name": "Black basic", "count": 10, "model": "basic", "colors": ["B"], "types": ["Swamp"]},
+    {"name": "Blue-black shock model", "count": 4, "model": "shock", "colors": ["U", "B"], "types": ["Island", "Swamp"]}
+  ],
+  "targets": [
+    {"name": "Blue one-drop", "turn": 1, "colored": {"U": 1}, "generic": 0, "artifact": false},
+    {"name": "Blue-black three-drop", "turn": 3, "colored": {"U": 1, "B": 1}, "generic": 1, "artifact": false}
+  ]
+}
