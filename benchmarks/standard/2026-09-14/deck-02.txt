@@ -1,0 +1,29 @@
+Deck
+6 Forest
+4 Stomping Ground
+4 Mountain
+4 Thornspire Verge
+2 Ba Sing Se
+2 Multiversal Passage
+1 Training Compound
+4 Biotech Specialist
+4 Torch the Tower
+4 Mutagen Man, Living Ooze
+4 Sentinel of the Nameless City
+4 Bejeweled Warg
+4 Smaug the Magnificent
+4 Llanowar Elves
+3 Pictures of Spider-Man
+2 The Ooze
+2 Goldvein Hydra
+2 Michelangelo, Weirdness to 11
+
+Sideboard
+2 Leatherhead, Swamp Stalker
+2 Surrak, Elusive Hunter
+2 Fire Magic
+2 Keen-Eyed Curator
+2 Hexing Squelcher
+2 Abrade
+2 Origin of Metalbending
+1 Scrapshooter

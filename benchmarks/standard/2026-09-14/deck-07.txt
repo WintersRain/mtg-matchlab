@@ -1,0 +1,35 @@
+Deck
+4 Sacred Foundry
+4 Blood Crypt
+4 Godless Shrine
+2 Great Hall of the Biblioplex
+2 Mountain
+2 Sundown Pass
+2 Blazemire Verge
+1 Swamp
+1 Bleachbone Verge
+1 Cori Mountain Monastery
+1 Plains
+4 Tablet of Discovery
+4 Inevitable Defeat
+4 Avengers Disassembled
+4 Lightning Helix
+3 Death to Our Enemies
+3 Thor, God of Thunder
+3 Improvisation Capstone
+2 Ugin, Eye of the Storms
+2 Duress
+2 Beza, the Bounding Spring
+1 Liliana, Dreadhorde General
+1 Decorum Dissertation
+1 The Mind Stone
+1 Outrageous Robbery
+1 The Soul Stone
+
+Sideboard
+4 Price of Freedom
+3 Voice of Victory
+2 Strategic Betrayal
+2 Duress
+2 Requisition Raid
+2 Requiting Hex

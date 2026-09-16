@@ -1,0 +1,38 @@
+Deck
+6 Plains
+4 Cavern of Souls
+4 Temple Garden
+3 Gathering Place
+3 Forest
+1 Restless Prairie
+1 Abandoned Air Temple
+1 Multiversal Passage
+4 Kinsbaile Aspirant
+4 Kinscaer Sentry
+4 Bristlebane Battler
+4 Eclipsed Kithkin
+4 Figure of Fable
+4 Thoughtweft Lieutenant
+2 Seam Rip
+2 Practiced Offense
+1 Catharsis
+1 Champion of the Clachan
+1 The Last Ronin's Technique
+1 Shardmage's Rescue
+1 Celestial Reunion
+1 Bilbo's Gambit
+1 Brigid's Command
+1 Personify
+1 Brigid, Clachan's Heart
+
+Sideboard
+2 Heritage Reclamation
+2 Soul-Guide Lantern
+2 Ajani, Outland Chaperone
+2 Chomping Changeling
+2 Strength of Will
+1 Seam Rip
+1 Personify
+1 Practiced Offense
+1 Dawn's Truce
+1 Bilbo's Gambit

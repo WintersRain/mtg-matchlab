@@ -1,0 +1,33 @@
+Deck
+4 Bleachbone Verge
+4 Blazemire Verge
+4 Godless Shrine
+3 Swamp
+3 Shattered Sanctum
+2 Sacred Foundry
+2 Starting Town
+2 Blood Crypt
+1 Sundown Pass
+1 Plains
+4 Deep-Cavern Bat
+4 Voice of Victory
+4 Greed's Gambit
+4 Beseech the Mirror
+3 Firdoch Core
+3 Momentum Breaker
+3 Get Lost
+3 Iroh, Tea Master
+3 Unholy Annex // Ritual Chamber
+1 Day of Judgment
+1 Aang's Iceberg
+1 Harmless Offering
+
+Sideboard
+4 Duress
+2 Rest in Peace
+2 Erode
+2 Cease // Desist
+2 Abrade
+1 Day of Judgment
+1 Ancient Vendetta
+1 Get Lost

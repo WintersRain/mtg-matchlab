@@ -1,0 +1,48 @@
+Deck
+4 Great Hall of the Biblioplex
+3 Overgrown Tomb
+2 Deathcap Glade
+2 Watery Grave
+2 Wastewood Verge
+1 Breeding Pool
+1 Swamp
+1 Gloomlake Verge
+1 Mistrise Village
+1 Willowrush Verge
+1 Undercity Sewers
+1 Island
+1 Forest
+1 Hedge Maze
+1 Petrified Hamlet
+1 Underground Mortuary
+1 Dreamroot Cascade
+4 Rakshasa's Bargain
+4 Ancient Cornucopia
+3 Emeritus of Abundance
+3 Mind into Matter
+3 Together as One
+3 Requiting Hex
+2 Withering Curse
+2 Professor Dellian Fel
+2 Nowhere to Run
+2 Strategic Betrayal
+2 Deadly Cover-Up
+1 Quandrix Charm
+1 Witherbloom Charm
+1 Awaken the Honored Dead
+1 Bitter Triumph
+1 Shoot the Sheriff
+
+Sideboard
+3 Duress
+2 Flashfreeze
+1 Professor Dellian Fel
+1 Arcane Omens
+1 Disdainful Stroke
+1 Exhibition Tidecaller
+1 Emeritus of Ideation
+1 Outrageous Robbery
+1 Strategic Betrayal
+1 Deadly Cover-Up
+1 Urgent Necropsy
+1 Ghost Vacuum

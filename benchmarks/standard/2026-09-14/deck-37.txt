@@ -1,0 +1,42 @@
+Deck
+10 Swamp
+3 Forest
+3 Demolition Field
+3 Overgrown Tomb
+2 Wastewood Verge
+2 Ba Sing Se
+1 Blooming Marsh
+3 Duress
+3 Mind Roots
+3 Intimidation Tactics
+2 Vicious Rivalry
+2 Black Widow, Super Spy
+2 Unstoppable Slasher
+2 Professor Dellian Fel
+2 Chomping Changeling
+2 Dark Confidant
+2 Unholy Annex // Ritual Chamber
+2 Ruthless Negotiation
+2 The End
+1 Firdoch Core
+1 Vivien Reid
+1 Emeritus of Abundance
+1 Bandit's Talent
+1 Cruelclaw's Heist
+1 Aclazotz, Deepest Betrayal
+1 Bloodletter of Aclazotz
+1 Leatherhead, Swamp Stalker
+1 Deadly Cover-Up
+
+Sideboard
+2 Bitter Triumph
+2 Icetill Explorer
+2 Strategic Betrayal
+2 Maelstrom Pulse
+1 The Ooze
+1 Keen-Eyed Curator
+1 Unholy Annex // Ritual Chamber
+1 Undergrowth Leopard
+1 Deadly Cover-Up
+1 Ghost Vacuum
+1 Unstoppable Slasher

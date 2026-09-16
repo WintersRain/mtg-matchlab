@@ -12,6 +12,14 @@ The JSON catalog has a versioned envelope and distinguishes model fidelity and d
 | Do curated inputs match the pin and have Forge scripts? | `audit` | Input/script audit, not legality or rules-fidelity proof |
 | What happens in a full game with Forge's AI? | `run` | One preboard AI game, not human win rates |
 
+## Published benchmark archive
+
+The [37-list archive README](../benchmarks/standard/2026-09-14/README.md) and
+[portable index](../benchmarks/standard/2026-09-14/index.json) preserve published
+lists, source qualification, exact counts, and hashes. They are reference data,
+not newly integrated Forge opponents: `run --opponent` still has four predefined
+roles. See [capture status](CAPTURE_STATUS.md) for local-only research and gaps.
+
 ## Offline quick start (fresh checkout)
 
 Python 3 stdlib on Linux/WSL; no Forge, Java, network, package installation,

@@ -1,0 +1,28 @@
+Deck
+6 Swamp
+4 Shattered Sanctum
+3 Shadowy Backstreet
+3 Plains
+2 Concealed Courtyard
+2 Godless Shrine
+4 Scolding Administrator
+4 Lecturing Scornmage
+4 Honor
+4 Masterful Flourish
+4 Dual-Sun Technique
+4 Silverquill Charm
+3 Informed Inkwright
+3 Desperate Measures
+3 Long Goodbye
+2 Snooping Page
+2 Bilbo's Gambit
+2 Stirring Hopesinger
+1 Practiced Offense
+
+Sideboard
+4 Requisition Raid
+3 Requiting Hex
+3 Deep-Cavern Bat
+2 Get Lost
+1 Cost of Brilliance
+1 Snooping Page

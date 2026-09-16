@@ -1,0 +1,36 @@
+Deck
+5 Swamp
+4 Plains
+3 Concealed Courtyard
+3 Bleachbone Verge
+1 Restless Fortress
+1 Abandoned Air Temple
+1 Dalkovan Encampment
+1 Godless Shrine
+4 Vengeful Bloodwitch
+3 Voice of Victory
+3 Perilous Snare
+3 Raise the Past
+3 Sephiroth, Fabled SOLDIER
+3 Umbral Collar Zealot
+2 Dream Beavers
+2 Sandbender Scavengers
+2 Bartolomé del Presidio
+2 Syr Vondam, Sunstar Exemplar
+2 Qarsi Revenant
+2 Split Up
+2 Infestation Sage
+2 Snarling Gorehound
+1 Moseo, Vein's New Dean
+1 Essence Channeler
+1 Enduring Innocence
+1 Amalia Benavides Aguirre
+1 Dark Confidant
+1 Super Shredder
+
+Sideboard
+2 Day of Judgment
+2 Emergency Eject
+1 Aclazotz, Deepest Betrayal
+1 Lunar Convocation
+1 Essence Channeler

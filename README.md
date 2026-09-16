@@ -26,6 +26,11 @@ measure these deck/AI/engine combinations, not human win rates or optimal play.
 
 ## Inputs and evidence
 
+- Published benchmark capture: [37-list archive README](benchmarks/standard/2026-09-14/README.md)
+  and [portable index](benchmarks/standard/2026-09-14/index.json). These are archived
+  lists, not additional CLI opponents; see [capture status](docs/CAPTURE_STATUS.md)
+  for repository versus local-only research boundaries.
+
 - `decks/doom.txt`: exact prior Doom revision, 60 main, no supplied sideboard.
 - `decks/{aggro,midrange,control,combo}.txt`: exact handoff lists, each 60 main / 15 side.
 - `decks.json`: immutable-input SHA-256 checks, parsed zones, evidence references.

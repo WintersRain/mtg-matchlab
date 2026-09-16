@@ -1,0 +1,38 @@
+Deck
+9 Plains
+3 Sacred Foundry
+2 Fountainport
+2 Multiversal Passage
+2 Sunbillow Verge
+1 Inspiring Vantage
+1 Abandoned Air Temple
+1 Petrified Hamlet
+1 Elegant Parlor
+4 Windcrag Siege
+4 United Battlefront
+4 Caretaker's Talent
+3 Aang's Iceberg
+3 The Misty Mountains Cold
+3 Ajani, Outland Chaperone
+3 Roads Go Ever, Ever On
+2 Day of Judgment
+2 Seam Rip
+2 Authority of the Consuls
+2 Rest in Peace
+2 Elspeth, Storm Slayer
+2 Candy Trail
+1 No Witnesses
+1 Fumigate
+
+Sideboard
+3 Ultima
+2 Rest in Peace
+2 Authority of the Consuls
+1 Banishing Light
+1 Aang's Iceberg
+1 Torpor Orb
+1 Seam Rip
+1 Pinnacle Starcage
+1 Stasis Snare
+1 Gleaming Splendor
+1 Astelli Reclaimer

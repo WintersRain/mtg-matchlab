@@ -1,0 +1,28 @@
+Deck
+19 Swamp
+3 Soulstone Sanctuary
+1 Demolition Field
+1 Cavern of Souls
+1 Realm of Koh
+4 Unholy Annex // Ritual Chamber
+4 Deep-Cavern Bat
+4 Unstoppable Slasher
+3 Bitter Triumph
+3 Qarsi Revenant
+3 Sunset Saboteur
+3 Bloodletter of Aclazotz
+3 Tragedy Feaster
+2 Strategic Betrayal
+2 Morlun, Devourer of Spiders
+2 Requiting Hex
+1 Shoot the Sheriff
+1 Heartless Act
+
+Sideboard
+3 Soul-Guide Lantern
+3 Mai, Scornful Striker
+3 Cecil, Dark Knight
+2 Deadly Cover-Up
+2 Day of Black Sun
+1 Requiting Hex
+1 Scavenger Regent

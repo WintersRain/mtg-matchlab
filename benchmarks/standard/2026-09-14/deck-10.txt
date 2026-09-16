@@ -1,0 +1,35 @@
+Deck
+4 Blood Crypt
+4 Blazemire Verge
+3 Starting Town
+3 Blooming Marsh
+2 Swamp
+2 Wastewood Verge
+2 Overgrown Tomb
+1 Stomping Ground
+1 Forest
+1 Mountain
+4 Duress
+4 Obsessive Pursuit
+4 Biotech Specialist
+4 Greedy Freebooter
+4 The Sackville-Bagginses
+3 Charming Scoundrel
+3 Rottenmouth Viper
+3 Lively Dirge
+3 Tragic Trajectory
+2 Witherbloom Charm
+2 Mutagen Man, Living Ooze
+1 Umbral Collar Zealot
+
+Sideboard
+3 Intimidation Tactics
+2 Heritage Reclamation
+2 Strategic Betrayal
+2 Pick Your Poison
+1 Requiting Hex
+1 Soul-Guide Lantern
+1 Ancient Vendetta
+1 Tragic Trajectory
+1 Ghost Vacuum
+1 Phoenix Fleet Airship

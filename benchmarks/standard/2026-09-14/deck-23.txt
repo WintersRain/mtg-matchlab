@@ -1,0 +1,30 @@
+Deck
+4 Mountain
+4 Sunbillow Verge
+4 Sacred Foundry
+4 Inspiring Vantage
+3 Dalkovan Encampment
+2 Multiversal Passage
+1 Plains
+1 Fountainport
+4 Frontline Rush
+4 Song of Totentanz
+4 Stadium Headliner
+4 The Last Ronin's Technique
+4 Belladonna Took
+4 Warleader's Call
+4 Political Triumph
+4 Voice of Victory
+3 Torch the Tower
+2 Hop to It
+
+Sideboard
+4 Rest in Peace
+2 Erode
+2 Seam Rip
+2 Bilbo's Gambit
+1 Torch the Tower
+1 Enduring Innocence
+1 Boros Charm
+1 Elspeth, Storm Slayer
+1 Pyrrhic Strike

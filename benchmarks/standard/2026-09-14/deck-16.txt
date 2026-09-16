@@ -1,0 +1,30 @@
+Deck
+6 Forest
+4 Hushwood Verge
+4 Temple Garden
+3 Abandoned Air Temple
+2 Multiversal Passage
+2 Plains
+1 Ba Sing Se
+4 Great Divide Guide
+4 Practiced Offense
+4 Pawpatch Recruit
+4 Ouroboroid
+4 Llanowar Elves
+4 Spider Manifestation
+4 Leatherhead, Swamp Stalker
+3 Surrak, Elusive Hunter
+2 Seam Rip
+2 Jennifer Walters
+1 Miles Morales
+1 Bejeweled Warg
+1 Bushwhack
+
+Sideboard
+3 Rest in Peace
+2 Doorkeeper Thrull
+2 Sheltered by Ghosts
+2 Erode
+2 Dawn's Truce
+2 Avatar's Wrath
+2 Elspeth, Storm Slayer

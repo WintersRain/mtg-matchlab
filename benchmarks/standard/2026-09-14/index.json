@@ -1,0 +1,302 @@
+{
+  "source": "https://magic.gg/decklists/traditional-standard-ranked-decklists-september-14-2026",
+  "qualification": "Six or more consecutive ranked match wins by Platinum or Mythic players; Traditional Standard BO3. Not a metagame share or tier ranking.",
+  "decks": [
+    {
+      "id": 1,
+      "main": 60,
+      "side": 15,
+      "file": "deck-01.txt",
+      "sha256": "e10bf8d359d99d97f6dfeb2cd34e8550b7eb0223131750affcd68c57897bb15e",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 2,
+      "main": 60,
+      "side": 15,
+      "file": "deck-02.txt",
+      "sha256": "0ea4eff9916cce39b8e708ca92335a96d4341d905f06bd3fef061a450e1f68d4",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 3,
+      "main": 60,
+      "side": 13,
+      "file": "deck-03.txt",
+      "sha256": "f941ffd1caf893a9bc375866025c0bc11f7716a8d1f3c52793ccfc45df382dcb",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 4,
+      "main": 60,
+      "side": 15,
+      "file": "deck-04.txt",
+      "sha256": "cdc4d9baf2fc3d8a6d035d5ef330dcdd4a03d5b7ee7c1c2c211d60caa9b6e987",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 5,
+      "main": 60,
+      "side": 12,
+      "file": "deck-05.txt",
+      "sha256": "960e0d100c74d8dcab1998eeaf16f0c9cfcc26ad5562cefbe6e7405b9ef1cb0a",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 6,
+      "main": 60,
+      "side": 15,
+      "file": "deck-06.txt",
+      "sha256": "599c0b63c7f6bad38bb8fa0decdd735765f5a71c5674739f2b72d93c6b3ef2b2",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 7,
+      "main": 60,
+      "side": 15,
+      "file": "deck-07.txt",
+      "sha256": "a27e27397804b52e73cccc9d169f966ef0fc012c549107b6b7cb9c79a99f1c1c",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 8,
+      "main": 60,
+      "side": 7,
+      "file": "deck-08.txt",
+      "sha256": "231d6e942278310c8995a82bc23ab1d0dc2dcd4ee90eae07ef3f9c7e6fedca27",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 9,
+      "main": 60,
+      "side": 15,
+      "file": "deck-09.txt",
+      "sha256": "9bef6a7d195e22e603b17772897c0644d87bd59691564fd13b8cda5a5eade70a",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 10,
+      "main": 60,
+      "side": 15,
+      "file": "deck-10.txt",
+      "sha256": "2211853209acf17ebca0b4bf745eafc26ac87f5dcc4847350abd04b7423d6e5f",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 11,
+      "main": 60,
+      "side": 15,
+      "file": "deck-11.txt",
+      "sha256": "c36c47f575950e6ee1496be46b2c283c8957c2bf96aa2c6dbb31cbbe8ccdcf6f",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 12,
+      "main": 60,
+      "side": 15,
+      "file": "deck-12.txt",
+      "sha256": "baf9870316ded4f5e9fcd4c4d415746b19bddf8673cfb1196cdc25f4330382d4",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 13,
+      "main": 60,
+      "side": 15,
+      "file": "deck-13.txt",
+      "sha256": "d194dc8d3eaea41b3abcc73583469e203e6e91d588a93d74356200a32d8671b7",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 14,
+      "main": 60,
+      "side": 14,
+      "file": "deck-14.txt",
+      "sha256": "8c930e841e296b4d4b1e7a20f62d9106067ec19d71735adc38d05aad3ba3e6fd",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 15,
+      "main": 60,
+      "side": 15,
+      "file": "deck-15.txt",
+      "sha256": "e6d7986c419cce5ecc159b5e26f2b5c27d3acd6a9030b506170a3ce49022d798",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 16,
+      "main": 60,
+      "side": 15,
+      "file": "deck-16.txt",
+      "sha256": "edf3f5b39ca8ba67ecd022a17fde4b5a01adc6bc8e355a8e88298e23d317a535",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 17,
+      "main": 60,
+      "side": 15,
+      "file": "deck-17.txt",
+      "sha256": "432561a6aa80184b0a86a3ddf51c0a4bc69238731ff7549e286c8db891aaa3a6",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 18,
+      "main": 60,
+      "side": 15,
+      "file": "deck-18.txt",
+      "sha256": "f3f4bf8e717feb1714f4dee279d7f22d4f0b863af539624dba73800b693b4291",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 19,
+      "main": 60,
+      "side": 15,
+      "file": "deck-19.txt",
+      "sha256": "b0530be98faff37992ef4f87b4e120179437fc13a804eef9f401d47cef9bf2b1",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 20,
+      "main": 60,
+      "side": 15,
+      "file": "deck-20.txt",
+      "sha256": "ac2d651b208e124a8889a5229896fe1422ed631fc33f95d13102d9571a9a380f",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 21,
+      "main": 60,
+      "side": 15,
+      "file": "deck-21.txt",
+      "sha256": "1d8791be89e2e2459d8b25a9e4cf8b23bf89fe0e5ed74f99d0d1744273156784",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 22,
+      "main": 60,
+      "side": 15,
+      "file": "deck-22.txt",
+      "sha256": "004e879c733447698c338932aa903ed19546e6cdcd08d2d9b6cb9375c1b2900f",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 23,
+      "main": 60,
+      "side": 15,
+      "file": "deck-23.txt",
+      "sha256": "833bfba90046f3d680662509a8f3fbf54c80b04e8939d1f28ff4ad56e6503826",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 24,
+      "main": 60,
+      "side": 14,
+      "file": "deck-24.txt",
+      "sha256": "dafafac12c40fefb74a65f801b6ce672981ae4f03cb420e22055d8a6eb9de97e",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 25,
+      "main": 60,
+      "side": 15,
+      "file": "deck-25.txt",
+      "sha256": "841933581ba757c252ec05ca848ea0b3e7a8fbceacc9623ed870018c5efa78cc",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 26,
+      "main": 60,
+      "side": 15,
+      "file": "deck-26.txt",
+      "sha256": "246766c94e85d9c7cbcefbae65538383d703d3f8689acadb7288f963fc740bc5",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 27,
+      "main": 60,
+      "side": 0,
+      "file": "deck-27.txt",
+      "sha256": "6de588c8c4d1d4fd8528dbc34a2166888d981328622df9d0c66b022f93df8398",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 28,
+      "main": 60,
+      "side": 15,
+      "file": "deck-28.txt",
+      "sha256": "96b2e5a8eb86b1a9f3d2325afab79455dd05f067efdc36908608a8eeae729b8c",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 29,
+      "main": 60,
+      "side": 15,
+      "file": "deck-29.txt",
+      "sha256": "1789f48b208c7ce8b31f430de639e423f49b595dfaa87c1c1bf98f71da3ef7bf",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 30,
+      "main": 60,
+      "side": 15,
+      "file": "deck-30.txt",
+      "sha256": "44de613942ca85245964be137cd5459e6865cd4dd0e587e448be49a1cbce686b",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 31,
+      "main": 60,
+      "side": 15,
+      "file": "deck-31.txt",
+      "sha256": "55a4d3e858d53a9931b789f1f66f4669864afa95d9bbb74ae724a0724c368735",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 32,
+      "main": 60,
+      "side": 15,
+      "file": "deck-32.txt",
+      "sha256": "954e93ac3e653e0e1c35f86909ede26bdc6eb54da39693dcb64a3a1a7ca206c4",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 33,
+      "main": 60,
+      "side": 15,
+      "file": "deck-33.txt",
+      "sha256": "a89f58e443d1be16d8e1b1ed65f170302058af06383b8c11fd8ed7a8ef604232",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 34,
+      "main": 60,
+      "side": 14,
+      "file": "deck-34.txt",
+      "sha256": "2b5ef846dc259279328ec497e17ca6430440e0050807c3e6e9c6494e490bf4e3",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 35,
+      "main": 60,
+      "side": 15,
+      "file": "deck-35.txt",
+      "sha256": "c2290269b3d1836a4e529f2bf254b39c3f45be9e7397fa5d8d55fd43b7617d09",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 36,
+      "main": 60,
+      "side": 15,
+      "file": "deck-36.txt",
+      "sha256": "f0fd8015eb08c8b9810e991dcb4b69a51cc611f32f3ff5c48d82952917e9570e",
+      "harness_parser_status": "accepted"
+    },
+    {
+      "id": 37,
+      "main": 60,
+      "side": 15,
+      "file": "deck-37.txt",
+      "sha256": "c02a17355430004d199b1655f4cb119dad54fcdac1f37bea3804c10a4fea7d57",
+      "harness_parser_status": "accepted"
+    }
+  ]
+}

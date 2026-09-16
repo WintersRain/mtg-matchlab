@@ -1,0 +1,33 @@
+Deck
+4 Swamp
+4 Blood Crypt
+4 Mountain
+3 Blazemire Verge
+2 Mudflat Village
+1 Jagged Barrens
+1 Rockface Village
+1 Restless Vents
+1 Fabled Passage
+4 Gev, Scaled Scorch
+4 Gastal Thrillseeker
+4 Viashino Pyromancer
+4 Fell
+4 Iridescent Vinelasher
+4 Hired Claw
+3 Flamecache Gecko
+2 Fireglass Mentor
+2 Thought-Stalker Warlock
+2 Laughing Jasper Flint
+2 Valley Flamecaller
+2 Withering Torment
+2 Alesha, Who Laughs at Fate
+
+Sideboard
+3 Bloodghast
+2 Ruinous Rampage
+2 Torch the Tower
+2 Magebane Lizard
+2 Hexing Squelcher
+2 Ghost Vacuum
+1 Scales of Shale
+1 Sunspine Lynx

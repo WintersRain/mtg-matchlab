@@ -1,0 +1,35 @@
+Deck
+4 Floodfarm Verge
+4 Castle Doom
+4 Hallowed Fountain
+3 Meticulous Archive
+2 Sacred Foundry
+2 Petrified Hamlet
+2 Plains
+1 Fomori Vault
+1 Starting Town
+1 Island
+4 The Mind Stone
+4 Cryogen Relic
+4 United Battlefront
+4 Simulacrum Synthesizer
+4 Perilous Snare
+3 Repurposing Bay
+3 Braided Net
+2 Pinnacle Starcage
+2 Spring-Loaded Sawblades
+2 Candy Trail
+1 The Fire Crystal
+1 Unidentified Hovership
+1 Giant's Boulder
+1 Torpor Orb
+
+Sideboard
+3 Day of Judgment
+3 Negate
+2 Rest in Peace
+2 Erode
+2 Authority of the Consuls
+1 Torpor Orb
+1 Pinnacle Starcage
+1 Three Steps Ahead

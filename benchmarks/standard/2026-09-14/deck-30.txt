@@ -1,0 +1,36 @@
+Deck
+4 Watery Grave
+4 Floodfarm Verge
+4 Starting Town
+4 Hallowed Fountain
+3 Multiversal Passage
+1 Bleachbone Verge
+1 Island
+1 Godless Shrine
+4 Floodpits Drowner
+4 Tinybones Joins Up
+4 Kaito, Bane of Nightmares
+4 Loki, God of Mischief
+3 Cryogen Relic
+3 Nowhere to Run
+3 Sunpearl Kirin
+3 Nurturing Pixie
+2 We Say Thee Nay!
+2 Boomerang Basics
+2 King T'Challa
+1 Momentum Breaker
+1 Sheltered by Ghosts
+1 Aang, Swift Savior
+1 Cecil, Dark Knight
+
+Sideboard
+2 We Say Thee Nay!
+2 Ghost Vacuum
+2 Duress
+2 Cathar Commando
+2 Avatar's Wrath
+1 Spider-Sense
+1 Skyseer's Chariot
+1 Aven Interrupter
+1 Sheltered by Ghosts
+1 Elenda, Saint of Dusk

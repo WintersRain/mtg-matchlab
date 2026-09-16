@@ -1,0 +1,33 @@
+Deck
+4 Gleaming Bastion
+4 Island
+4 Hallowed Fountain
+3 Skycoach Waypoint
+3 Plains
+2 Floodfarm Verge
+2 Meticulous Archive
+1 Petrified Hamlet
+1 Demolition Field
+4 Seam Rip
+4 Bender's Waterskin
+4 Emeritus of Ideation
+4 Opt
+4 No More Lies
+3 Three Steps Ahead
+3 Emeritus of Truce
+2 Ugin, Eye of the Storms
+2 Day of Judgment
+2 Get Lost
+2 Candy Trail
+1 The Legend of Kuruk
+1 Erode
+
+Sideboard
+2 Doorkeeper Thrull
+2 Sage of the Skies
+2 Rest in Peace
+2 Spell Snare
+2 Sleep Magic
+2 Spell Pierce
+2 Annul
+1 Negate

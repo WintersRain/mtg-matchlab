@@ -1,0 +1,35 @@
+Deck
+8 Swamp
+4 Forest
+4 Overgrown Tomb
+3 Wastewood Verge
+1 Deathcap Glade
+1 Strangled Cemetery
+1 Restless Cottage
+4 Insidious Roots
+4 Teacher's Pest
+3 The Sackville-Bagginses
+3 Bloodghast
+3 Dragon Sniper
+2 Cauldron of Essence
+2 Gollum the Abandoned
+2 Along the Crooked Way
+2 Eaten Alive
+2 Sephiroth, Fabled SOLDIER
+2 Llanowar Elves
+2 Mosswood Dreadknight
+2 Corrupted Conviction
+1 Day of Black Sun
+1 Deadly Cover-Up
+1 Infestation Sage
+1 Arnyn, Deathbloom Botanist
+1 Insidious Fungus
+
+Sideboard
+4 Ancient Vendetta
+3 Duress
+2 Insidious Fungus
+2 Day of Black Sun
+2 Requiting Hex
+1 Strategic Betrayal
+1 Eaten Alive

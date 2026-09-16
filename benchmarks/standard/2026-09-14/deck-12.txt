@@ -1,0 +1,20 @@
+Deck
+24 Forest
+4 The Earth King
+4 Beorn the Fierce
+4 Hard-Hitting Question
+4 Bushwhack
+4 Dancing from Dark to Dawn
+4 Llanowar Elves
+4 Outcaster Trailblazer
+3 Vastlands Scavenger
+3 Flourishing Bloom-Kin
+2 Dredger's Insight
+
+Sideboard
+4 Pick Your Poison
+3 Thunderous Velocipede
+3 Twitching Doll
+2 Attercop
+2 Scrapshooter
+1 Sandman, Shifting Scoundrel

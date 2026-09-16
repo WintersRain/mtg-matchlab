@@ -1,0 +1,27 @@
+Deck
+12 Mountain
+4 Fire Nation Palace
+1 Dark Fortress
+1 Blood Crypt
+4 Leyline of Resonance
+4 Ancestral Anger
+4 Full Bore
+4 Emberheart Challenger
+4 Stadium Headliner
+4 Hired Claw
+4 Slickshot Show-Off
+4 Callous Sell-Sword
+4 Turn Inside Out
+3 Dreadmaw's Ire
+3 Quicksilver, Brash Blur
+
+Sideboard
+3 Magebane Lizard
+2 Pyroclasm
+2 Fire Magic
+2 Giant Cindermaw
+1 Slagstorm
+1 Zhao, the Moon Slayer
+1 Jennika's Technique
+1 Avengers Disassembled
+1 Frenzied Goblin

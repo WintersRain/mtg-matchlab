@@ -1,0 +1,32 @@
+Deck
+6 Swamp
+6 Mountain
+4 Temple of Malice
+3 Dark Fortress
+2 Restless Vents
+3 Lightning Strike
+3 Duress
+3 Boltwave
+3 Mai, Scornful Striker
+3 Razorkin Needlehead
+3 Undead Sprinter
+3 Gollum, Riddle Master
+2 Decadent Dragon
+2 Molten Collapse
+2 Burst Lightning
+2 Archenemy's Charm
+2 Smaug the Magnificent
+2 Bitter Triumph
+2 Requiting Hex
+2 Villainous Wrath
+2 Fiery Annihilation
+
+Sideboard
+1 Swamp
+1 Mountain
+3 Gandalf, Goblins' Bane
+2 Pox Plague
+2 Combustion Technique
+2 Fiery Annihilation
+1 Bitter Triumph
+1 Lightning Strike
