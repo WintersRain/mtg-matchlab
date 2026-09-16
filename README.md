@@ -27,8 +27,8 @@ measure these deck/AI/engine combinations, not human win rates or optimal play.
 ## Inputs and evidence
 
 - Published benchmark capture: [37-list archive README](benchmarks/standard/2026-09-14/README.md)
-  and [portable index](benchmarks/standard/2026-09-14/index.json). These are archived
-  lists, not additional CLI opponents; see [capture status](docs/CAPTURE_STATUS.md)
+  and [portable index](benchmarks/standard/2026-09-14/index.json). All 37 are selectable
+  CLI opponents; see [capture status](docs/CAPTURE_STATUS.md)
   for repository versus local-only research boundaries.
 
 - `decks/doom.txt`: exact prior Doom revision, 60 main, no supplied sideboard.
@@ -76,10 +76,30 @@ From the repository root:
 
 ```sh
 python3 -m unittest discover -s tests -v
+python3 matchlab.py decks
+python3 matchlab.py decks --json
 python3 matchlab.py audit
+python3 matchlab.py audit --opponent standard-2026-09-14-03
+python3 matchlab.py audit --all-benchmarks
+python3 matchlab.py run --opponent standard-2026-09-14-03 --seed 42
 python3 matchlab.py run --opponent aggro --seed 42
 python3 matchlab.py run --opponent aggro --seed 42 --swap
 ```
+
+`decks` works offline and lists four curated roles plus stable selectors
+`standard-2026-09-14-01` through `standard-2026-09-14-37`, with verified source
+hashes and counts (`--json` includes provenance). The player is the pinned
+historical `decks/doom.txt`, not automatically the user's current Arena deck.
+Archive files are consumed directly, never substituted or padded: short and empty
+sideboards remain exact. Unknown selectors and paths are rejected.
+
+Bare `audit` retains the original five-deck scope; `--opponent SELECTOR` audits
+Doom plus that opponent, and `--all-benchmarks` audits all 42 inputs. Each run
+audits only its two selected inputs in an isolated snapshot. Reports and run
+summaries record the actual selector, relative source, source hash, provenance
+(publication URL, qualification, numeric archive ID), DCK hash, and card scripts.
+Benchmark DCK filenames and metadata use the stable selector, including in seats
+and winner reporting. No Forge pin or engine changes are required.
 
 `audit` verifies the exact Git HEAD, immutable deck input hashes, Arena sections,
 60-card main, <=15 side, duplicate/combined main-side four-copy limits (basic
@@ -90,7 +110,7 @@ It writes `runtime/audit/{doom,aggro,midrange,control,combo}.dck` with `[metadat
 its real script path and SHA-256. Script existence is not proof of rules fidelity,
 valid printed edition, complete token/dependency support, or Standard legality.
 The parser intentionally fails closed on unsupported special formats/sections
-and nonbasic copy-limit exceptions; these five lists do not need exceptions.
+and nonbasic copy-limit exceptions; the curated and archived lists need none.
 Arena `(SET) number` suffixes are accepted and omitted in name-based DCK output.
 
 The native command is precisely:

@@ -1,0 +1,64 @@
+{
+  "scope": "Integration smoke tests, not matchup win rates or exhaustive card-rules validation. Player is pinned historical decks/doom.txt, not latest Arena deck.",
+  "unit_tests_passed": 37,
+  "script_audit_inputs": 42,
+  "games": [
+    {
+      "opponent": "standard-2026-09-14-01",
+      "seed": 43,
+      "seats": [
+        "doom",
+        "standard-2026-09-14-01"
+      ],
+      "status": "completed",
+      "winner": "doom",
+      "preboard": true,
+      "engine_pin": "b88dbd3ebd78b6aebfb2839cbbffee3102d59e30",
+      "jar_sha256": "8e231031a70f9d81769b37ffb70e5a6e2293b15bec5abf389cfe657225c2ac61",
+      "exit_code": 0,
+      "normalized_log_sha256": "10bb30c20cadae8a2bf99e074089842d18c40d886ca8b43e32aa41f8b95f59b4",
+      "deck_hashes": {
+        "doom": "7a90c5e0d517162eba3c66e58dbe1d0dbdc8950fae692f2c97caf55cbdcd4590",
+        "standard-2026-09-14-01": "e10bf8d359d99d97f6dfeb2cd34e8550b7eb0223131750affcd68c57897bb15e"
+      }
+    },
+    {
+      "opponent": "standard-2026-09-14-14",
+      "seed": 44,
+      "seats": [
+        "standard-2026-09-14-14",
+        "doom"
+      ],
+      "status": "completed",
+      "winner": "standard-2026-09-14-14",
+      "preboard": true,
+      "engine_pin": "b88dbd3ebd78b6aebfb2839cbbffee3102d59e30",
+      "jar_sha256": "8e231031a70f9d81769b37ffb70e5a6e2293b15bec5abf389cfe657225c2ac61",
+      "exit_code": 0,
+      "normalized_log_sha256": "647588d0d1bbd842c2341bcb612951e5cf4789804eae1066c381e58b33a18aa2",
+      "deck_hashes": {
+        "doom": "7a90c5e0d517162eba3c66e58dbe1d0dbdc8950fae692f2c97caf55cbdcd4590",
+        "standard-2026-09-14-14": "8c930e841e296b4d4b1e7a20f62d9106067ec19d71735adc38d05aad3ba3e6fd"
+      }
+    },
+    {
+      "opponent": "standard-2026-09-14-27",
+      "seed": 42,
+      "seats": [
+        "doom",
+        "standard-2026-09-14-27"
+      ],
+      "status": "completed",
+      "winner": "standard-2026-09-14-27",
+      "preboard": true,
+      "engine_pin": "b88dbd3ebd78b6aebfb2839cbbffee3102d59e30",
+      "jar_sha256": "8e231031a70f9d81769b37ffb70e5a6e2293b15bec5abf389cfe657225c2ac61",
+      "exit_code": 0,
+      "normalized_log_sha256": "b3c5d7693d100720f93c6c952f56d85020874f730b2d25c5cdfa70572b926fca",
+      "deck_hashes": {
+        "doom": "7a90c5e0d517162eba3c66e58dbe1d0dbdc8950fae692f2c97caf55cbdcd4590",
+        "standard-2026-09-14-27": "6de588c8c4d1d4fd8528dbc34a2166888d981328622df9d0c66b022f93df8398"
+      }
+    }
+  ]
+}

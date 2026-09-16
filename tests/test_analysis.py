@@ -197,7 +197,7 @@ class AnalysisTests(unittest.TestCase):
             return subprocess.run([sys.executable, 'matchlab.py', *args], cwd=ROOT, text=True, capture_output=True)
         r = cli('tools', '--json')
         self.assertEqual(r.returncode, 0, r.stderr)
-        self.assertEqual({x['command'] for x in json.loads(r.stdout)['tools']}, {'draw', 'mana', 'audit', 'run'})
+        self.assertEqual({x['command'] for x in json.loads(r.stdout)['tools']}, {'draw', 'mana', 'audit', 'run', 'decks'})
         self.assertIn('mana', cli('--help').stdout)
         r = cli('draw', '--deck-size', '10', '--sources', '4', '--draws', '3', '--at-least', '2')
         self.assertEqual(json.loads(r.stdout)['denominator'], 3)

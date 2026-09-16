@@ -17,3 +17,11 @@ needed for `draw` and `mana`.
 - Preserve the Forge pin, privacy requirements, and existing run interface;
   read README.md and SETUP.md before using Forge.
 - Run `python3 -m unittest discover -s tests -v`; use tests before implementation.
+- Discover opponents with `python3 matchlab.py decks --json`: four curated roles
+  and `standard-2026-09-14-01` through `standard-2026-09-14-37`. Preserve archive
+  bytes/index hashes and exact zones; never fill short/empty sideboards or swap
+  in another list. `audit --opponent SELECTOR` checks Doom plus that opponent;
+  `audit --all-benchmarks` checks all 42 inputs against pinned Forge scripts.
+  `run --opponent SELECTOR --seed 42` remains one preboard game, recording the
+  actual selector/provenance/hashes. Do not treat discovery as script support,
+  legality, rules fidelity, or evidence that every opponent was smoke-tested.

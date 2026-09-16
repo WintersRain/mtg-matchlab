@@ -166,7 +166,77 @@ def write_json(path, data):
     Path(path).write_text(json.dumps(data, indent=2, sort_keys=True) + '\n')
 
 
-def audit(root=ROOT, *, out=None):
+ARCHIVE = Path('benchmarks/standard/2026-09-14')
+BENCHMARK_PREFIX = 'standard-2026-09-14-'
+
+
+def benchmark_entries(root=ROOT):
+    archive = json.loads((root / ARCHIVE / 'index.json').read_text())
+    rows = archive['decks']
+    if len(rows) != 37 or {r['id'] for r in rows} != set(range(1, 38)):
+        raise ValueError('Invalid benchmark archive IDs')
+    entries = {}
+    for row in rows:
+        if type(row['id']) is not int or row['file'] != f"deck-{row['id']:02d}.txt":
+            raise ValueError('Unsafe benchmark archive filename')
+        selector = BENCHMARK_PREFIX + f"{row['id']:02d}"
+        entries[selector] = dict(row, provenance={'source': archive['source'],
+            'qualification': archive['qualification'], 'id': row['id'],
+            'index': str(ARCHIVE / 'index.json')})
+    return entries
+
+
+def load_deck(selector, root=ROOT):
+    """Resolve only registered IDs; never interpret a selector as a path."""
+    if selector in ('doom', *ROLES):
+        row = json.loads((root / 'decks.json').read_text())[selector]
+        relative = Path('decks') / (selector + '.txt')
+        kind = 'curated'
+        provenance = row.get('provenance')
+    elif isinstance(selector, str) and re.fullmatch(r'standard-2026-09-14-(?:0[1-9]|[12][0-9]|3[0-7])', selector):
+        row = benchmark_entries(root)[selector]
+        relative = ARCHIVE / row['file']
+        kind = 'benchmark'
+        provenance = row['provenance']
+    else:
+        raise ValueError(f'Unknown opponent selector: {selector!r}; use decks to list opponents')
+    source = root / relative
+    if source.resolve().parent != (root / relative.parent).resolve():
+        raise ValueError('Unsafe deck source path')
+    data = source.read_bytes()
+    if sha(data) != row['sha256']:
+        raise ValueError(f'{kind.title()} deck hash mismatch: {selector}')
+    deck = parse_arena(data.decode('utf-8-sig'))
+    counts = {zone: sum(cards.values()) for zone, cards in deck.items()}
+    if kind == 'curated' and deck != row['zones']:
+        raise ValueError('Curated deck zones mismatch: ' + selector)
+    if kind == 'benchmark' and counts != {'main': row['main'], 'sideboard': row['side']}:
+        raise ValueError('Benchmark archive counts mismatch: ' + selector)
+    return deck, {'selector': selector, 'kind': kind, 'source': str(relative),
+                  'source_sha256': sha(data), 'provenance': provenance, 'counts': counts}
+
+
+def deck_catalog(root=ROOT):
+    """Offline, hash-verified catalog of selectable opponents (Doom is the player)."""
+    return [load_deck(name, root)[1] for name in (*ROLES, *benchmark_entries(root))]
+
+
+def forge_deck(name, deck):
+    text = '[metadata]\nName=' + name + '\n[Main]\n'
+    text += ''.join(f'{count} {card}\n' for card, count in deck['main'].items())
+    text += '[Sideboard]\n' + ''.join(f'{count} {card}\n' for card, count in deck['sideboard'].items())
+    return text
+
+
+def audit(root=ROOT, *, out=None, opponent=None, all_benchmarks=False):
+    if opponent is not None and all_benchmarks:
+        raise ValueError('Choose --opponent or --all-benchmarks, not both')
+    names = ('doom', opponent) if opponent is not None else ('doom', *ROLES)
+    if opponent == 'doom':
+        raise ValueError('Unknown opponent selector: doom; Doom is the player deck')
+    if all_benchmarks:
+        names = (*names, *benchmark_entries(root))
+    loaded = {name: load_deck(name, root) for name in names}
     forge = root / 'vendor/forge'
     actual = subprocess.check_output(['git', '-C', str(forge), 'rev-parse', 'HEAD'], text=True).strip()
     if actual != PIN:
@@ -174,24 +244,12 @@ def audit(root=ROOT, *, out=None):
     index = card_index(forge / 'forge-gui/res/cardsfolder')
     out = root / 'runtime/audit' if out is None else out
     out.mkdir(parents=True, exist_ok=True)
-    manifest = json.loads((root / 'decks.json').read_text())
     report = {'engine_pin': actual, 'decks': {}}
-    for name in ('doom', *ROLES):
-        source = root / 'decks' / (name + '.txt')
-        data = source.read_bytes()
-        if sha(data) != manifest[name]['sha256']:
-            raise ValueError('Curated deck hash mismatch: ' + name)
-        deck = parse_arena(data.decode('utf-8-sig'))
-        if deck != manifest[name]['zones']:
-            raise ValueError('Curated deck zones mismatch: ' + name)
+    for name, (deck, info) in loaded.items():
         cards = audit_cards(deck, index)
-        text = '[metadata]\nName=' + name + '\n[Main]\n'
-        text += ''.join(f'{count} {card}\n' for card, count in deck['main'].items())
-        text += '[Sideboard]\n' + ''.join(f'{count} {card}\n' for card, count in deck['sideboard'].items())
+        text = forge_deck(name, deck)
         (out / (name + '.dck')).write_text(text)
-        report['decks'][name] = {'source_sha256': sha(data), 'dck_sha256': sha(text.encode()),
-                                'counts': {zone: sum(counts.values()) for zone, counts in deck.items()},
-                                'cards': cards}
+        report['decks'][name] = dict(info, dck_sha256=sha(text.encode()), cards=cards)
     write_json(out / 'audit.json', report)
     return report
 
@@ -205,7 +263,7 @@ def run(args):
     if args.swap:
         seats.reverse()
     summary = {'schema': 1, 'engine_pin': PIN, 'engine_version': '2.0.15-SNAPSHOT',
-               'seed': args.seed, 'seats': seats, 'ai_profiles': ['Default', 'Default'],
+               'seed': args.seed, 'seats': seats, 'opponent': args.opponent, 'ai_profiles': ['Default', 'Default'],
                'status': 'invalid', 'winner': None, 'preboard': True,
                'normalization': 'v1: CRLF to LF; canonical UUID to <UUID>; numeric ms to <TIME> ms; preserve line order',
                'run_directory': str(run_dir)}
@@ -215,7 +273,7 @@ def run(args):
         with (runtime / 'run.lock').open('w') as lock, ExitStack() as cleanup:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
             # Never consume shared standalone audit outputs: generate a private snapshot.
-            report = audit(ROOT, out=run_dir / 'audit')
+            report = audit(ROOT, out=run_dir / 'audit', opponent=args.opponent)
             summary['decks'] = {s: report['decks'][s] for s in seats}
             java = Path(args.java).resolve()
             jar = Path(args.jar).resolve()
@@ -267,9 +325,14 @@ def main():
     sub = parser.add_subparsers(dest='action', required=True)
     from analysis_tools import add_commands, dispatch
     add_commands(sub)
-    sub.add_parser('audit', help='Audit pinned Forge inputs (not legality or gameplay)')
+    discovery = sub.add_parser('decks', help='List hash-verified curated and archived opponent selectors (offline)')
+    discovery.add_argument('--json', action='store_true', dest='as_json')
+    auditor = sub.add_parser('audit', help='Audit pinned Forge inputs (not legality or gameplay)')
+    selection = auditor.add_mutually_exclusive_group()
+    selection.add_argument('--opponent', help='Audit Doom and this selector; see decks')
+    selection.add_argument('--all-benchmarks', action='store_true', help='Audit curated inputs and all 37 archived lists')
     runner = sub.add_parser('run', help='Run one full Forge Default-AI game')
-    runner.add_argument('--opponent', choices=ROLES, required=True)
+    runner.add_argument('--opponent', required=True, help='Curated role or stable benchmark selector; see decks')
     runner.add_argument('--seed', type=int, required=True)
     runner.add_argument('--swap', action='store_true')
     runner.add_argument('--java', default=str(ROOT / '.local/jdk-17.0.20.1+1/bin/java'))
@@ -282,7 +345,12 @@ def main():
             report = dispatch(args)
             print(report if isinstance(report, str) else json.dumps(report, indent=2))
             return 0
-        report = audit()
+        if args.action == 'decks':
+            rows = deck_catalog()
+            print(json.dumps({'schema_version': 1, 'decks': rows}, indent=2) if args.as_json else '\n'.join(
+                f"{r['selector']} ({r['kind']}): {r['counts']['main']} main / {r['counts']['sideboard']} side" for r in rows))
+            return 0
+        report = audit(opponent=args.opponent, all_benchmarks=args.all_benchmarks)
         print(json.dumps({'status': 'audited', 'engine_pin': PIN, 'decks': {name: d['counts'] for name, d in report['decks'].items()}, 'report': str(ROOT / 'runtime/audit/audit.json')}, indent=2))
         return 0
     except (OSError, ValueError, subprocess.SubprocessError) as exc:

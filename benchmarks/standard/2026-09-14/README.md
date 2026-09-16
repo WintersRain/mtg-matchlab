@@ -17,11 +17,30 @@ Preserved sideboards shorter than 15: ID 3 has 13, ID 5 has 12, ID 8 has 7,
 IDs 14, 24, and 34 have 14, and ID 27 has 0. No missing cards were invented.
 Parser acceptance does not establish Standard legality or Forge rules fidelity.
 
-## Archive, not opponent integration
+## Selectable Forge opponents
 
-These files are reference inputs, **not 37 integrated runnable Forge opponents**.
-`matchlab.py run --opponent` still accepts only `aggro`, `midrange`, `control`,
-and `combo`; the five curated `decks/` inputs and `decks.json` are unchanged.
+All 37 files are integrated directly as immutable Forge opponent inputs.
+Selectors are `standard-2026-09-14-01` through `standard-2026-09-14-37`, mapping
+exactly to original numeric IDs. The four curated role selectors and the five
+curated `decks/` inputs / `decks.json` remain unchanged.
+
+From the repository root:
+
+```sh
+python3 matchlab.py decks --json
+python3 matchlab.py audit --opponent standard-2026-09-14-27
+python3 matchlab.py audit --all-benchmarks
+python3 matchlab.py run --opponent standard-2026-09-14-27 --seed 42
+```
+
+Discovery verifies hashes/counts offline. Audit uses the pinned Forge scripts;
+run requires the privacy-patched build described in [SETUP](../../../SETUP.md).
+Both main and sideboard names must be supported or the run fails closed.
+No cards are substituted or added. Forge DCK output preserves both sections;
+games remain preboard, with no BO3 sideboarding policy. Run summaries retain
+the selected ID, publication URL/qualification, source and DCK hashes.
+Script presence is not proof of legality or faithful card implementation.
+
 No source HTML, player identifiers, raw logs, or private filesystem paths are
 included. See [capture status](../../../docs/CAPTURE_STATUS.md) for boundaries.
 

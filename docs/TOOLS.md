@@ -9,16 +9,33 @@ The JSON catalog has a versioned envelope and distinguishes model fidelity and d
 | Chance of seeing at least k cards from a source pool? | `draw` | Exact hypergeometric probability, no sequencing |
 | Can these lands pay one isolated target by a turn? | `mana` | Monte Carlo mana feasibility with optimal perfect-lookahead land sequencing |
 | Which of two mana configurations does better under that model? | `mana --compare` | **Unpaired**, right-minus-left estimates, not physical-slot paired trials |
-| Do curated inputs match the pin and have Forge scripts? | `audit` | Input/script audit, not legality or rules-fidelity proof |
+| Which opponents can I select? | `decks` / `decks --json` | Offline verified hashes, counts, stable selectors and provenance |
+| Do inputs match the pin and have Forge scripts? | `audit` | Input/script audit, not legality or rules-fidelity proof |
 | What happens in a full game with Forge's AI? | `run` | One preboard AI game, not human win rates |
 
 ## Published benchmark archive
 
 The [37-list archive README](../benchmarks/standard/2026-09-14/README.md) and
 [portable index](../benchmarks/standard/2026-09-14/index.json) preserve published
-lists, source qualification, exact counts, and hashes. They are reference data,
-not newly integrated Forge opponents: `run --opponent` still has four predefined
-roles. See [capture status](CAPTURE_STATUS.md) for local-only research and gaps.
+lists, source qualification, exact counts, and hashes. All 37 are integrated
+opponents alongside the unchanged `aggro`, `midrange`, `control`, `combo` roles.
+Discover selectors with `python3 matchlab.py decks --json` (offline).
+
+```sh
+python3 matchlab.py audit --opponent standard-2026-09-14-01
+python3 matchlab.py audit --all-benchmarks
+python3 matchlab.py run --opponent standard-2026-09-14-01 --seed 42
+```
+
+Audit requires the pinned Forge source; run additionally requires the privacy-
+patched build. Bare audit retains its five curated inputs; all-benchmarks checks
+those plus all 37 lists. Every run checks Doom and its selected opponent,
+including sideboard script support. Hash, count, selector, or support failures
+stop execution. Source files are never rewritten and short/zero sideboards are
+not filled. Games remain preboard, not BO3; publication qualification does not
+prove legality, engine fidelity, tier rank, or human win rates. Summary deck
+entries include selected ID/provenance and exact source/DCK hashes.
+See [capture status](CAPTURE_STATUS.md) for local-only research and gaps.
 
 ## Offline quick start (fresh checkout)
 

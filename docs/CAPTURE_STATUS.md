@@ -18,7 +18,8 @@ preservation change; local-only material below is deliberately excluded.
   to version control; it was previously saved only outside this repository.
 - **Five original curated harness decks remain unchanged:** `doom`, `aggro`,
   `midrange`, `control`, `combo` in `decks/`; byte equality against Git HEAD
-  was verified. `decks.json` and the run interface were not modified.
+  was verified. `decks.json` remains unchanged; the run interface now additionally
+  accepts stable benchmark selectors while preserving all four role selectors.
 - **Offline math and fixtures are already tracked:** `analysis_tools.py`,
   `tests/test_analysis.py`, `examples/mana-basic.json`,
   `examples/mana-grixis-baseline.json`, and `examples/mana-grixis-proposal.json`,
@@ -67,12 +68,24 @@ were inspected, and these counts do not cover every possible local location.
 
 ## Distinct remaining gaps
 
-1. **Archive versus execution:** the 37 published lists are not integrated as
-   runnable Forge opponents. The CLI still exposes four predefined opponent
-   roles (`aggro`, `midrange`, `control`, `combo`). Parsing and hashing alone do
-   not establish legality, Forge script coverage, or gameplay correctness.
+1. **Execution coverage:** all 37 published lists are now integrated as selectable
+   opponents (`standard-2026-09-14-01` through `standard-2026-09-14-37`), alongside
+   the four unchanged roles. `decks --json` discovers hashes/counts/provenance;
+   `audit --opponent SELECTOR` checks Doom and one list; `audit --all-benchmarks`
+   checks all 42 inputs. The all-input audit passed against the pinned Forge
+   scripts during integration. Tests cover all 37 source-to-DCK roundtrips,
+   immutable hashes, exact short/zero sideboards, unsafe selectors, and run
+   identity/provenance. Three real preboard smokes completed: selector 01/seed43,
+   14/seed44 with reversed seats, and 27/seed42. These cover full, short, and
+   empty sideboards. [Sanitized results](../evidence/benchmark-integration-smoke.json)
+   preserve deck hashes and outcomes; raw runtime logs remain ignored/local.
+   The player is the pinned historical Doom list, not the current Arena deck.
+   This is not 37 live smoke games, independent legality
+   verification, or proof of gameplay correctness. Use
+   `python3 matchlab.py run --opponent standard-2026-09-14-01 --seed 42` with the
+   privacy-patched build for one preboard game; no source lists were changed.
 2. **Draft workflow:** the current tracked CLI advertises `tools`, `draw`,
-   `mana`, `audit`, and `run`, not a draft workflow. The pinned Forge source
+   `mana`, `decks`, `audit`, and `run`, not a draft workflow. The pinned Forge source
    contains `BoosterDraft`, `BoosterDraftAI`, and `LimitedPlayerAI`, including
    pack-choice and pick entrypoints. That is source-level capability, not an
    implemented or runtime-tested Matchlab drafting interface. No draft was run.
