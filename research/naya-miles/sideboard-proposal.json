@@ -1,0 +1,36 @@
+{
+  "status": "Proposed completed sideboard; not observed applied",
+  "main_changes": [],
+  "preserved_sideboard": {
+    "Jennifer Walters": 3,
+    "Authority of the Consuls": 2,
+    "Tyvar, the Pummeler": 2
+  },
+  "additions": {
+    "Ghost Vacuum": 2,
+    "Exorcise": 2,
+    "Dawn's Truce": 2,
+    "Get Lost": 2
+  },
+  "sideboard": {
+    "Jennifer Walters": 3,
+    "Authority of the Consuls": 2,
+    "Tyvar, the Pummeler": 2,
+    "Ghost Vacuum": 2,
+    "Exorcise": 2,
+    "Dawn's Truce": 2,
+    "Get Lost": 2
+  },
+  "total": 15,
+  "roles": {
+    "Ghost Vacuum": "Selective repeatable graveyard hate preserving our Smile and Augmenter deaths; one card per tap, not blanket suppression",
+    "Exorcise": "Exile artifacts/enchantments or large creatures; sorcery",
+    "Dawn's Truce": "Whole-board protection; promise card for indestructible; does not stop untargeted exile or toughness reduction",
+    "Get Lost": "Extra instant creature/enchantment/planeswalker answers"
+  },
+  "alternatives": {
+    "Rest in Peace": "Legal but shuts off Smile and Augmenter death triggers; reserve for stronger broad hate need with explicit boarding changes",
+    "Tranquil Frillback": "Rejected: current Standard not legal"
+  },
+  "testing": "Card legality and counts verified; BO3 sideboard plan not playtested."
+}
