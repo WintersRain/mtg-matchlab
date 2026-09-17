@@ -1,0 +1,116 @@
+{
+  "deck_size": 60,
+  "opening_hand": 7,
+  "on_play": true,
+  "lands": [
+    {
+      "name": "Forest",
+      "count": 10,
+      "model": "basic",
+      "colors": [
+        "G"
+      ],
+      "types": [
+        "Forest"
+      ]
+    },
+    {
+      "name": "Plains",
+      "count": 9,
+      "model": "basic",
+      "colors": [
+        "W"
+      ],
+      "types": [
+        "Plains"
+      ]
+    },
+    {
+      "name": "Mountain",
+      "count": 5,
+      "model": "basic",
+      "colors": [
+        "R"
+      ],
+      "types": [
+        "Mountain"
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "name": "T1 green",
+      "turn": 1,
+      "generic": 0,
+      "colored": {
+        "G": 1
+      },
+      "artifact": false
+    },
+    {
+      "name": "T1 white",
+      "turn": 1,
+      "generic": 0,
+      "colored": {
+        "W": 1
+      },
+      "artifact": false
+    },
+    {
+      "name": "T2 Miles",
+      "turn": 2,
+      "generic": 1,
+      "colored": {
+        "G": 1
+      },
+      "artifact": false
+    },
+    {
+      "name": "T2 Academic",
+      "turn": 2,
+      "generic": 0,
+      "colored": {
+        "R": 1,
+        "W": 1
+      },
+      "artifact": false
+    },
+    {
+      "name": "T3 Lightning",
+      "turn": 3,
+      "generic": 1,
+      "colored": {
+        "R": 1,
+        "W": 1
+      },
+      "artifact": false
+    },
+    {
+      "name": "T3 Tyvar",
+      "turn": 3,
+      "generic": 1,
+      "colored": {
+        "G": 2
+      },
+      "artifact": false
+    },
+    {
+      "name": "T4 Ouroboroid",
+      "turn": 4,
+      "generic": 2,
+      "colored": {
+        "G": 2
+      },
+      "artifact": false
+    },
+    {
+      "name": "T5 Smile",
+      "turn": 5,
+      "generic": 3,
+      "colored": {
+        "W": 2
+      },
+      "artifact": false
+    }
+  ]
+}

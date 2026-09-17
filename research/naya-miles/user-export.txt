@@ -1,0 +1,26 @@
+Deck
+4 Miles Morales (SPM) 108
+5 Mountain (MSH) 294
+2 Erode (SOS) 15
+10 Forest (MSH) 296
+3 Hexing Squelcher (ECL) 145
+9 Plains (MSH) 288
+2 Hardened Academic (SOS) 194
+3 Michelangelo, Weirdness to 11 (TMT) 121
+1 Halana and Alena, Partners (FDN) 659
+2 Ouroboroid (EOE) 201
+2 Ambitious Augmenter (SOS) 140
+1 Agrus Kos, Spirit of Justice (MKM) 184
+3 Warden of the Grove (TDM) 166
+2 Smile at Death (TDM) 24
+3 Lightning, Army of One (FIN) 233
+2 Pawpatch Recruit (BLB) 187
+1 Restoration Magic (FIN) 30
+1 Defend the Rider (DFT) 157
+2 Sheltered by Ghosts (DSK) 30
+2 Get Lost (LCI) 14
+
+Sideboard
+3 Jennifer Walters (MSH) 18
+2 Authority of the Consuls (FIC) 232
+2 Tyvar, the Pummeler (DSK) 202

@@ -1,0 +1,602 @@
+{
+  "tool": "mana",
+  "paired": false,
+  "comparison": "Unpaired independent PRNG streams; right minus left. No physical-slot pairing claim.",
+  "left": {
+    "tool": "mana",
+    "model_version": 1,
+    "method": "Monte Carlo isolated-target feasibility",
+    "seed": 9162026,
+    "samples": 500,
+    "config_sha256": "625169e270f7661fe3d4295edc1338d13b5b043e1622338d88869331e7ce1d88",
+    "config": {
+      "deck_size": 60,
+      "opening_hand": 7,
+      "on_play": true,
+      "lands": [
+        {
+          "name": "Forest",
+          "count": 10,
+          "model": "basic",
+          "colors": [
+            "G"
+          ],
+          "types": [
+            "Forest"
+          ]
+        },
+        {
+          "name": "Mountain",
+          "count": 5,
+          "model": "basic",
+          "colors": [
+            "R"
+          ],
+          "types": [
+            "Mountain"
+          ]
+        },
+        {
+          "name": "Plains",
+          "count": 9,
+          "model": "basic",
+          "colors": [
+            "W"
+          ],
+          "types": [
+            "Plains"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "name": "T1 green",
+          "turn": 1,
+          "generic": 0,
+          "colored": {
+            "G": 1
+          },
+          "artifact": false
+        },
+        {
+          "name": "T1 white",
+          "turn": 1,
+          "generic": 0,
+          "colored": {
+            "W": 1
+          },
+          "artifact": false
+        },
+        {
+          "name": "T2 Academic",
+          "turn": 2,
+          "generic": 0,
+          "colored": {
+            "R": 1,
+            "W": 1
+          },
+          "artifact": false
+        },
+        {
+          "name": "T2 Miles",
+          "turn": 2,
+          "generic": 1,
+          "colored": {
+            "G": 1
+          },
+          "artifact": false
+        },
+        {
+          "name": "T3 Lightning",
+          "turn": 3,
+          "generic": 1,
+          "colored": {
+            "R": 1,
+            "W": 1
+          },
+          "artifact": false
+        },
+        {
+          "name": "T3 Tyvar",
+          "turn": 3,
+          "generic": 1,
+          "colored": {
+            "G": 2
+          },
+          "artifact": false
+        },
+        {
+          "name": "T4 Ouroboroid",
+          "turn": 4,
+          "generic": 2,
+          "colored": {
+            "G": 2
+          },
+          "artifact": false
+        },
+        {
+          "name": "T5 Smile",
+          "turn": 5,
+          "generic": 3,
+          "colored": {
+            "W": 2
+          },
+          "artifact": false
+        }
+      ]
+    },
+    "python_version": "3.11.15",
+    "assumptions": [
+      "Isolated target availability assumed externally; targets do not occupy or alter sampled slots.",
+      "No mulligans, prior spells, opponents, ramp, filtering, abilities, or extra land drops.",
+      "Perfect-lookahead optimal land sequencing per target: optimistic feasibility, not a pilot policy.",
+      "One land per turn; all previous lands untap; cast in target-turn main phase after draw and land drop.",
+      "Each land supplies at most one mana; each colored/colorless pip needs an independent payment.",
+      "Shock lands may enter tapped for zero life or untapped for two; sufficient life to pay is assumed.",
+      "Starting Town enters tapped with three or more other lands; C/generic free, colored activation one life.",
+      "Zero-life successes have a genuinely feasible zero-life sequence, not an average-life proxy.",
+      "Each target is assessed separately, not a full curve, full gameplay, or win-rate prediction."
+    ],
+    "targets": [
+      {
+        "name": "T1 green",
+        "turn": 1,
+        "successes": 358,
+        "zero_life_successes": 358,
+        "probability": 0.716,
+        "zero_life_probability": 0.716,
+        "standard_error": 0.020166506886419373,
+        "mean_minimum_life_given_success": 0.0
+      },
+      {
+        "name": "T1 white",
+        "turn": 1,
+        "successes": 332,
+        "zero_life_successes": 332,
+        "probability": 0.664,
+        "zero_life_probability": 0.664,
+        "standard_error": 0.02112363605064242,
+        "mean_minimum_life_given_success": 0.0
+      },
+      {
+        "name": "T2 Academic",
+        "turn": 2,
+        "successes": 198,
+        "zero_life_successes": 198,
+        "probability": 0.396,
+        "zero_life_probability": 0.396,
+        "standard_error": 0.02187162545399861,
+        "mean_minimum_life_given_success": 0.0
+      },
+      {
+        "name": "T2 Miles",
+        "turn": 2,
+        "successes": 370,
+        "zero_life_successes": 370,
+        "probability": 0.74,
+        "zero_life_probability": 0.74,
+        "standard_error": 0.019616319736382767,
+        "mean_minimum_life_given_success": 0.0
+      },
+      {
+        "name": "T3 Lightning",
+        "turn": 3,
+        "successes": 217,
+        "zero_life_successes": 217,
+        "probability": 0.434,
+        "zero_life_probability": 0.434,
+        "standard_error": 0.02216501748251059,
+        "mean_minimum_life_given_success": 0.0
+      },
+      {
+        "name": "T3 Tyvar",
+        "turn": 3,
+        "successes": 216,
+        "zero_life_successes": 216,
+        "probability": 0.432,
+        "zero_life_probability": 0.432,
+        "standard_error": 0.022152923057691506,
+        "mean_minimum_life_given_success": 0.0
+      },
+      {
+        "name": "T4 Ouroboroid",
+        "turn": 4,
+        "successes": 210,
+        "zero_life_successes": 210,
+        "probability": 0.42,
+        "zero_life_probability": 0.42,
+        "standard_error": 0.02207260745811423,
+        "mean_minimum_life_given_success": 0.0
+      },
+      {
+        "name": "T5 Smile",
+        "turn": 5,
+        "successes": 156,
+        "zero_life_successes": 156,
+        "probability": 0.312,
+        "zero_life_probability": 0.312,
+        "standard_error": 0.02071984555926998,
+        "mean_minimum_life_given_success": 0.0
+      }
+    ],
+    "states_visited": 86827,
+    "limits": {
+      "max_samples": 5000,
+      "max_turn": 6,
+      "max_land_models": 16,
+      "max_targets": 8,
+      "state_budget": 2000000
+    },
+    "uncertainty": "Binomial plug-in standard errors; zero error at endpoints is not certainty.",
+    "reproducibility": "Canonical names/order; Python random.Random shuffle; retain Python version for cross-version replay."
+  },
+  "right": {
+    "tool": "mana",
+    "model_version": 1,
+    "method": "Monte Carlo isolated-target feasibility",
+    "seed": 9162027,
+    "samples": 500,
+    "config_sha256": "890bef0170dabfa523fc1ca4012fef5c4db11fdb615c0a40a6154ee3dee46d88",
+    "config": {
+      "deck_size": 60,
+      "opening_hand": 7,
+      "on_play": true,
+      "lands": [
+        {
+          "name": "Forest",
+          "count": 3,
+          "model": "basic",
+          "colors": [
+            "G"
+          ],
+          "types": [
+            "Forest"
+          ]
+        },
+        {
+          "name": "Hushwood Verge",
+          "count": 4,
+          "model": "verge",
+          "colors": [
+            "G"
+          ],
+          "types": [],
+          "conditional_color": "W",
+          "requires_types": [
+            "Forest",
+            "Plains"
+          ]
+        },
+        {
+          "name": "Inspiring Vantage",
+          "count": 2,
+          "model": "fast",
+          "colors": [
+            "R",
+            "W"
+          ],
+          "types": []
+        },
+        {
+          "name": "Mountain",
+          "count": 2,
+          "model": "basic",
+          "colors": [
+            "R"
+          ],
+          "types": [
+            "Mountain"
+          ]
+        },
+        {
+          "name": "Plains",
+          "count": 3,
+          "model": "basic",
+          "colors": [
+            "W"
+          ],
+          "types": [
+            "Plains"
+          ]
+        },
+        {
+          "name": "Sacred Foundry",
+          "count": 1,
+          "model": "shock",
+          "colors": [
+            "R",
+            "W"
+          ],
+          "types": [
+            "Mountain",
+            "Plains"
+          ]
+        },
+        {
+          "name": "Stomping Ground",
+          "count": 2,
+          "model": "shock",
+          "colors": [
+            "G",
+            "R"
+          ],
+          "types": [
+            "Forest",
+            "Mountain"
+          ]
+        },
+        {
+          "name": "Sunbillow Verge",
+          "count": 2,
+          "model": "verge",
+          "colors": [
+            "W"
+          ],
+          "types": [],
+          "conditional_color": "R",
+          "requires_types": [
+            "Mountain",
+            "Plains"
+          ]
+        },
+        {
+          "name": "Temple Garden",
+          "count": 2,
+          "model": "shock",
+          "colors": [
+            "G",
+            "W"
+          ],
+          "types": [
+            "Forest",
+            "Plains"
+          ]
+        },
+        {
+          "name": "Thornspire Verge",
+          "count": 3,
+          "model": "verge",
+          "colors": [
+            "R"
+          ],
+          "types": [],
+          "conditional_color": "G",
+          "requires_types": [
+            "Forest",
+            "Mountain"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "name": "T1 green",
+          "turn": 1,
+          "generic": 0,
+          "colored": {
+            "G": 1
+          },
+          "artifact": false
+        },
+        {
+          "name": "T1 white",
+          "turn": 1,
+          "generic": 0,
+          "colored": {
+            "W": 1
+          },
+          "artifact": false
+        },
+        {
+          "name": "T2 Academic",
+          "turn": 2,
+          "generic": 0,
+          "colored": {
+            "R": 1,
+            "W": 1
+          },
+          "artifact": false
+        },
+        {
+          "name": "T2 Miles",
+          "turn": 2,
+          "generic": 1,
+          "colored": {
+            "G": 1
+          },
+          "artifact": false
+        },
+        {
+          "name": "T3 Lightning",
+          "turn": 3,
+          "generic": 1,
+          "colored": {
+            "R": 1,
+            "W": 1
+          },
+          "artifact": false
+        },
+        {
+          "name": "T3 Tyvar",
+          "turn": 3,
+          "generic": 1,
+          "colored": {
+            "G": 2
+          },
+          "artifact": false
+        },
+        {
+          "name": "T4 Ouroboroid",
+          "turn": 4,
+          "generic": 2,
+          "colored": {
+            "G": 2
+          },
+          "artifact": false
+        },
+        {
+          "name": "T5 Smile",
+          "turn": 5,
+          "generic": 3,
+          "colored": {
+            "W": 2
+          },
+          "artifact": false
+        }
+      ]
+    },
+    "python_version": "3.11.15",
+    "assumptions": [
+      "Isolated target availability assumed externally; targets do not occupy or alter sampled slots.",
+      "No mulligans, prior spells, opponents, ramp, filtering, abilities, or extra land drops.",
+      "Perfect-lookahead optimal land sequencing per target: optimistic feasibility, not a pilot policy.",
+      "One land per turn; all previous lands untap; cast in target-turn main phase after draw and land drop.",
+      "Each land supplies at most one mana; each colored/colorless pip needs an independent payment.",
+      "Shock lands may enter tapped for zero life or untapped for two; sufficient life to pay is assumed.",
+      "Starting Town enters tapped with three or more other lands; C/generic free, colored activation one life.",
+      "Zero-life successes have a genuinely feasible zero-life sequence, not an average-life proxy.",
+      "Each target is assessed separately, not a full curve, full gameplay, or win-rate prediction."
+    ],
+    "targets": [
+      {
+        "name": "T1 green",
+        "turn": 1,
+        "successes": 400,
+        "zero_life_successes": 311,
+        "probability": 0.8,
+        "zero_life_probability": 0.622,
+        "standard_error": 0.017888543819998316,
+        "mean_minimum_life_given_success": 0.445
+      },
+      {
+        "name": "T1 white",
+        "turn": 1,
+        "successes": 388,
+        "zero_life_successes": 305,
+        "probability": 0.776,
+        "zero_life_probability": 0.61,
+        "standard_error": 0.018645321128905233,
+        "mean_minimum_life_given_success": 0.42783505154639173
+      },
+      {
+        "name": "T2 Academic",
+        "turn": 2,
+        "successes": 341,
+        "zero_life_successes": 327,
+        "probability": 0.682,
+        "zero_life_probability": 0.654,
+        "standard_error": 0.020826713614970557,
+        "mean_minimum_life_given_success": 0.08211143695014662
+      },
+      {
+        "name": "T2 Miles",
+        "turn": 2,
+        "successes": 418,
+        "zero_life_successes": 405,
+        "probability": 0.836,
+        "zero_life_probability": 0.81,
+        "standard_error": 0.0165592270351004,
+        "mean_minimum_life_given_success": 0.06220095693779904
+      },
+      {
+        "name": "T3 Lightning",
+        "turn": 3,
+        "successes": 369,
+        "zero_life_successes": 361,
+        "probability": 0.738,
+        "zero_life_probability": 0.722,
+        "standard_error": 0.01966499427917537,
+        "mean_minimum_life_given_success": 0.04336043360433604
+      },
+      {
+        "name": "T3 Tyvar",
+        "turn": 3,
+        "successes": 320,
+        "zero_life_successes": 308,
+        "probability": 0.64,
+        "zero_life_probability": 0.616,
+        "standard_error": 0.02146625258399798,
+        "mean_minimum_life_given_success": 0.075
+      },
+      {
+        "name": "T4 Ouroboroid",
+        "turn": 4,
+        "successes": 275,
+        "zero_life_successes": 260,
+        "probability": 0.55,
+        "zero_life_probability": 0.52,
+        "standard_error": 0.022248595461286987,
+        "mean_minimum_life_given_success": 0.10909090909090909
+      },
+      {
+        "name": "T5 Smile",
+        "turn": 5,
+        "successes": 224,
+        "zero_life_successes": 217,
+        "probability": 0.448,
+        "zero_life_probability": 0.434,
+        "standard_error": 0.02223942445298439,
+        "mean_minimum_life_given_success": 0.0625
+      }
+    ],
+    "states_visited": 136471,
+    "limits": {
+      "max_samples": 5000,
+      "max_turn": 6,
+      "max_land_models": 16,
+      "max_targets": 8,
+      "state_budget": 2000000
+    },
+    "uncertainty": "Binomial plug-in standard errors; zero error at endpoints is not certainty.",
+    "reproducibility": "Canonical names/order; Python random.Random shuffle; retain Python version for cross-version replay."
+  },
+  "deltas": [
+    {
+      "name": "T1 green",
+      "probability_delta": 0.08400000000000007,
+      "standard_error": 0.026957151184796954,
+      "zero_life_probability_delta": -0.09399999999999997
+    },
+    {
+      "name": "T1 white",
+      "probability_delta": 0.11199999999999999,
+      "standard_error": 0.02817545030696049,
+      "zero_life_probability_delta": -0.05400000000000005
+    },
+    {
+      "name": "T2 Academic",
+      "probability_delta": 0.28600000000000003,
+      "standard_error": 0.03020132447426768,
+      "zero_life_probability_delta": 0.258
+    },
+    {
+      "name": "T2 Miles",
+      "probability_delta": 0.09599999999999997,
+      "standard_error": 0.02567115112339141,
+      "zero_life_probability_delta": 0.07000000000000006
+    },
+    {
+      "name": "T3 Lightning",
+      "probability_delta": 0.304,
+      "standard_error": 0.029631064780058107,
+      "zero_life_probability_delta": 0.288
+    },
+    {
+      "name": "T3 Tyvar",
+      "probability_delta": 0.20800000000000002,
+      "standard_error": 0.030847236505074486,
+      "zero_life_probability_delta": 0.184
+    },
+    {
+      "name": "T4 Ouroboroid",
+      "probability_delta": 0.13000000000000006,
+      "standard_error": 0.03134007019775163,
+      "zero_life_probability_delta": 0.10000000000000003
+    },
+    {
+      "name": "T5 Smile",
+      "probability_delta": 0.136,
+      "standard_error": 0.030395789182056123,
+      "zero_life_probability_delta": 0.122
+    }
+  ]
+}

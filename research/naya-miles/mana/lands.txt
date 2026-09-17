@@ -1,0 +1,10 @@
+3 Forest
+3 Plains
+2 Mountain
+4 Hushwood Verge
+3 Thornspire Verge
+2 Sunbillow Verge
+2 Inspiring Vantage
+2 Temple Garden
+2 Stomping Ground
+1 Sacred Foundry

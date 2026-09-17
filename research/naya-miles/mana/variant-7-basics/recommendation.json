@@ -1,0 +1,207 @@
+{
+  "deck_size": 60,
+  "opening_hand": 7,
+  "on_play": true,
+  "lands": [
+    {
+      "name": "Forest",
+      "count": 3,
+      "model": "basic",
+      "colors": [
+        "G"
+      ],
+      "types": [
+        "Forest"
+      ]
+    },
+    {
+      "name": "Plains",
+      "count": 3,
+      "model": "basic",
+      "colors": [
+        "W"
+      ],
+      "types": [
+        "Plains"
+      ]
+    },
+    {
+      "name": "Mountain",
+      "count": 1,
+      "model": "basic",
+      "colors": [
+        "R"
+      ],
+      "types": [
+        "Mountain"
+      ]
+    },
+    {
+      "name": "Hushwood Verge",
+      "count": 4,
+      "model": "verge",
+      "colors": [
+        "G"
+      ],
+      "types": [],
+      "conditional_color": "W",
+      "requires_types": [
+        "Forest",
+        "Plains"
+      ]
+    },
+    {
+      "name": "Thornspire Verge",
+      "count": 3,
+      "model": "verge",
+      "colors": [
+        "R"
+      ],
+      "types": [],
+      "conditional_color": "G",
+      "requires_types": [
+        "Mountain",
+        "Forest"
+      ]
+    },
+    {
+      "name": "Sunbillow Verge",
+      "count": 3,
+      "model": "verge",
+      "colors": [
+        "W"
+      ],
+      "types": [],
+      "conditional_color": "R",
+      "requires_types": [
+        "Mountain",
+        "Plains"
+      ]
+    },
+    {
+      "name": "Inspiring Vantage",
+      "count": 2,
+      "model": "fast",
+      "colors": [
+        "R",
+        "W"
+      ],
+      "types": []
+    },
+    {
+      "name": "Temple Garden",
+      "count": 2,
+      "model": "shock",
+      "colors": [
+        "G",
+        "W"
+      ],
+      "types": [
+        "Forest",
+        "Plains"
+      ]
+    },
+    {
+      "name": "Stomping Ground",
+      "count": 2,
+      "model": "shock",
+      "colors": [
+        "R",
+        "G"
+      ],
+      "types": [
+        "Mountain",
+        "Forest"
+      ]
+    },
+    {
+      "name": "Sacred Foundry",
+      "count": 1,
+      "model": "shock",
+      "colors": [
+        "R",
+        "W"
+      ],
+      "types": [
+        "Mountain",
+        "Plains"
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "name": "T1 green",
+      "turn": 1,
+      "generic": 0,
+      "colored": {
+        "G": 1
+      },
+      "artifact": false
+    },
+    {
+      "name": "T1 white",
+      "turn": 1,
+      "generic": 0,
+      "colored": {
+        "W": 1
+      },
+      "artifact": false
+    },
+    {
+      "name": "T2 Miles",
+      "turn": 2,
+      "generic": 1,
+      "colored": {
+        "G": 1
+      },
+      "artifact": false
+    },
+    {
+      "name": "T2 Academic",
+      "turn": 2,
+      "generic": 0,
+      "colored": {
+        "R": 1,
+        "W": 1
+      },
+      "artifact": false
+    },
+    {
+      "name": "T3 Lightning",
+      "turn": 3,
+      "generic": 1,
+      "colored": {
+        "R": 1,
+        "W": 1
+      },
+      "artifact": false
+    },
+    {
+      "name": "T3 Tyvar",
+      "turn": 3,
+      "generic": 1,
+      "colored": {
+        "G": 2
+      },
+      "artifact": false
+    },
+    {
+      "name": "T4 Ouroboroid",
+      "turn": 4,
+      "generic": 2,
+      "colored": {
+        "G": 2
+      },
+      "artifact": false
+    },
+    {
+      "name": "T5 Smile",
+      "turn": 5,
+      "generic": 3,
+      "colored": {
+        "W": 2
+      },
+      "artifact": false
+    }
+  ]
+}

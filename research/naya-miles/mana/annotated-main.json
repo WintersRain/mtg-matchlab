@@ -1,0 +1,191 @@
+[
+  {
+    "name": "Miles Morales",
+    "count": 4,
+    "kind": "creature",
+    "mv": 2,
+    "role": "early_creature"
+  },
+  {
+    "name": "Erode",
+    "count": 2,
+    "kind": "other",
+    "mv": 1,
+    "role": "cheap_interaction"
+  },
+  {
+    "name": "Hexing Squelcher",
+    "count": 3,
+    "kind": "creature",
+    "mv": 2,
+    "role": "early_creature"
+  },
+  {
+    "name": "Hardened Academic",
+    "count": 2,
+    "kind": "creature",
+    "mv": 2,
+    "role": "early_creature"
+  },
+  {
+    "name": "Michelangelo, Weirdness to 11",
+    "count": 3,
+    "kind": "creature",
+    "mv": 2,
+    "role": "early_creature"
+  },
+  {
+    "name": "Halana and Alena, Partners",
+    "count": 1,
+    "kind": "creature",
+    "mv": 4,
+    "role": "board_closer"
+  },
+  {
+    "name": "Ouroboroid",
+    "count": 2,
+    "kind": "creature",
+    "mv": 4,
+    "role": "board_closer"
+  },
+  {
+    "name": "Ambitious Augmenter",
+    "count": 2,
+    "kind": "creature",
+    "mv": 1,
+    "role": "early_creature"
+  },
+  {
+    "name": "Agrus Kos, Spirit of Justice",
+    "count": 1,
+    "kind": "creature",
+    "mv": 4,
+    "role": "board_closer"
+  },
+  {
+    "name": "Warden of the Grove",
+    "count": 3,
+    "kind": "creature",
+    "mv": 3,
+    "role": "middle_pressure_value"
+  },
+  {
+    "name": "Smile at Death",
+    "count": 2,
+    "kind": "other",
+    "mv": 5,
+    "role": "recovery"
+  },
+  {
+    "name": "Lightning, Army of One",
+    "count": 3,
+    "kind": "creature",
+    "mv": 3,
+    "role": "middle_pressure_value"
+  },
+  {
+    "name": "Pawpatch Recruit",
+    "count": 2,
+    "kind": "creature",
+    "mv": 1,
+    "role": "early_creature"
+  },
+  {
+    "name": "Restoration Magic",
+    "count": 1,
+    "kind": "other",
+    "mv": 1,
+    "role": "cheap_interaction"
+  },
+  {
+    "name": "Defend the Rider",
+    "count": 1,
+    "kind": "other",
+    "mv": 1,
+    "role": "cheap_interaction"
+  },
+  {
+    "name": "Sheltered by Ghosts",
+    "count": 2,
+    "kind": "other",
+    "mv": 2,
+    "role": "cheap_interaction"
+  },
+  {
+    "name": "Get Lost",
+    "count": 2,
+    "kind": "other",
+    "mv": 2,
+    "role": "cheap_interaction"
+  },
+  {
+    "name": "Forest",
+    "count": 3,
+    "kind": "land",
+    "mv": 0,
+    "role": "land"
+  },
+  {
+    "name": "Plains",
+    "count": 3,
+    "kind": "land",
+    "mv": 0,
+    "role": "land"
+  },
+  {
+    "name": "Mountain",
+    "count": 2,
+    "kind": "land",
+    "mv": 0,
+    "role": "land"
+  },
+  {
+    "name": "Hushwood Verge",
+    "count": 4,
+    "kind": "land",
+    "mv": 0,
+    "role": "land"
+  },
+  {
+    "name": "Thornspire Verge",
+    "count": 3,
+    "kind": "land",
+    "mv": 0,
+    "role": "land"
+  },
+  {
+    "name": "Sunbillow Verge",
+    "count": 2,
+    "kind": "land",
+    "mv": 0,
+    "role": "land"
+  },
+  {
+    "name": "Inspiring Vantage",
+    "count": 2,
+    "kind": "land",
+    "mv": 0,
+    "role": "land"
+  },
+  {
+    "name": "Temple Garden",
+    "count": 2,
+    "kind": "land",
+    "mv": 0,
+    "role": "land"
+  },
+  {
+    "name": "Stomping Ground",
+    "count": 2,
+    "kind": "land",
+    "mv": 0,
+    "role": "land"
+  },
+  {
+    "name": "Sacred Foundry",
+    "count": 1,
+    "kind": "land",
+    "mv": 0,
+    "role": "land"
+  }
+]

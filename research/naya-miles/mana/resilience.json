@@ -1,0 +1,339 @@
+{
+  "method": "Exhaustive eligible five-land multisets within copy limits; two nonbasic hits with chosen basic replacements; after untap; costs individually supported; not probability weighted. Reserved basics unavailable to search and not on board. End-state existence, not an adversarial online policy.",
+  "requirements": [
+    {
+      "name": "Tyvar activation",
+      "turn": 5,
+      "generic": 3,
+      "colored": {
+        "G": 2
+      },
+      "artifact": false
+    },
+    {
+      "name": "Smile / Curaga",
+      "turn": 5,
+      "generic": 3,
+      "colored": {
+        "W": 2
+      },
+      "artifact": false
+    },
+    {
+      "name": "Lightning",
+      "turn": 3,
+      "generic": 1,
+      "colored": {
+        "R": 1,
+        "W": 1
+      },
+      "artifact": false
+    }
+  ],
+  "reports": [
+    {
+      "already_drawn_off_board_each_basic": 0,
+      "cases": 3677,
+      "passed": 3607,
+      "failed": 70,
+      "failure_examples": [
+        {
+          "board": [
+            "Forest",
+            "Forest",
+            "Forest",
+            "Hushwood Verge",
+            "Inspiring Vantage"
+          ],
+          "removed": [
+            "Hushwood Verge",
+            "Inspiring Vantage"
+          ],
+          "library_basics": {
+            "Forest": 0,
+            "Mountain": 2,
+            "Plains": 3
+          }
+        },
+        {
+          "board": [
+            "Forest",
+            "Forest",
+            "Forest",
+            "Hushwood Verge",
+            "Sacred Foundry"
+          ],
+          "removed": [
+            "Hushwood Verge",
+            "Sacred Foundry"
+          ],
+          "library_basics": {
+            "Forest": 0,
+            "Mountain": 2,
+            "Plains": 3
+          }
+        },
+        {
+          "board": [
+            "Forest",
+            "Forest",
+            "Forest",
+            "Inspiring Vantage",
+            "Inspiring Vantage"
+          ],
+          "removed": [
+            "Inspiring Vantage",
+            "Inspiring Vantage"
+          ],
+          "library_basics": {
+            "Forest": 0,
+            "Mountain": 2,
+            "Plains": 3
+          }
+        },
+        {
+          "board": [
+            "Forest",
+            "Forest",
+            "Forest",
+            "Inspiring Vantage",
+            "Sacred Foundry"
+          ],
+          "removed": [
+            "Inspiring Vantage",
+            "Sacred Foundry"
+          ],
+          "library_basics": {
+            "Forest": 0,
+            "Mountain": 2,
+            "Plains": 3
+          }
+        },
+        {
+          "board": [
+            "Forest",
+            "Forest",
+            "Forest",
+            "Inspiring Vantage",
+            "Sunbillow Verge"
+          ],
+          "removed": [
+            "Inspiring Vantage",
+            "Sunbillow Verge"
+          ],
+          "library_basics": {
+            "Forest": 0,
+            "Mountain": 2,
+            "Plains": 3
+          }
+        },
+        {
+          "board": [
+            "Forest",
+            "Forest",
+            "Forest",
+            "Inspiring Vantage",
+            "Temple Garden"
+          ],
+          "removed": [
+            "Inspiring Vantage",
+            "Temple Garden"
+          ],
+          "library_basics": {
+            "Forest": 0,
+            "Mountain": 2,
+            "Plains": 3
+          }
+        },
+        {
+          "board": [
+            "Forest",
+            "Forest",
+            "Forest",
+            "Sacred Foundry",
+            "Sunbillow Verge"
+          ],
+          "removed": [
+            "Sacred Foundry",
+            "Sunbillow Verge"
+          ],
+          "library_basics": {
+            "Forest": 0,
+            "Mountain": 2,
+            "Plains": 3
+          }
+        },
+        {
+          "board": [
+            "Forest",
+            "Forest",
+            "Forest",
+            "Sacred Foundry",
+            "Temple Garden"
+          ],
+          "removed": [
+            "Sacred Foundry",
+            "Temple Garden"
+          ],
+          "library_basics": {
+            "Forest": 0,
+            "Mountain": 2,
+            "Plains": 3
+          }
+        }
+      ]
+    },
+    {
+      "already_drawn_off_board_each_basic": 1,
+      "cases": 3584,
+      "passed": 3576,
+      "failed": 8,
+      "failure_examples": [
+        {
+          "board": [
+            "Hushwood Verge",
+            "Sacred Foundry",
+            "Thornspire Verge",
+            "Thornspire Verge",
+            "Thornspire Verge"
+          ],
+          "removed": [
+            "Hushwood Verge",
+            "Sacred Foundry"
+          ],
+          "library_basics": {
+            "Forest": 2,
+            "Mountain": 1,
+            "Plains": 2
+          }
+        },
+        {
+          "board": [
+            "Hushwood Verge",
+            "Temple Garden",
+            "Thornspire Verge",
+            "Thornspire Verge",
+            "Thornspire Verge"
+          ],
+          "removed": [
+            "Hushwood Verge",
+            "Temple Garden"
+          ],
+          "library_basics": {
+            "Forest": 2,
+            "Mountain": 1,
+            "Plains": 2
+          }
+        },
+        {
+          "board": [
+            "Inspiring Vantage",
+            "Sacred Foundry",
+            "Thornspire Verge",
+            "Thornspire Verge",
+            "Thornspire Verge"
+          ],
+          "removed": [
+            "Inspiring Vantage",
+            "Sacred Foundry"
+          ],
+          "library_basics": {
+            "Forest": 2,
+            "Mountain": 1,
+            "Plains": 2
+          }
+        },
+        {
+          "board": [
+            "Inspiring Vantage",
+            "Temple Garden",
+            "Thornspire Verge",
+            "Thornspire Verge",
+            "Thornspire Verge"
+          ],
+          "removed": [
+            "Inspiring Vantage",
+            "Temple Garden"
+          ],
+          "library_basics": {
+            "Forest": 2,
+            "Mountain": 1,
+            "Plains": 2
+          }
+        },
+        {
+          "board": [
+            "Sacred Foundry",
+            "Sunbillow Verge",
+            "Thornspire Verge",
+            "Thornspire Verge",
+            "Thornspire Verge"
+          ],
+          "removed": [
+            "Sacred Foundry",
+            "Sunbillow Verge"
+          ],
+          "library_basics": {
+            "Forest": 2,
+            "Mountain": 1,
+            "Plains": 2
+          }
+        },
+        {
+          "board": [
+            "Sacred Foundry",
+            "Temple Garden",
+            "Thornspire Verge",
+            "Thornspire Verge",
+            "Thornspire Verge"
+          ],
+          "removed": [
+            "Sacred Foundry",
+            "Temple Garden"
+          ],
+          "library_basics": {
+            "Forest": 2,
+            "Mountain": 1,
+            "Plains": 2
+          }
+        },
+        {
+          "board": [
+            "Sunbillow Verge",
+            "Temple Garden",
+            "Thornspire Verge",
+            "Thornspire Verge",
+            "Thornspire Verge"
+          ],
+          "removed": [
+            "Sunbillow Verge",
+            "Temple Garden"
+          ],
+          "library_basics": {
+            "Forest": 2,
+            "Mountain": 1,
+            "Plains": 2
+          }
+        },
+        {
+          "board": [
+            "Temple Garden",
+            "Temple Garden",
+            "Thornspire Verge",
+            "Thornspire Verge",
+            "Thornspire Verge"
+          ],
+          "removed": [
+            "Temple Garden",
+            "Temple Garden"
+          ],
+          "library_basics": {
+            "Forest": 2,
+            "Mountain": 1,
+            "Plains": 2
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "structure_pass": true,
+  "errors": [],
+  "total": 60,
+  "kinds": {
+    "creature": 26,
+    "other": 10,
+    "land": 24
+  },
+  "roles": {
+    "early_creature": 16,
+    "cheap_interaction": 8,
+    "board_closer": 4,
+    "middle_pressure_value": 6,
+    "recovery": 2
+  },
+  "curve": {
+    "2": 16,
+    "1": 8,
+    "4": 4,
+    "3": 6,
+    "5": 2
+  },
+  "scope": "Structural accounting only; not legality, practical curve, strategy or match validation",
+  "input_sha256": [
+    "ecca62fe026920b62d5a55c093dc9eb77f97fffceb354d9271773528ce9866ac",
+    "cd99f60856de04a0fee356b91d2ee3279968dde4b42221e0229af3bd9e4e4e37"
+  ]
+}
