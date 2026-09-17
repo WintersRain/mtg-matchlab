@@ -1,0 +1,83 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "be48c721-bdc6-4f2c-96d6-82d934b31615",
+      "source": "wotc",
+      "published_at": "2025-09-19",
+      "comment": "In the Commander variant, a double-faced card's color identity is determined by the mana costs and mana symbols in the rules text of both faces combined. If either face has a color indicator or basic land type, those are also considered."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "be48c721-bdc6-4f2c-96d6-82d934b31615",
+      "source": "wotc",
+      "published_at": "2025-09-19",
+      "comment": "If an effect instructs a player to choose a card name, the name of either face may be chosen. If that effect or a linked ability refers to a spell with the chosen name being cast and/or a land with the chosen name being played, it considers only the chosen name, not the other face's name."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "be48c721-bdc6-4f2c-96d6-82d934b31615",
+      "source": "wotc",
+      "published_at": "2025-09-19",
+      "comment": "To determine whether it is legal to play a modal double-faced card, consider only the characteristics of the face you're playing and ignore the other face's characteristics."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "be48c721-bdc6-4f2c-96d6-82d934b31615",
+      "source": "wotc",
+      "published_at": "2025-09-19",
+      "comment": "Each double-faced card has an icon in the top-left corner of each face. For modal double-faced cards in this set, these icons are a single black triangle for the front face, and a double white triangle for the back face."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "be48c721-bdc6-4f2c-96d6-82d934b31615",
+      "source": "wotc",
+      "published_at": "2025-09-19",
+      "comment": "While a double-faced card isn't on the stack or battlefield, consider only the characteristics of its front face."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "be48c721-bdc6-4f2c-96d6-82d934b31615",
+      "source": "wotc",
+      "published_at": "2025-09-19",
+      "comment": "If an effect allows you to put a card with particular characteristics onto the battlefield without instructing you to play or cast it, you consider only the characteristics of a modal double-faced card's front face to see if that card qualifies. If it does, it enters the battlefield with its front face up."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "be48c721-bdc6-4f2c-96d6-82d934b31615",
+      "source": "wotc",
+      "published_at": "2025-09-19",
+      "comment": "A modal double-faced card can be transformed or be put onto the battlefield transformed. This is a change from previous rules. If an effect instructs you to transform a modal double-faced card on the battlefield, it transforms only if its other face has a permanent type (that is, if its other face isn't an instant or sorcery). If it doesn't, it simply won't transform. Similarly, if an effect attempts to put a modal double-faced card onto the battlefield transformed, it will enter transformed if its back face has a permanent type. If it doesn't, it will simply stay in its current zone."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "be48c721-bdc6-4f2c-96d6-82d934b31615",
+      "source": "wotc",
+      "published_at": "2025-09-19",
+      "comment": "Each face of a double-faced card has its own set of characteristics: name, types, subtypes, abilities, and so on. While a double-faced card is on the stack or battlefield, consider only the characteristics of the face that's currently up. The other set of characteristics is ignored."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "be48c721-bdc6-4f2c-96d6-82d934b31615",
+      "source": "wotc",
+      "published_at": "2025-09-19",
+      "comment": "One or both faces of a double-faced card may include a reminder about what's on the other face. This reminder text has no effect on gameplay."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "be48c721-bdc6-4f2c-96d6-82d934b31615",
+      "source": "wotc",
+      "published_at": "2025-09-19",
+      "comment": "If an effect allows you to play a land or cast a spell from among a group of cards, you may play or cast a modal double-faced card with any face that fits the criteria of that effect."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "be48c721-bdc6-4f2c-96d6-82d934b31615",
+      "source": "wotc",
+      "published_at": "2025-09-19",
+      "comment": "The mana value of a modal double-faced card is based on the characteristics of the face that's being considered. On the stack or the battlefield, consider whichever face is up. In all other zones, consider only the front face. This is different than how the mana value of other double-faced cards is determined."
+    }
+  ]
+}
