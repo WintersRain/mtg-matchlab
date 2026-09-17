@@ -1,33 +1,141 @@
 {
   "version": 1,
-  "status": "Proposed fixed construction baseline; user requested structure-first slot allocation. User proposed four-drop occupants; remaining budgets are assistant recommendations awaiting agreement. Not an applied or tested deck.",
+  "status": "Fixed structure accepted by user: Sure lets pick some stuff. Further card selections are proposals until agreed. Not an applied or tested deck.",
   "archetype": "Aggressive Naya creature midrange with counter amplification and Smile recovery",
   "expected_total": 60,
-  "kinds": {"land": 24, "creature": 26, "other": 10},
-  "roles": {"early_creature": 16, "middle_pressure_value": 6, "board_closer": 4, "cheap_interaction": 8, "recovery": 2},
+  "kinds": {
+    "land": 24,
+    "creature": 26,
+    "other": 10
+  },
+  "roles": {
+    "early_creature": 16,
+    "middle_pressure_value": 6,
+    "board_closer": 4,
+    "cheap_interaction": 8,
+    "recovery": 2
+  },
   "curve": {
-    "1": {"target": 8, "min": 8, "max": 8},
-    "2": {"target": 16, "min": 16, "max": 16},
-    "3": {"target": 6, "min": 6, "max": 6},
-    "4": {"target": 4, "min": 4, "max": 4},
-    "5": {"target": 2, "min": 2, "max": 2},
-    "6": {"target": 0, "min": 0, "max": 0}
+    "1": {
+      "target": 8,
+      "min": 8,
+      "max": 8
+    },
+    "2": {
+      "target": 16,
+      "min": 16,
+      "max": 16
+    },
+    "3": {
+      "target": 6,
+      "min": 6,
+      "max": 6
+    },
+    "4": {
+      "target": 4,
+      "min": 4,
+      "max": 4
+    },
+    "5": {
+      "target": 2,
+      "min": 2,
+      "max": 2
+    },
+    "6": {
+      "target": 0,
+      "min": 0,
+      "max": 0
+    }
   },
   "slot_groups": [
-    {"id": "C1", "kind": "creature", "mv": 1, "count": 4, "role": "early_creature", "job": "Independent early pressure"},
-    {"id": "C2", "kind": "creature", "mv": 2, "count": 12, "role": "early_creature", "job": "Miles plus pressure, disruption and counter support"},
-    {"id": "C3", "kind": "creature", "mv": 3, "count": 6, "role": "middle_pressure_value", "job": "Combat leverage and integrated replenishment"},
-    {"id": "C4", "kind": "creature", "mv": 4, "count": 4, "role": "board_closer", "job": "Amplify board or disrupt blockers"},
-    {"id": "I1", "kind": "other", "mv": 1, "count": 4, "role": "cheap_interaction", "job": "Cheap opposing-board answers"},
-    {"id": "I2", "kind": "other", "mv": 2, "count": 4, "role": "cheap_interaction", "job": "Answers plus bounded protection"},
-    {"id": "R5", "kind": "other", "mv": 5, "count": 2, "role": "recovery", "job": "Smile at Death recovery and counter-supported return payoffs"}
+    {
+      "id": "C1",
+      "kind": "creature",
+      "mv": 1,
+      "count": 4,
+      "role": "early_creature",
+      "job": "Independent early pressure"
+    },
+    {
+      "id": "C2",
+      "kind": "creature",
+      "mv": 2,
+      "count": 12,
+      "role": "early_creature",
+      "job": "Miles plus pressure, disruption and counter support"
+    },
+    {
+      "id": "C3",
+      "kind": "creature",
+      "mv": 3,
+      "count": 6,
+      "role": "middle_pressure_value",
+      "job": "Combat leverage and integrated replenishment"
+    },
+    {
+      "id": "C4",
+      "kind": "creature",
+      "mv": 4,
+      "count": 4,
+      "role": "board_closer",
+      "job": "Amplify board or disrupt blockers"
+    },
+    {
+      "id": "I1",
+      "kind": "other",
+      "mv": 1,
+      "count": 4,
+      "role": "cheap_interaction",
+      "job": "Cheap opposing-board answers"
+    },
+    {
+      "id": "I2",
+      "kind": "other",
+      "mv": 2,
+      "count": 4,
+      "role": "cheap_interaction",
+      "job": "Answers plus bounded protection"
+    },
+    {
+      "id": "R5",
+      "kind": "other",
+      "mv": 5,
+      "count": 2,
+      "role": "recovery",
+      "job": "Smile at Death recovery and counter-supported return payoffs"
+    }
   ],
   "reserved_cards": [
-    {"name": "Ouroboroid", "count": 2, "slot": "C4", "authority": "User proposed"},
-    {"name": "Halana and Alena, Partners", "count": 1, "slot": "C4", "authority": "User proposed"},
-    {"name": "Agrus Kos, Spirit of Justice", "count": 1, "slot": "C4", "authority": "User proposed"},
-    {"name": "Miles Morales // Ultimate Spider-Man", "count": 4, "slot": "C2", "authority": "Assistant recommended anchor allocation"},
-    {"name": "Smile at Death", "count": 2, "slot": "R5", "authority": "Assistant recommended recovery allocation"}
+    {
+      "name": "Ouroboroid",
+      "count": 2,
+      "slot": "C4",
+      "authority": "User proposed"
+    },
+    {
+      "name": "Halana and Alena, Partners",
+      "count": 1,
+      "slot": "C4",
+      "authority": "User proposed"
+    },
+    {
+      "name": "Agrus Kos, Spirit of Justice",
+      "count": 1,
+      "slot": "C4",
+      "authority": "User proposed"
+    },
+    {
+      "name": "Miles Morales // Ultimate Spider-Man",
+      "count": 4,
+      "slot": "C2",
+      "authority": "Assistant recommended anchor allocation"
+    },
+    {
+      "name": "Smile at Death",
+      "count": 2,
+      "slot": "R5",
+      "authority": "Assistant recommended recovery allocation"
+    }
   ],
   "protected_floors": {
     "independent_early_bodies_mv_le_2": 12,

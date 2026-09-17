@@ -1,0 +1,22 @@
+{
+  "status": "Assistant-proposed card allocation within user-approved structure; not a complete deck or applied Arena list",
+  "structure_version": 1,
+  "user_decisions": ["Accept structure-first fixed budgets", "Prefer Lightning over Tyvar for safety", "Like Warden", "Deprioritize Raph & Leo for board dependence", "Like Miles/Michelangelo synergy and Hexing Squelcher", "Consider Hardened Academic", "Jennifer Walters reserved for sideboard; no sideboard quantity assigned"],
+  "proposed_slots": [
+    {"name": "Miles Morales // Ultimate Spider-Man", "count": 4, "kind": "creature", "mv": 2, "role": "early_creature", "slot": "C2"},
+    {"name": "Michelangelo, Weirdness to 11", "count": 3, "kind": "creature", "mv": 2, "role": "early_creature", "slot": "C2"},
+    {"name": "Hexing Squelcher", "count": 3, "kind": "creature", "mv": 2, "role": "early_creature", "slot": "C2"},
+    {"name": "Hardened Academic", "count": 2, "kind": "creature", "mv": 2, "role": "early_creature", "slot": "C2"},
+    {"name": "Warden of the Grove", "count": 3, "kind": "creature", "mv": 3, "role": "middle_pressure_value", "slot": "C3"},
+    {"name": "Lightning, Army of One", "count": 3, "kind": "creature", "mv": 3, "role": "middle_pressure_value", "slot": "C3"}
+  ],
+  "reasoning": {
+    "Lightning_vs_Tyvar": "First strike, trample and lifelink provide immediate solo combat quality without another untapped creature or a five-mana activation. Both have printed power three and are ineligible for Smile absent a relevant zone effect.",
+    "Raph_and_Leo": "Extra-combat synergy remains real, but no native haste/evasion/removal means lower priority for the requested independent combat quality.",
+    "Academic": "Two-power flying haste is already a pressure floor without an engine. Discard is optional, not a draw/filter effect: spend only for meaningful lifegain or useful Smile setup. Hold repeat copies until mana and pressure tests.",
+    "Michelangelo": "Three proposed because legendary and weaker standalone body. Improves each Miles target and counter engine, including Smile's post-entry counter grants.",
+    "Hexing": "Ward-life payments support damage pressure, but removing Squelcher first or using nontargeting answers limits total tax; no assumed guaranteed damage."
+  },
+  "remaining": "Four one-drop creatures, eight interaction spells, and land identities remain open. Existing four-drop and Smile reservations remain unchanged. At least one further creature copy with replenishment/additional-body production is required to satisfy the structure's four-copy resource floor; evaluate the open one-drop band (e.g. prior-researched Pawpatch Recruit offspring) before finalization, or explicitly propose a Warden/Lightning adjustment. No silent floor relaxation.",
+  "validation": "Partial two/three-mana slot arithmetic only; full structure checker and complete mana/performance gates await a fully selected list."
+}

@@ -35,6 +35,10 @@ Worked package: Smile returns Halana and Alena plus Ouroboroid, adding a counter
 
 Michelangelo returned by Smile is on the battlefield when Smile then puts counters on the returned creatures; his replacement effect increases each grant. Raph & Leo's extra combat also repeats beginning-of-combat abilities (Ouroboroid and Halana and Alena), but only their selected attacking creatures untap. Jennifer's spell restriction does not disable abilities. No quantities or constructed list yet.
 
+## Current slot discussion
+
+The user accepted the fixed structure and prefers Lightning to Tyvar, likes Warden and the Miles/Michelangelo/Squelcher core, deprioritizes Raph & Leo, and reserves Jennifer for the sideboard (quantity undecided). [Proposed two/three-drop allocations](../research/naya-miles/slot-selections-v1.json) preserve the original budgets. Academic is a flying haste threat first; optional discard must justify its card cost. Lightning and Tyvar both have printed power three, so neither is an ordinary Smile target. Remaining creature-resource floor and mana validation are explicitly open.
+
 ## Evidence and limitations
 
 [Candidate ledger](../research/naya-miles/shortlist.json), [pictured-card source records](../research/naya-miles/pictured.json), and [Miles rulings](../research/naya-miles/miles-rulings.json).
