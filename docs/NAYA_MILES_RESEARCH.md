@@ -1,6 +1,6 @@
 # Naya Miles — aggressive creature research
 
-Status: discussion/research only; no deck quantities or construction approval. Arkenstone deferred at user's request.
+Status: structure-first construction authorized by the user's request to lock curve and slots. [Proposed fixed structure](../research/naya-miles/structure.json) preserves the user's four-drop allocation and labels assistant-proposed budgets separately; open cards remain unselected. Candidate ledgers remain quantity-free research. Arkenstone deferred at user's request.
 
 ## Direction and cost boundary
 
