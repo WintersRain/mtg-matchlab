@@ -1,14 +1,20 @@
 {
-  "source": "/tmp/doom-midrange-arena.txt",
-  "identity": "Exact supplied Doctor Doom artifact-midrange recommendation; no substitutions",
+  "identity": "Latest locally captured authenticated Doom artifact-midrange submission; not a proposal",
+  "submission_utc": "2026-09-16T15:22:44.470000+00:00",
+  "latest_completion_utc": "2026-09-16T15:29:12.299000+00:00",
+  "sideboard_note": "No sideboardCards supplied in this submission; empty, not invented.",
+  "limitations": [
+    "Latest captured desktop submission only; source is stale and cannot establish unseen mobile/client edits.",
+    "Name-based list; printings omitted. No fresh legality or engine-fidelity claim."
+  ],
   "main_count": 60,
   "sideboard_count": 0,
-  "sideboard_note": "No sideboard was supplied; no sideboard invented",
+  "source": "Authenticated local Arena submission; private capture retained outside repository",
+  "hash_reference": "../decks.json:doom.sha256",
   "legality": {
-    "status": "prior-review-claim-not-independently-rechecked",
-    "evidence": "/tmp/doom-midrange-review.md lines 3-4, 41-42",
-    "quoted_claim": "Standard/Arena card records checked. ... Recounted 60 cards, copy limits, current Standard/Arena records",
-    "limitation": "The supplied review claims checks, but this repository does not contain a fresh per-card Scryfall or official legality audit for Doom. Forge script existence is NOT Standard legality or proof of correct implementation."
+    "status": "Scryfall Standard legal for all card identities at sync",
+    "checked_at_utc": "2026-09-16T23:59:09.491671+00:00",
+    "limitation": "Printing-specific Arena availability and full engine correctness are not established by legality."
   },
-  "hash_reference": "../../decks.json:doom.sha256"
+  "proposal_status": "Suggested lower-pain mana changes were not observed; captured lands retained unchanged."
 }

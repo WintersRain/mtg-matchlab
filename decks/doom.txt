@@ -1,17 +1,13 @@
 Deck
-4 Ravenous Robots
-4 Mechanized Ninja Cavalry
-3 Iron Spider, Stark Upgrade
-3 Selfcraft Mechan
-2 Interceptor Mechan
-2 M.O.D.O.K.
+1 Tony Stark
+3 Super-Adaptoid
+4 Chrome Dome
+4 Interceptor Mechan
+3 M.O.D.O.K.
 2 Doctor Doom
-1 Krang, Master Mind
-2 The Arkenstone
-4 Grim Bauble
-2 Cryogen Relic
+4 Requiting Hex
 3 Bitter Triumph
-2 Withering Torment
+3 Stock Up
 4 Blood Crypt
 4 Watery Grave
 4 Steam Vents
@@ -21,3 +17,5 @@ Deck
 4 Swamp
 3 Island
 3 Mountain
+3 Iron Spider, Stark Upgrade
+4 Hullcarver

@@ -1,0 +1,20 @@
+{
+  "opponent": "standard-2026-09-14-14",
+  "seed": 45,
+  "seats": [
+    "doom",
+    "standard-2026-09-14-14"
+  ],
+  "status": "completed",
+  "winner": "standard-2026-09-14-14",
+  "preboard": true,
+  "engine_pin": "b88dbd3ebd78b6aebfb2839cbbffee3102d59e30",
+  "jar_sha256": "8e231031a70f9d81769b37ffb70e5a6e2293b15bec5abf389cfe657225c2ac61",
+  "exit_code": 0,
+  "normalized_log_sha256": "415f523936f16b11687815cc3f00a54b55e98e3578abdf643b16442d7833a070",
+  "deck_hashes": {
+    "doom": "a846aa090960bcf7ea5c796c695c4c0cdb17b640440265eebe11d3bd556b5870",
+    "standard-2026-09-14-14": "8c930e841e296b4d4b1e7a20f62d9106067ec19d71735adc38d05aad3ba3e6fd"
+  },
+  "scope": "Current captured player deck integration smoke; not matchup statistics."
+}

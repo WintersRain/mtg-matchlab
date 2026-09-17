@@ -16,9 +16,7 @@ preservation change; local-only material below is deliberately excluded.
   main/side counts, and SHA-256. All 37 passed the existing parser; unusual
   sideboard sizes remain unaltered. The preservation change adds this archive
   to version control; it was previously saved only outside this repository.
-- **Five original curated harness decks remain unchanged:** `doom`, `aggro`,
-  `midrange`, `control`, `combo` in `decks/`; byte equality against Git HEAD
-  was verified. `decks.json` remains unchanged; the run interface now additionally
+- **Current player synchronized:** `decks/doom.txt`, its manifest hash, and provenance now match the latest authenticated captured September 16 submission (60 main / 0 side). Proposed lower-pain lands were not observed and remain unapplied. Four curated opponents remain unchanged. Earlier player revisions remain in Git history; historical smoke results retain their original hashes. See [current-player smoke](../evidence/current-player-smoke.json).
   accepts stable benchmark selectors while preserving all four role selectors.
 - **Offline math and fixtures are already tracked:** `analysis_tools.py`,
   `tests/test_analysis.py`, `examples/mana-basic.json`,
@@ -79,7 +77,8 @@ were inspected, and these counts do not cover every possible local location.
    14/seed44 with reversed seats, and 27/seed42. These cover full, short, and
    empty sideboards. [Sanitized results](../evidence/benchmark-integration-smoke.json)
    preserve deck hashes and outcomes; raw runtime logs remain ignored/local.
-   The player is the pinned historical Doom list, not the current Arena deck.
+   Those three earlier smokes used the historical Doom list. The newer
+   current-player smoke above verifies the synchronized captured player list.
    This is not 37 live smoke games, independent legality
    verification, or proof of gameplay correctness. Use
    `python3 matchlab.py run --opponent standard-2026-09-14-01 --seed 42` with the

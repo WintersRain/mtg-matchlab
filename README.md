@@ -31,14 +31,15 @@ measure these deck/AI/engine combinations, not human win rates or optimal play.
   CLI opponents; see [capture status](docs/CAPTURE_STATUS.md)
   for repository versus local-only research boundaries.
 
-- `decks/doom.txt`: exact prior Doom revision, 60 main, no supplied sideboard.
+- `decks/doom.txt`: latest authenticated captured September 16 player list, 60 main / 0 side; Hullcarver, Super-Adaptoid, Tony Stark, and Chrome Dome. Proposed land swaps were not observed and are not applied.
 - `decks/{aggro,midrange,control,combo}.txt`: exact handoff lists, each 60 main / 15 side.
 - `decks.json`: immutable-input SHA-256 checks, parsed zones, evidence references.
 - `evidence/opponents/`: curated September 15, 2026 research handoff: provenance,
   exact lists, per-name Scryfall legality, small Arena-alternates response, README.
-- `evidence/doom-provenance.json`: origin of the prior Doom revision.
-- `evidence/doom-legality.json`: fresh September 15 Scryfall check; every Doom card
-  is Standard-legal. No independent official rotation/B&R audit is claimed.
+- `evidence/doom-provenance.json`: current captured submission provenance and freshness limits.
+- `evidence/doom-current-card-check.json`: Standard legality records for the updated player list.
+- `evidence/current-player-smoke.json`: completed full-game integration smoke for that exact list.
+- `evidence/doom-legality.json` and earlier smoke files are historical evidence for the prior list, retained with their original hashes; earlier deck versions remain in Git history.
 
 Opponents: Mono-Green Landfall (aggro/ramp hybrid), Dimir Midrange, 4c Control,
 and Bant Airbending Combo. See the evidence README for selection nuance, source
@@ -88,8 +89,9 @@ python3 matchlab.py run --opponent aggro --seed 42 --swap
 
 `decks` works offline and lists four curated roles plus stable selectors
 `standard-2026-09-14-01` through `standard-2026-09-14-37`, with verified source
-hashes and counts (`--json` includes provenance). The player is the pinned
-historical `decks/doom.txt`, not automatically the user's current Arena deck.
+hashes and counts (`--json` includes provenance). The player is the hash-verified
+`decks/doom.txt`, synchronized to the latest captured September 16 submission.
+Later Arena edits are not automatically synchronized; check its provenance before testing.
 Archive files are consumed directly, never substituted or padded: short and empty
 sideboards remain exact. Unknown selectors and paths are rejected.
 

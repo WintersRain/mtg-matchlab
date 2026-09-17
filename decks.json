@@ -1,22 +1,18 @@
 {
   "doom": {
     "file": "decks/doom.txt",
-    "sha256": "7a90c5e0d517162eba3c66e58dbe1d0dbdc8950fae692f2c97caf55cbdcd4590",
+    "sha256": "a846aa090960bcf7ea5c796c695c4c0cdb17b640440265eebe11d3bd556b5870",
     "zones": {
       "main": {
-        "Ravenous Robots": 4,
-        "Mechanized Ninja Cavalry": 4,
-        "Iron Spider, Stark Upgrade": 3,
-        "Selfcraft Mechan": 3,
-        "Interceptor Mechan": 2,
-        "M.O.D.O.K.": 2,
+        "Tony Stark": 1,
+        "Super-Adaptoid": 3,
+        "Chrome Dome": 4,
+        "Interceptor Mechan": 4,
+        "M.O.D.O.K.": 3,
         "Doctor Doom": 2,
-        "Krang, Master Mind": 1,
-        "The Arkenstone": 2,
-        "Grim Bauble": 4,
-        "Cryogen Relic": 2,
+        "Requiting Hex": 4,
         "Bitter Triumph": 3,
-        "Withering Torment": 2,
+        "Stock Up": 3,
         "Blood Crypt": 4,
         "Watery Grave": 4,
         "Steam Vents": 4,
@@ -25,12 +21,14 @@
         "Restless Vents": 1,
         "Swamp": 4,
         "Island": 3,
-        "Mountain": 3
+        "Mountain": 3,
+        "Iron Spider, Stark Upgrade": 3,
+        "Hullcarver": 4
       },
       "sideboard": {}
     },
     "provenance": "evidence/doom-provenance.json",
-    "legality": "prior-review-claim-not-independently-rechecked"
+    "legality": "scryfall-standard-legal-at-sync"
   },
   "aggro": {
     "file": "decks/aggro.txt",
