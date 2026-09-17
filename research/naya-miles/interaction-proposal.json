@@ -1,0 +1,48 @@
+{
+  "status": "Assistant proposal for discussion, not approved/applied/played",
+  "allocation": [
+    {
+      "name": "Erode",
+      "count": 2,
+      "mv": 1,
+      "slot": "I1",
+      "kind": "other",
+      "role": "cheap_interaction",
+      "subrole": "direct_answer"
+    },
+    {
+      "name": "Restoration Magic",
+      "count": 2,
+      "mv": 1,
+      "slot": "I1",
+      "kind": "other",
+      "role": "cheap_interaction",
+      "subrole": "protection"
+    },
+    {
+      "name": "Sheltered by Ghosts",
+      "count": 2,
+      "mv": 2,
+      "slot": "I2",
+      "kind": "other",
+      "role": "cheap_interaction",
+      "subrole": "direct_answer"
+    },
+    {
+      "name": "Get Lost",
+      "count": 2,
+      "mv": 2,
+      "slot": "I2",
+      "kind": "other",
+      "role": "cheap_interaction",
+      "subrole": "direct_answer"
+    }
+  ],
+  "checks": "Eight slots: four MV1/four MV2; six direct answers (four independent of own creature board), two protection. No full mana/sequence/performance pass.",
+  "tradeoffs": [
+    "Permanent artifact answers limited to conditional Sheltered exile.",
+    "No cheap whole-board sweeper protection in this starting package.",
+    "White needed alongside early green and red; final sources not yet selected.",
+    "Erode and Get Lost give opponent real resources."
+  ]
+}
