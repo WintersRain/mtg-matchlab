@@ -114,8 +114,16 @@ public class MatchlabCardScriptsCheck extends MatchlabRulesCheck {
         check(me.getCardsIn(ZoneType.Hand).size()==hand && me.getCardsIn(ZoneType.Graveyard).size()==grave+2,"Cryomancer draws two then discards two");
         check(c.getSpellAbilities().stream().anyMatch(sa->sa.getApi()==ApiType.Draw && "Graveyard".equals(sa.getParam("ActivationZone"))),"Cryomancer has graveyard draw-two ability");
     }
+    static void tomik() {
+        setup(); Card tomik=add("Tomik, Izzet Sparkmage",me); Card bear=add("Runeclaw Bear",opp); settle();
+        check(tomik.hasKeyword(forge.game.keyword.Keyword.PROWESS),"Tomik has prowess");
+        resolve(AbilityFactory.getAbility("DB$ DealDamage | Defined$ Opponent | NumDmg$ 1",tomik)); drain(game);
+        check(opp.getLife()==18,"Tomik adds one to noncombat damage dealt to an opponent");
+        resolve(AbilityFactory.getAbility("DB$ DealDamage | Defined$ Valid Creature.OppCtrl | NumDmg$ 1",tomik)); drain(game); settle();
+        check(bear.getDamage()==2 || bear.isInZone(ZoneType.Graveyard),"Tomik adds one to noncombat damage dealt to an opposing permanent");
+    }
     public static void main(String[] args) {
-        initialize(); empower(); mentorLifeEvents(); paradoxAllowances(); shaper(); combinedEngineLine(); ferocity(); grapple(); cryomancer();
+        initialize(); empower(); mentorLifeEvents(); paradoxAllowances(); shaper(); combinedEngineLine(); ferocity(); grapple(); cryomancer(); tomik();
         System.out.println("CARD_RULE_SUITE_OK assertions="+assertions);
     }
 }
