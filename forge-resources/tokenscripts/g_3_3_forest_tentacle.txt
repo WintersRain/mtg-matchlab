@@ -1,0 +1,5 @@
+Name:Forest Tentacle
+ManaCost:no cost
+Colors:green
+Types:Land Creature Forest Tentacle
+PT:3/3

@@ -1,0 +1,9 @@
+Name:Ferocity of the Hunt
+ManaCost:1 B/G
+Types:Enchantment Aura
+K:Flash
+K:Enchant:Creature
+S:Mode$ Continuous | Affected$ Creature.EnchantedBy | AddPower$ 1 | AddKeyword$ Deathtouch | Description$ Enchanted creature gets +1/+0 and has deathtouch.
+T:Mode$ ChangesZone | Origin$ Battlefield | Destination$ Graveyard | ValidCard$ Creature.EnchantedBy | TriggerZones$ Battlefield | Execute$ TrigReturn | TriggerDescription$ When enchanted creature dies, return that card to the battlefield tapped under its owner's control.
+SVar:TrigReturn:DB$ ChangeZone | Origin$ Graveyard | Destination$ Battlefield | Defined$ TriggeredNewCardLKICopy | Tapped$ True
+Oracle:Flash\nEnchant creature\nEnchanted creature gets +1/+0 and has deathtouch.\nWhen enchanted creature dies, return that card to the battlefield tapped under its owner's control.

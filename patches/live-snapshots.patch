@@ -1,0 +1,279 @@
+diff --git a/forge-gui-desktop/src/main/java/forge/view/SimulateMatch.java b/forge-gui-desktop/src/main/java/forge/view/SimulateMatch.java
+index f9a46797..9b8a4fe0 100644
+--- a/forge-gui-desktop/src/main/java/forge/view/SimulateMatch.java
++++ b/forge-gui-desktop/src/main/java/forge/view/SimulateMatch.java
+@@ -36,6 +36,7 @@ import forge.util.WordUtil;
+ import forge.util.storage.IStorage;
+ 
+ public class SimulateMatch {
++    private static volatile boolean lastSimulationHealthy;
+     public static void simulate(String[] args) {
+         FModel.initialize(null, null);
+ 
+@@ -167,6 +168,57 @@ public class SimulateMatch {
+ 
+         System.out.println(sb);
+ 
++        if ("1".equals(System.getenv("MATCHLAB_REUSE"))) {
++            if (seed == null || matchSize != 0 || nGames < 1 || nGames > 50
++                    || !params.containsKey("d") || params.get("d").size() != 2) {
++                throw new IllegalArgumentException("Reuse requires two decks, explicit seed, 1..50 independent games and no match setting");
++            }
++            Math.addExact(seed, nGames - 1L);
++            boolean alternate = "1".equals(System.getenv("MATCHLAB_ALTERNATE"));
++            for (int gameIndex = 0; gameIndex < nGames; gameIndex++) {
++                String stopFile = System.getenv("MATCHLAB_STOP_FILE");
++                if (stopFile != null && new File(stopFile).isFile()) {
++                    System.out.println("MATCHLAB_SERIES_STOPPED " + MatchlabSnapshots.json(MatchlabSnapshots.map("after",gameIndex)));
++                    System.out.flush();
++                    break;
++                }
++                long gameSeed = Math.addExact(seed, gameIndex);
++                MyRandom.setRandom(new Random(gameSeed));
++                List<String> deckNames = new ArrayList<>(params.get("d"));
++                List<String> profiles = aiProfiles == null ? null : new ArrayList<>(aiProfiles);
++                if (alternate && gameIndex % 2 == 1) {
++                    Collections.reverse(deckNames);
++                    if (profiles != null) Collections.reverse(profiles);
++                }
++                List<RegisteredPlayer> independent = new ArrayList<>();
++                int engineSeat = 1;
++                for (String deckName : deckNames) {
++                    Deck deck = deckFromCommandLineParameter(deckName, type);
++                    if (deck == null) throw new IllegalArgumentException("Reuse could not load deck " + deckName);
++                    String profile = profiles != null && profiles.size() >= engineSeat ? profiles.get(engineSeat-1) : "";
++                    RegisteredPlayer player = type.equals(GameType.Commander)
++                            ? RegisteredPlayer.forCommander(deck) : new RegisteredPlayer(deck);
++                    player.setPlayer(GamePlayerUtil.createAiPlayer("Ai(" + engineSeat + ")-" + deck.getName(), engineSeat-1, profile));
++                    independent.add(player);
++                    engineSeat++;
++                }
++                System.out.println("MATCHLAB_GAME_BEGIN " + MatchlabSnapshots.json(MatchlabSnapshots.map(
++                    "game",gameIndex+1,"seed",gameSeed,"decks",deckNames)));
++                System.out.flush();
++                // A new Match removes lastOutcome, prior wins, sideboarding and previous-game chooser state.
++                simulateSingleMatch(new Match(rules,independent,"Independent reuse game"),gameIndex,outputGamelog);
++                System.out.println("MATCHLAB_GAME_END " + MatchlabSnapshots.json(MatchlabSnapshots.map(
++                    "game",gameIndex+1,"seed",gameSeed,"healthy",lastSimulationHealthy)));
++                System.out.flush();
++                if (!lastSimulationHealthy) {
++                    // A timed-out worker may not honor interruption; never let it contaminate a next game.
++                    System.exit(2);
++                    return;
++                }
++            }
++            return;
++        }
++
+         Match mc = new Match(rules, pp, "Test");
+ 
+         if (matchSize != 0) {
+@@ -203,11 +255,18 @@ public class SimulateMatch {
+     }
+ 
+     public static void simulateSingleMatch(final Match mc, int iGame, boolean outputGamelog) {
++        lastSimulationHealthy = true;
+         final StopWatch sw = new StopWatch();
+         sw.start();
+ 
+         final Game g1 = mc.createGame();
+         g1.setNoGUIUser();
++        final MatchlabSnapshots spectator = "1".equals(System.getenv("MATCHLAB_SNAPSHOTS"))
++                ? new MatchlabSnapshots(g1, iGame + 1) : null;
++        if (spectator != null) {
++            g1.subscribeToEvents(spectator);
++            spectator.emit("Initial");
++        }
+         // will run match in the same thread
+         try {
+             TimeLimitedCodeBlock.runWithTimeout(() -> {
+@@ -215,14 +274,17 @@ public class SimulateMatch {
+                 sw.stop();
+             }, mc.getRules().getSimTimeout(), TimeUnit.SECONDS);
+         } catch (TimeoutException e) {
++            lastSimulationHealthy = false;
+             System.out.println("Stopping slow match as draw");
+         } catch (Exception | StackOverflowError e) {
++            lastSimulationHealthy = false;
+             e.printStackTrace();
+         } finally {
+             if (sw.isStarted()) {
+                 sw.stop();
+             }
+             g1.setGameOver(GameEndReason.Draw);
++            if (spectator != null) spectator.emit("Final");
+         }
+ 
+         List<GameLogEntry> log;
+diff --git a/forge-gui-desktop/src/main/java/forge/view/MatchlabSnapshots.java b/forge-gui-desktop/src/main/java/forge/view/MatchlabSnapshots.java
+new file mode 100644
+index 00000000..c28df034
+--- /dev/null
++++ b/forge-gui-desktop/src/main/java/forge/view/MatchlabSnapshots.java
+@@ -0,0 +1,166 @@
++package forge.view;
++
++import com.google.common.eventbus.Subscribe;
++import com.google.common.collect.Multiset;
++import forge.game.Game;
++import forge.game.GameLogEntry;
++import forge.game.card.Card;
++import forge.game.card.CounterType;
++import forge.game.event.GameEvent;
++import forge.game.player.Player;
++import forge.game.spellability.SpellAbilityStackInstance;
++import forge.game.zone.ZoneType;
++import java.util.*;
++
++/** Opt-in, synchronous spectator snapshots from real engine state; never changes RNG or game state. */
++public final class MatchlabSnapshots {
++    private final Game game;
++    private final int gameNumber;
++    private final long started = System.nanoTime();
++    private int sequence;
++    private int logged;
++    private boolean failed;
++    private String previousState;
++    private final Map<Integer,Map<String,String>> previousZones = new HashMap<>();
++
++    public MatchlabSnapshots(Game game, int gameNumber) {
++        this.game = game;
++        this.gameNumber = gameNumber;
++    }
++
++    @Subscribe public void onEvent(GameEvent event) {
++        String kind = event.getClass().getSimpleName();
++        // Priority and mana-pool chatter adds volume without meaningful board transitions.
++        if (kind.equals("GameEventPlayerPriority") || kind.equals("GameEventManaPool")
++                || kind.equals("GameEventCombatUpdate")) return;
++        emit(kind);
++    }
++
++    public void emit(String kind) {
++        if (failed) return;
++        try {
++            Map<String,Object> snapshot = map("version",1,"game",gameNumber,"sequence",sequence+1,
++                "event",kind,"captured_seconds",(System.nanoTime()-started)/1e9,
++                "turn",game.getPhaseHandler().getTurn(),
++                "phase",String.valueOf(game.getPhaseHandler().getPhase()),
++                "active_player",game.getPhaseHandler().getPlayerTurn() == null ? null
++                    : game.getPhaseHandler().getPlayerTurn().getId());
++            List<Object> players = new ArrayList<>();
++            for (Player p : game.getPlayers()) {
++                Map<String,Object> zones = new LinkedHashMap<>();
++                for (ZoneType z : new ZoneType[]{ZoneType.Battlefield,ZoneType.Hand,ZoneType.Graveyard,ZoneType.Exile,ZoneType.Command}) {
++                    List<Object> cards = new ArrayList<>();
++                    for (Card c : p.getCardsIn(z)) cards.add(card(c));
++                    zones.put(z.name(),cards);
++                }
++                zones.put("Library",map("count",p.getCardsIn(ZoneType.Library).size()));
++                players.add(map("id",p.getId(),"name",p.getName(),"life",p.getLife(),
++                    "poison",p.getPoisonCounters(),"max_land_plays",p.getMaxLandPlays(),
++                    "max_land_plays_infinite",p.getMaxLandPlaysInfinite(),
++                    "lands_played_this_turn",p.getLandsPlayedThisTurn(),"zones",zones));
++            }
++            snapshot.put("players",players);
++            List<Object> stack = new ArrayList<>();
++            for (SpellAbilityStackInstance item : game.getStack())
++                stack.add(map("text",item.getStackDescription()));
++            snapshot.put("stack",stack);
++            List<GameLogEntry> entries = game.getGameLog().getLogEntries(null);
++            List<Object> actions = new ArrayList<>();
++            int fresh = Math.max(0,entries.size()-logged);
++            for (int i=fresh-1;i>=0;i--) {
++                GameLogEntry entry = entries.get(i);
++                actions.add(map("kind",entry.type().name(),"text",entry.toString()));
++            }
++            logged = entries.size();
++            snapshot.put("actions",actions);
++            String state = json(map("turn",snapshot.get("turn"),"phase",snapshot.get("phase"),
++                "active_player",snapshot.get("active_player"),"players",players,"stack",stack));
++            // Zone/stat events often repeat without changing real state. Keep every state transition
++            // and every actual log delta, while avoiding repeated copies of an unchanged board.
++            if (state.equals(previousState) && actions.isEmpty()
++                    && !kind.equals("Initial") && !kind.equals("Final")) return;
++            previousState = state;
++            sequence++;
++            boolean full = kind.equals("Initial") || kind.equals("Final");
++            snapshot.put("delta",!full);
++            compactZones(players,full);
++            System.out.println("MATCHLAB_SNAPSHOT " + json(snapshot));
++            System.out.flush();
++        } catch (RuntimeException error) {
++            // Spectator failure must not change a game result, but must be visible.
++            failed = true;
++            System.err.println("MATCHLAB_SNAPSHOT_ERROR " + error.getClass().getName() + ": " + error.getMessage());
++        }
++    }
++
++    private Object card(Card c) {
++        Map<String,Object> counters = new LinkedHashMap<>();
++        for (Multiset.Entry<CounterType> entry : c.getCounters().entrySet())
++            counters.put(entry.getElement().getName(),entry.getCount());
++        return map("id",c.getId(),"name",c.getName(),"tapped",c.isTapped(),"token",c.isToken(),
++            "power",c.isCreature()?c.getNetPower():null,
++            "toughness",c.isCreature()?c.getNetToughness():null,"counters",counters,
++            "land",c.isLand(),"creature",c.isCreature(),"planeswalker",c.isPlaneswalker(),"artifact",c.isArtifact(),
++            "attacking",game.getCombat()!=null && game.getCombat().getAttackers().contains(c),
++            "blocking",game.getCombat()!=null && !game.getCombat().getAttackersBlockedBy(c).isEmpty(),
++            "owner",c.getOwner()==null?null:c.getOwner().getId(),
++            "controller",c.getController()==null?null:c.getController().getId());
++    }
++
++    @SuppressWarnings("unchecked")
++    private void compactZones(List<Object> players, boolean full) {
++        // Explicit lossless zone deltas: omitted zones mean exactly the previously emitted zone.
++        // Initial/Final frames are complete; consumers materialize intermediate frames by player id.
++        for (Object raw : players) {
++            Map<String,Object> player = (Map<String,Object>)raw;
++            Integer id = (Integer)player.get("id");
++            Map<String,Object> zones = (Map<String,Object>)player.get("zones");
++            Map<String,String> prior = previousZones.computeIfAbsent(id,k -> new HashMap<>());
++            Iterator<Map.Entry<String,Object>> iterator = zones.entrySet().iterator();
++            while(iterator.hasNext()) {
++                Map.Entry<String,Object> entry = iterator.next();
++                String state = json(entry.getValue());
++                String old = prior.put(entry.getKey(),state);
++                if (!full && state.equals(old)) iterator.remove();
++            }
++        }
++    }
++
++    static Map<String,Object> map(Object... pairs) {
++        Map<String,Object> result = new LinkedHashMap<>();
++        for(int i=0;i<pairs.length;i+=2) result.put((String)pairs[i],pairs[i+1]);
++        return result;
++    }
++
++    // Avoid adding a JSON dependency to the pinned upstream desktop build.
++    static String json(Object value) {
++        if(value==null) return "null";
++        if(value instanceof Boolean || value instanceof Number) return value.toString();
++        if(value instanceof Map) {
++            List<String> parts = new ArrayList<>();
++            for(Object raw : ((Map<?,?>)value).entrySet()) {
++                Map.Entry<?,?> entry = (Map.Entry<?,?>)raw;
++                parts.add(json(entry.getKey().toString())+":"+json(entry.getValue()));
++            }
++            return "{"+String.join(",",parts)+"}";
++        }
++        if(value instanceof Iterable) {
++            List<String> parts = new ArrayList<>();
++            for(Object item : (Iterable<?>)value) parts.add(json(item));
++            return "["+String.join(",",parts)+"]";
++        }
++        StringBuilder escaped = new StringBuilder("\"");
++        for(char c : value.toString().toCharArray()) {
++            switch(c) {
++                case '"': escaped.append("\\\""); break;
++                case '\\': escaped.append("\\\\"); break;
++                case '\n': escaped.append("\\n"); break;
++                case '\r': escaped.append("\\r"); break;
++                case '\t': escaped.append("\\t"); break;
++                default: if(c<32) escaped.append(String.format("\\u%04x",(int)c)); else escaped.append(c);
++            }
++        }
++        return escaped.append('"').toString();
++    }
++}
++

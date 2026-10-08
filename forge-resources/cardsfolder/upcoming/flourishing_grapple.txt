@@ -1,0 +1,7 @@
+Name:Flourishing Grapple
+ManaCost:G
+Types:Instant
+A:SP$ Pump | ValidTgts$ Creature.OppCtrl+Red,Creature.OppCtrl+White,Planeswalker.OppCtrl+Red,Planeswalker.OppCtrl+White | LoseAllAbilities$ True | SubAbility$ DBBite | SpellDescription$ Target creature or planeswalker an opponent controls that's red or white loses all abilities until end of turn. Target creature you control deals damage equal to its power to that permanent.
+SVar:DBBite:DB$ DealDamage | ValidTgts$ Creature.YouCtrl | DamageSource$ Targeted | Defined$ ParentTarget | NumDmg$ X
+SVar:X:Targeted$CardPower
+Oracle:Target creature or planeswalker an opponent controls that's red or white loses all abilities until end of turn. Target creature you control deals damage equal to its power to that permanent.
