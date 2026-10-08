@@ -73,8 +73,11 @@ def match_log(match_id='m1', completed=True, undone_cast=False, resolve_without_
     lines.append(gre(state(2, OPP, 'Phase_Main1', objects=[obj(301, 30, OPP, ('CardType_Creature',), power={'value': 2}, toughness={'value': 2})],
                            zones=[zone(2, 'Battlefield', 0, [201, 202, 301])], annotations=[transfer(301, 'CastSpell', 7, 3)])))
     lines.append(gre(state(2, OPP, 'Phase_Combat', annotations=[damage(301, ME, 2)], players=[{'systemSeatNumber': ME, 'lifeTotal': 18}])))
-    # my turn 3: Sheriff (2 mana paid by my lands) kills Pridemate; ability object named via its parent
-    lines.append(gre(state(3, ME, 'Phase_Main1', objects=[obj(201, 11, ME), obj(202, 10, ME)])))
+    # my turn 3: lands were tapped on turn 2; the untap update omits isTapped (Arena drops false fields)
+    lines.append(gre(state(2, OPP, 'Phase_Ending', objects=[obj(201, 11, ME, tapped=True), obj(202, 10, ME, tapped=True)])))
+    untapped = [{k: v for k, v in obj(i, g, ME).items() if k != 'isTapped'} for i, g in ((201, 11), (202, 10))]
+    lines.append(gre(state(3, ME, 'Phase_Main1', objects=untapped)))
+    # Sheriff (2 mana paid by my lands) kills Pridemate; ability object named via its parent
     lines.append(gre(state(3, ME, 'Phase_Main1', objects=[obj(101, 20, ME, ('CardType_Instant',))], zones=[zone(1, 'Hand', ME, [102, 103, 104]), zone(3, 'Stack', 0, [101])],
                            annotations=[transfer(101, 'CastSpell', 1, 3), mana_paid(201, 101), mana_paid(202, 101)])))
     resolve = transfer(101, 'Resolve', 3, 4)

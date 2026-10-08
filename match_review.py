@@ -129,6 +129,8 @@ def seats(text):
 
 # --- replay ---
 
+IDENTITY = ('grpId', 'type', 'ownerSeatId', 'controllerSeatId', 'cardTypes', 'parentId', 'objectSourceGrpId')
+
 def _details(annotation):
     return {d['key']: (d.get('valueString') or d.get('valueInt32') or [None])[0] for d in annotation.get('details', [])}
 
@@ -140,7 +142,9 @@ def review(text, cards, player):
         raise ValueError(f'{player!r} is not a player in this match (players: {sorted(seat_map)})')
     opponent = next((n for n, s in seat_map.items() if s != me), None)
     match_id = (re.search(r'Connecting to matchId ([\w-]+)', text) or [None, None])[1]
-    objects, zones, known, life = {}, {}, {}, {}
+    # objects: current state, replaced on every update (Arena omits false fields such as isTapped,
+    # so merging would keep stale values). ident: identity that must survive deletion and re-ids.
+    objects, ident, zones, known, life = {}, {}, {}, {}, {}
     games, submissions = [], []
     game = None
     turn = 0
@@ -153,7 +157,7 @@ def review(text, cards, player):
     def name_of(iid):
         if iid in (1, 2):
             return label(iid)
-        o = objects.get(iid)
+        o = ident.get(iid)
         if o and o.get('type') == 'GameObjectType_Ability':
             # Ability grpIds are ability ids that can collide with card ids: name by the source card.
             return 'ability of ' + (known.get(o.get('parentId')) or cards.name(o.get('objectSourceGrpId', 0)))
@@ -222,7 +226,8 @@ def review(text, cards, player):
             if game is None or number != game['game']:
                 game, turn = new_game(number), 0
             for o in g.get('gameObjects', []):
-                objects[o['instanceId']] = {**objects.get(o['instanceId'], {}), **o}
+                objects[o['instanceId']] = o
+                ident[o['instanceId']] = {**ident.get(o['instanceId'], {}), **{k: o[k] for k in IDENTITY if k in o}}
                 if o.get('type') != 'GameObjectType_Ability':
                     known[o['instanceId']] = cards.name(o['grpId'])
                     if o.get('ownerSeatId') not in (None, me) and o.get('type') != 'GameObjectType_Token':
@@ -250,18 +255,18 @@ def review(text, cards, player):
                     # Arena re-ids cards as they change zones; carry identity, owner and history forward.
                     old, new = d.get('orig_id'), d.get('new_id')
                     known[new] = known.get(old, known.get(new))
-                    objects[new] = {**objects.get(old, {}), **objects.get(new, {})}
+                    ident[new] = {**ident.get(old, {}), **ident.get(new, {})}
                     for history in (game['casts'], game['last_damage_seat']):
                         if old in history:
                             history[new] = history[old]
                 elif t == 'AnnotationType_ZoneTransfer':
                     for i in aff:
-                        o = objects.get(i, {})
+                        o = ident.get(i, {})
                         e = {'kind': 'zone', 'seat': label(o.get('ownerSeatId')), 'category': d.get('category'),
                              'card': name_of(i), 'src': zone_type(d.get('zone_src')), 'dst': zone_type(d.get('zone_dest')), 'iid': i}
                         if src and src not in (1, 2):
                             e['by'] = name_of(src)
-                            e['by_seat'] = label((objects.get(src) or {}).get('controllerSeatId') or (objects.get(src) or {}).get('ownerSeatId'))
+                            e['by_seat'] = label((ident.get(src) or {}).get('controllerSeatId') or (ident.get(src) or {}).get('ownerSeatId'))
                         if e['category'] == 'Draw' and e['seat'] == 'me' and o.get('type') != 'GameObjectType_Ability':
                             game['seen_in_hand'][e['card']] = 'CardType_Land' not in o.get('cardTypes', [])
                         if e['category'] == 'CastSpell':
@@ -270,7 +275,7 @@ def review(text, cards, player):
                         elif i in game['casts']:
                             game['casts'][i]['undone'] = False
                         if e['category'] == 'PlayLand' and e['seat'] == 'me':
-                            game['land_untapped_on_play'].setdefault(turn, []).append(not o.get('isTapped'))
+                            game['land_untapped_on_play'].setdefault(turn, []).append(not objects.get(i, {}).get('isTapped'))
                         if e["category"] in ("SBA_Damage", "SBA_ZeroLoyalty") and i in game["last_damage_seat"]:
                             e['by_seat'] = game['last_damage_seat'][i]
                         events.append(e)
@@ -280,7 +285,7 @@ def review(text, cards, player):
                     text_ = getattr(cards, 'ability_text', lambda _: None)(d['abilityGrpId'])
                     events.append({'kind': 'activate', 'card': name_of(aff[0]) if aff else None, 'ability': text_})
                 elif t == 'AnnotationType_DamageDealt':
-                    source_obj = objects.get(src) or {}
+                    source_obj = ident.get(src) or {}
                     for i in aff:
                         e = {'kind': 'damage', 'source': name_of(src), 'source_seat': label(source_obj.get('controllerSeatId')),
                              'target': name_of(i), 'amount': d.get('damage')}
@@ -293,7 +298,7 @@ def review(text, cards, player):
                     for i in aff:
                         events.append({'kind': 'life', 'seat': label(i), 'delta': d.get('life'), 'total': life.get(i)})
                 elif t == 'AnnotationType_ManaPaid':
-                    payer = (objects.get(src) or {}).get('controllerSeatId')
+                    payer = (ident.get(src) or {}).get('controllerSeatId')
                     events.append({'kind': 'mana', 'seat': label(payer) if payer else None})
                 elif t == 'AnnotationType_TokenCreated':
                     events.extend({'kind': 'token', 'card': name_of(i)} for i in aff)
@@ -395,7 +400,7 @@ def render(rv):
                 out.append(f"  opp hand: {s['opp_hand_size']} cards")
             for e in rec['events']:
                 k = e['kind']
-                if k == 'zone' and not (e['category'] == 'Draw' and e['seat'] == 'opp'):
+                if k == 'zone' and not (e['category'] == 'Draw' and e['seat'] != 'me'):
                     out.append(f"    {e['seat']:3s} {e['category']}: {e['card']}" + (' [UNDONE]' if e.get('undone') else '')
                                + (f"  (by {e['by']})" if e.get('by') and e['category'] not in ('CastSpell', 'Resolve', 'PlayLand') else ''))
                 elif k == 'target':
