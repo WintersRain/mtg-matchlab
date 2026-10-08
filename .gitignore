@@ -3,3 +3,8 @@
 /runtime/
 __pycache__/
 *.py[cod]
+
+# Personal evidence, private research and scratch sandboxes never belong in this public repo.
+/private/
+/private-evidence/
+/experiments/
