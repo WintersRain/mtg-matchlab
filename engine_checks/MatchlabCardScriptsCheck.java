@@ -108,8 +108,14 @@ public class MatchlabCardScriptsCheck extends MatchlabRulesCheck {
         check(!angel.hasKeyword(forge.game.keyword.Keyword.FLYING) && !angel.hasKeyword(forge.game.keyword.Keyword.VIGILANCE),"Grapple target loses all abilities");
         check(angel.getDamage()==2,"Grapple deals damage equal to own creature power");
     }
+    static void cryomancer() {
+        setup(); int hand=me.getCardsIn(ZoneType.Hand).size(); int grave=me.getCardsIn(ZoneType.Graveyard).size();
+        Card c=enter("Seasoned Cryomancer");
+        check(me.getCardsIn(ZoneType.Hand).size()==hand && me.getCardsIn(ZoneType.Graveyard).size()==grave+2,"Cryomancer draws two then discards two");
+        check(c.getSpellAbilities().stream().anyMatch(sa->sa.getApi()==ApiType.Draw && "Graveyard".equals(sa.getParam("ActivationZone"))),"Cryomancer has graveyard draw-two ability");
+    }
     public static void main(String[] args) {
-        initialize(); empower(); mentorLifeEvents(); paradoxAllowances(); shaper(); combinedEngineLine(); ferocity(); grapple();
+        initialize(); empower(); mentorLifeEvents(); paradoxAllowances(); shaper(); combinedEngineLine(); ferocity(); grapple(); cryomancer();
         System.out.println("CARD_RULE_SUITE_OK assertions="+assertions);
     }
 }
