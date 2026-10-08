@@ -107,6 +107,18 @@ class MatchReviewTests(unittest.TestCase):
     def test_mana_value_from_arena_mana_text(self):
         self.assertEqual([r.mana_value(t) for t in ('o1oGoG', 'oXoRoR', 'o2o(B/G)', '', 'oBoBoG')], [3, 2, 3, 0, 3])
 
+    def test_display_name_prefers_the_universes_beyond_title_over_omenpaths(self):
+        import sqlite3
+        db = sqlite3.connect(':memory:')
+        db.executescript('''create table Cards (GrpId, TitleId, InterchangeableTitleId, ExpansionCode, OldSchoolManaText, IsToken);
+            create table Localizations_enUS (LocId, Loc, Formatted);
+            insert into Localizations_enUS values (1, 'Superior Spider-Man', 0), (2, 'Kavaero, Mind-Bitten', 0), (3, 'Forest', 0);
+            insert into Cards values (97973, 1, 2, 'SPM', 'o2oUoB', 0), (104806, 2, 1, 'OM1', 'o2oUoB', 0), (5, 3, 0, 'FDN', '', 0);''')
+        cards = r.CardDB(db)
+        self.assertEqual([cards.name(g) for g in (97973, 104806, 5)], ['Superior Spider-Man', 'Superior Spider-Man', 'Forest'])
+        self.assertEqual(cards.display('Kavaero, Mind-Bitten'), 'Superior Spider-Man')
+        self.assertEqual(cards.display('Forest'), 'Forest')
+
     def test_split_returns_only_completed_matches_in_order(self):
         text = match_log('a') + match_log('b') + match_log('c', completed=False)
         self.assertEqual([m['match_id'] for m in r.split_matches(text)], ['a', 'b'])

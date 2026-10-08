@@ -66,10 +66,23 @@ def mana_value(mana_text):
 
 
 class CardDB:
-    """Read-only Arena Raw_CardDatabase lookups."""
-    def __init__(self, path):
-        self.db = sqlite3.connect(f'file:{path}?mode=ro', uri=True)
+    """Read-only Arena Raw_CardDatabase lookups.
+
+    Names are display names: a Through the Omenpaths (OM1) printing is shown by its
+    interchangeable Universes Beyond title (e.g. Superior Spider-Man, not Kavaero,
+    Mind-Bitten), because that is the name the player sees. MTGO lists and Scryfall
+    use the OM1 names; pass those through display().
+    """
+    def __init__(self, path_or_connection):
+        self.db = (path_or_connection if isinstance(path_or_connection, sqlite3.Connection)
+                   else sqlite3.connect(f'file:{path_or_connection}?mode=ro', uri=True))
         self._cache = {}
+        self._display = dict(self.db.execute(
+            "select l.Loc, i.Loc from Cards c join Localizations_enUS l on l.LocId=c.TitleId "
+            "join Localizations_enUS i on i.LocId=c.InterchangeableTitleId where c.ExpansionCode='OM1'").fetchall())
+
+    def display(self, name):
+        return self._display.get(name, name)
 
     def _one(self, sql, arg):
         key = (sql, arg)
@@ -79,7 +92,8 @@ class CardDB:
         return self._cache[key]
 
     def name(self, grp):
-        return self._one('select l.Loc from Cards c join Localizations_enUS l on l.LocId=c.TitleId where c.GrpId=? limit 1', grp) or f'#{grp}'
+        title = self._one('select l.Loc from Cards c join Localizations_enUS l on l.LocId=c.TitleId where c.GrpId=? limit 1', grp)
+        return self.display(title) if title else f'#{grp}'
 
     def mana_value(self, grp):
         return mana_value(self._one('select OldSchoolManaText from Cards where GrpId=?', grp))
