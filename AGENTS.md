@@ -34,6 +34,6 @@ For MTG analysis workflows, read [the compact shared Matchlab skill](skills/matc
 - Never hand-write Forge card scripts. Copy official upstream scripts into `forge-resources/`; edits to pinned scripts go in `patches/`.
 - Push from **Windows** git (WSL git has no GitHub credentials):
   `git -C //wsl.localhost/Ubuntu/home/winter/projects/mtg-matchlab -c safe.directory=* push origin main`
-- Card names: always use the name the player sees on Arena. Through the Omenpaths (OM1) printings
-  share rules with Universes Beyond cards (e.g. Kavaero, Mind-Bitten = **Superior Spider-Man**);
-  MTGO lists and Scryfall use the OM1 name. Translate with `match_review.CardDB(db).display(name)`.
+- Card names: always use the printed (paper) card name. Through the Omenpaths (OM1) is a digital
+  reskin of Universes Beyond cards (e.g. Kavaero, Mind-Bitten is the digital name of the printed
+  card **Superior Spider-Man**); MTGO lists and Scryfall use the OM1 name. Translate with `match_review.CardDB(db).display(name)`.

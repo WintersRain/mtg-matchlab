@@ -68,10 +68,10 @@ def mana_value(mana_text):
 class CardDB:
     """Read-only Arena Raw_CardDatabase lookups.
 
-    Names are display names: a Through the Omenpaths (OM1) printing is shown by its
-    interchangeable Universes Beyond title (e.g. Superior Spider-Man, not Kavaero,
-    Mind-Bitten), because that is the name the player sees. MTGO lists and Scryfall
-    use the OM1 names; pass those through display().
+    Names are the printed (paper) card names. Through the Omenpaths (OM1) is a digital
+    reskin of Universes Beyond cards; its names (e.g. Kavaero, Mind-Bitten) are mapped to
+    the printed card (Superior Spider-Man). MTGO lists and Scryfall use the OM1 names;
+    pass those through display().
     """
     def __init__(self, path_or_connection):
         self.db = (path_or_connection if isinstance(path_or_connection, sqlite3.Connection)
