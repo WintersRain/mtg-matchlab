@@ -32,6 +32,16 @@ def plan(opponents, games, seed, chunk):
     return jobs
 
 
+def resume(result):
+    """Drop failed sessions and their games from result; return those jobs to rerun with the same seeds."""
+    failed = [s for s in result['sessions'] if s['status'] != 'completed']
+    for s in failed:
+        seeds = range(s['seed'], s['seed'] + s['games'])
+        result['games'][s['opponent']] = [x for x in result['games'][s['opponent']] if x['seed'] not in seeds]
+    result['sessions'] = [s for s in result['sessions'] if s['status'] == 'completed']
+    return [{'opponent': s['opponent'], 'seed': s['seed'], 'games': s['games']} for s in failed]
+
+
 def tally(games):
     out = {'wins': 0, 'losses': 0, 'draws': 0, 'failed': 0}
     for game in games:
@@ -78,6 +88,8 @@ def main():
     parser.add_argument('--workers', type=int, default=8)
     parser.add_argument('--weights', type=Path, help='JSON {name: share} or gauntlet.json with share fields')
     parser.add_argument('--out', required=True, type=Path)
+    parser.add_argument('--resume', action='store_true',
+                        help='Rerun only failed sessions of an existing --out (same seeds), replacing their games')
     args = parser.parse_args()
     sys.path.insert(0, str(ROOT))
     import matchlab
@@ -99,6 +111,16 @@ def main():
               'games_per_matchup': args.games, 'seed': args.seed, 'chunk': args.chunk, 'workers': args.workers,
               'mode': 'preboard Forge Default AI both seats, alternating seats', 'started_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
               'sessions': [], 'games': {k: [] for k in files}}
+    if args.resume:
+        previous = json.loads(args.out.read_text())
+        if previous['deck_sha256'] != result['deck_sha256'] or any(
+                previous['opponents'][k]['sha256'] != v['sha256'] for k, v in result['opponents'].items()):
+            raise SystemExit('--resume inputs differ from the existing result; refusing to mix versions')
+        result = previous
+        jobs = [j for j in resume(result) if j['opponent'] in files]
+        result.setdefault('resumed', []).append({'at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                                                 'workers': args.workers, 'jobs': jobs})
+        print(f'resuming {len(jobs)} failed sessions', flush=True)
     lock = threading.Lock()
 
     def run(job):

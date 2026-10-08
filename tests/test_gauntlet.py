@@ -15,6 +15,16 @@ class GauntletTests(unittest.TestCase):
             with self.subTest(games=games, chunk=chunk), self.assertRaises(ValueError):
                 g.plan(['jund'], games=games, seed=0, chunk=chunk)
 
+    def test_resume_reruns_failed_sessions_and_drops_their_games(self):
+        result = {'sessions': [{'opponent': 'jund', 'seed': 0, 'games': 2, 'status': 'completed'},
+                               {'opponent': 'jund', 'seed': 2, 'games': 2, 'status': 'error'}],
+                  'games': {'jund': [{'seed': 0, 'status': 'completed'}, {'seed': 1, 'status': 'completed'},
+                                     {'seed': 2, 'status': 'completed'}, {'seed': 3, 'status': 'error'}]}}
+        jobs = g.resume(result)
+        self.assertEqual(jobs, [{'opponent': 'jund', 'seed': 2, 'games': 2}])
+        self.assertEqual([x['seed'] for x in result['games']['jund']], [0, 1])
+        self.assertEqual([s['seed'] for s in result['sessions']], [0])
+
     def test_tally_counts_only_completed_games_as_results(self):
         games = [{'status': 'completed', 'winner': 'seat-a'}, {'status': 'completed', 'winner': 'seat-b'},
                  {'status': 'draw', 'winner': None}, {'status': 'timeout', 'winner': None},
