@@ -27,3 +27,10 @@ needed for `draw` and `mana`.
   legality, rules fidelity, or evidence that every opponent was smoke-tested.
 
 For MTG analysis workflows, read [the compact shared Matchlab skill](skills/matchlab-workflow/SKILL.md). It defines task routing, exact-version evidence, and cross-bot handoffs.
+
+## Staying clean
+
+- Run `python3 tools/check_clean.py` before ending work; it must report clean.
+- Never hand-write Forge card scripts. Copy official upstream scripts into `forge-resources/`; edits to pinned scripts go in `patches/`.
+- Push from **Windows** git (WSL git has no GitHub credentials):
+  `git -C //wsl.localhost/Ubuntu/home/winter/projects/mtg-matchlab -c safe.directory=* push origin main`
