@@ -22,5 +22,20 @@ class ReuseRunnerInputTests(unittest.TestCase):
             with self.subTest(value=value),self.assertRaises(ValueError):
                 r.marker('MATCHLAB_GAME_BEGIN '+value,'MATCHLAB_GAME_BEGIN ')
 
+    def test_private_assets_link_res_and_write_profile(self):
+        import tempfile
+        from pathlib import Path
+        with tempfile.TemporaryDirectory() as t:
+            t=Path(t); res=t/'real-res'; res.mkdir(); (res/'x.txt').write_text('x')
+            session=t/'s'; session.mkdir()
+            dirs={'userDir':session/'user','decksConstructedDir':session/'decks/constructed'}
+            assets=r.private_assets(session,res,dirs)
+            # Named forge-gui so both of Forge's asset-dir conventions ("" and "../forge-gui/") resolve here.
+            self.assertEqual(assets,session/'forge-gui')
+            self.assertTrue((assets/'res').is_symlink())
+            self.assertEqual((assets/'res'/'x.txt').read_text(),'x')
+            self.assertEqual((assets/'forge.profile.properties').read_text(),
+                             'userDir='+str(session/'user')+'\ndecksConstructedDir='+str(session/'decks/constructed')+'\n')
+
 if __name__=='__main__':unittest.main()
 

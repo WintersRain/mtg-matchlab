@@ -36,6 +36,19 @@ def marker(line, prefix):
     if not isinstance(value,dict): raise ValueError('Invalid native lifecycle marker')
     return value
 
+def private_assets(session, res, dirs):
+    """Per-session Forge assets dir: symlinked shared res/ plus a private profile.
+
+    Lets concurrent series run without the shared vendor/forge/forge-gui profile symlink.
+    Named forge-gui so both asset conventions ("" and "../forge-gui/") resolve here.
+    """
+    assets = Path(session) / 'forge-gui'
+    assets.mkdir()
+    (assets / 'res').symlink_to(Path(res).resolve(), target_is_directory=True)
+    (assets / 'forge.profile.properties').write_text(
+        ''.join(f'{key}={str(value).replace(chr(92), chr(92)*2)}\n' for key, value in dirs.items()))
+    return assets
+
 def run_series(body, on_game=None, *, stop_path=None):
     """Return session plus finalized child summaries; callback is called once per started game.
 
@@ -52,11 +65,11 @@ def run_series(body, on_game=None, *, stop_path=None):
               'session_directory':str(session),'status':'invalid','games':[]}
     children = []
     started = time.monotonic()
-    profile = m.ROOT/'vendor/forge/forge-gui/forge.profile.properties'
     proc = None
     try:
         with (m.ROOT/'runtime/run.lock').open('w') as lock, ExitStack() as cleanup:
-            fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+            # Shared: concurrent series use private asset dirs; legacy single runs still take LOCK_EX.
+            fcntl.flock(lock,fcntl.LOCK_SH|fcntl.LOCK_NB)
             report = d.audit_pair(pair,session/'audit')
             java=m.ROOT/'.local/jdk-17.0.20.1+1/bin/java'
             jar=m.ROOT/'vendor/forge/forge-gui-desktop/target/forge-gui-desktop-2.0.15-SNAPSHOT-jar-with-dependencies.jar'
@@ -71,10 +84,7 @@ def run_series(body, on_game=None, *, stop_path=None):
                 data=(session/'audit'/(seat+'.dck')).read_bytes()
                 if m.sha(data)!=report['decks'][seat]['dck_sha256']: raise ValueError('DCK hash mismatch: '+seat)
                 (dirs['decksConstructedDir']/(seat+'.dck')).write_bytes(data)
-            config=''.join(f'{key}={str(value).replace(chr(92),chr(92)*2)}\n' for key,value in dirs.items())
-            (session/'forge.profile.properties').write_text(config)
-            profile.symlink_to(session/'forge.profile.properties')
-            cleanup.callback(profile.unlink)
+            assets=private_assets(session,m.ROOT/'vendor/forge/forge-gui/res',dirs)
             command=m.build_command(java,jar,home,expected_seats(body,0),seed)
             command[command.index('-n')+1]=str(count)
             env=os.environ.copy()
@@ -102,7 +112,7 @@ def run_series(body, on_game=None, *, stop_path=None):
                 children.append(child);m.write_json(run_dir/'summary.json',child)
             series.update(status='running',command=command,jar_sha256=jar_hash)
             m.write_json(session/'summary.json',series)
-            proc=subprocess.Popen(command,cwd=m.ROOT/'vendor/forge/forge-gui',env=env,stdout=subprocess.PIPE,
+            proc=subprocess.Popen(command,cwd=assets,env=env,stdout=subprocess.PIPE,
                                   stderr=subprocess.STDOUT,start_new_session=True)
             process_started=time.monotonic();idle_started=process_started
             active=None;active_file=None;active_started=None;size=0;next_game=0;pending=b'';failure=None;stopped=False
