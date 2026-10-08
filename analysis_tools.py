@@ -18,7 +18,7 @@ ASSUMPTIONS = [
     'One land per turn; all previous lands untap; cast in target-turn main phase after draw and land drop.',
     'Each land supplies at most one mana; each colored/colorless pip needs an independent payment.',
     'Shock lands may enter tapped for zero life or untapped for two; sufficient life to pay is assumed.',
-    'Starting Town enters tapped with three or more other lands; C/generic free, colored activation one life.',
+    'Starting Town enters tapped after turn three regardless of land count; C/generic free, colored activation one life.',
     'Zero-life successes have a genuinely feasible zero-life sequence, not an average-life proxy.',
     'Each target is assessed separately, not a full curve, full gameplay, or win-rate prediction.',
 ]
@@ -220,7 +220,8 @@ def minimum_life(c, order, target, budget=None):
                     model = lands[i]['model']
                     if model == 'shock':
                         modes.append((available + [i], 2))
-                    elif not (model == 'tapped' or (model in {'fast', 'starting_town'} and len(board) >= 3)
+                    elif not (model == 'tapped' or (model == 'fast' and len(board) >= 3)
+                              or (model == 'starting_town' and turn > 3)
                               or (model == 'slow' and len(board) < 2)):
                         modes.append((available + [i], 0))
                 for sources, life in modes:

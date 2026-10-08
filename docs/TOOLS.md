@@ -102,7 +102,7 @@ remaining slots are inert nonlands. Each land produces at most one mana.
 | `tapped` | Always enters tapped |
 | `shock` | Choose tapped for no life or untapped for two life |
 | `fast` | Untapped with at most two **other** lands already controlled |
-| `starting_town` | Untapped with at most two **other** lands; C for zero life, listed colored mana for one life per activation |
+| `starting_town` | Untapped only during your first three **turns**, regardless of land count; C for zero life, listed colored mana for one life per activation |
 | `slow` | Untapped with at least two **other** lands already controlled |
 | `verge` | Untapped, one unconditional `colors` entry; additionally supplies `conditional_color` (W/U/B/R/G) while any controlled land has any of `requires_types` |
 | `artifact_castle` | Untapped; C always, listed colors only when the target is an artifact |
