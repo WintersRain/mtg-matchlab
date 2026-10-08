@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Compile/run real Forge rules fixtures in a locked, isolated privacy-patched runtime."""
-import json,os,subprocess,uuid,fcntl
+import json,os,subprocess,sys,uuid,fcntl
 from pathlib import Path
 from contextlib import ExitStack
 import matchlab as m
@@ -9,7 +9,8 @@ def main():
     root=m.ROOT; runtime=root/'runtime';run_dir=runtime/'rules-checks'/uuid.uuid4().hex;run_dir.mkdir(parents=True)
     java=root/'.local/jdk-17.0.20.1+1/bin/java';javac=java.with_name('javac')
     jar=root/'vendor/forge/forge-gui-desktop/target/forge-gui-desktop-2.0.15-SNAPSHOT-jar-with-dependencies.jar'
-    sources=sorted((root/'engine_checks').glob('*.java'));classes=run_dir/'classes';classes.mkdir()
+    # Extra fixtures (e.g. private per-deck checks) compile and run alongside the tracked suite.
+    sources=sorted((root/'engine_checks').glob('*.java'))+[Path(a).resolve() for a in sys.argv[1:]];classes=run_dir/'classes';classes.mkdir()
     compiled=subprocess.run([str(javac),'-cp',str(jar),'-d',str(classes),*[str(p) for p in sources]],capture_output=True,text=True)
     print(compiled.stdout+compiled.stderr,end='')
     if compiled.returncode:return compiled.returncode
