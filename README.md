@@ -18,6 +18,14 @@ land sequencing, assumed target availability, no mulligans or prior spells.
 It is not a full curve/game simulator. See the guide for supported land models,
 JSON schema, actual zero-life feasibility, and unpaired comparison limitations.
 
+## Local visual dashboard
+
+Run `python3 dashboard.py serve` and open **http://127.0.0.1:8765**.
+Both bot seats accept independent Arena imports and saved lists. Batch controls,
+progress/results and actual live board/replay observations are available locally.
+See [docs/DASHBOARD.md](docs/DASHBOARD.md) for the generic two-deck stdin/API
+interface, and [docs/BOARD_VIEWER.md](docs/BOARD_VIEWER.md) for observer setup.
+
 ## Forge game harness
 
 Small Python 3 stdlib CLI for **one full Forge AI-versus-AI game per process**.

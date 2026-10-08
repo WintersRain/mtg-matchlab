@@ -163,7 +163,13 @@ def capture(command, cwd, env, raw, timeout=300, limit=8 * 1024 * 1024):
 
 
 def write_json(path, data):
-    Path(path).write_text(json.dumps(data, indent=2, sort_keys=True) + '\n')
+    path = Path(path)
+    temporary = path.with_name(path.name + '.' + uuid.uuid4().hex + '.tmp')
+    try:
+        temporary.write_text(json.dumps(data, indent=2, sort_keys=True) + '\n')
+        temporary.replace(path)
+    finally:
+        temporary.unlink(missing_ok=True)
 
 
 ARCHIVE = Path('benchmarks/standard/2026-09-14')
@@ -259,7 +265,7 @@ def run(args):
     runtime.mkdir(exist_ok=True)
     run_dir = runtime / 'runs' / uuid.uuid4().hex
     run_dir.mkdir(parents=True)
-    seats = ['doom', args.opponent]
+    seats = list(args.pair) if getattr(args, 'pair', None) else ['doom', args.opponent]
     if args.swap:
         seats.reverse()
     summary = {'schema': 1, 'engine_pin': PIN, 'engine_version': '2.0.15-SNAPSHOT',
@@ -273,7 +279,11 @@ def run(args):
         with (runtime / 'run.lock').open('w') as lock, ExitStack() as cleanup:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
             # Never consume shared standalone audit outputs: generate a private snapshot.
-            report = audit(ROOT, out=run_dir / 'audit', opponent=args.opponent)
+            if getattr(args, 'pair', None):
+                from dashboard import audit_pair
+                report = audit_pair(args.pair, run_dir / 'audit')
+            else:
+                report = audit(ROOT, out=run_dir / 'audit', opponent=args.opponent)
             summary['decks'] = {s: report['decks'][s] for s in seats}
             java = Path(args.java).resolve()
             jar = Path(args.jar).resolve()
@@ -297,8 +307,13 @@ def run(args):
             command = build_command(java, jar, home, seats, args.seed)
             summary['command'] = command
             env = os.environ.copy()
-            for key in ('JAVA_TOOL_OPTIONS', '_JAVA_OPTIONS', 'JDK_JAVA_OPTIONS'):
+            for key in ('JAVA_TOOL_OPTIONS', '_JAVA_OPTIONS', 'JDK_JAVA_OPTIONS', 'MATCHLAB_REUSE', 'MATCHLAB_ALTERNATE', 'MATCHLAB_STOP_FILE'):
                 env.pop(key, None)
+            if getattr(args, 'snapshots', False):
+                env['MATCHLAB_SNAPSHOTS'] = '1'
+                summary['snapshot_schema'] = 1
+            else:
+                env.pop('MATCHLAB_SNAPSHOTS', None)
             env.update(HOME=str(home), XDG_CONFIG_HOME=str(run_dir / 'xdg-config'),
                        XDG_CACHE_HOME=str(run_dir / 'xdg-cache'), XDG_DATA_HOME=str(run_dir / 'xdg-data'))
             raw = run_dir / 'raw.log'
@@ -306,9 +321,15 @@ def run(args):
                 copied = dirs['decksConstructedDir'] / (seat + '.dck')
                 if sha(copied.read_bytes()) != report['decks'][seat]['dck_sha256']:
                     raise ValueError('DCK hash mismatch: ' + seat)
+            summary['status'] = 'running'
+            write_json(run_dir / 'summary.json', summary)
             result = capture(command, ROOT / 'vendor/forge/forge-gui', env, raw)
             log = raw.read_text(errors='replace')
             summary.update(result)
+            snapshot_errors = [line for line in log.splitlines() if line.startswith('MATCHLAB_SNAPSHOT_ERROR')]
+            summary['viewer_status'] = 'error' if snapshot_errors else ('recorded' if 'MATCHLAB_SNAPSHOT ' in log else 'unavailable')
+            if snapshot_errors:
+                summary['viewer_errors'] = snapshot_errors
             summary['raw_sha256'] = sha(raw.read_bytes())
             summary['normalized_log_sha256'] = normalized_hash(log)
             summary.update(parse_result(log, result['exit_code'], seats) if not result['status'] else {'status': result['status']})
