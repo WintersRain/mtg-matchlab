@@ -25,3 +25,5 @@ needed for `draw` and `mana`.
   `run --opponent SELECTOR --seed 42` remains one preboard game, recording the
   actual selector/provenance/hashes. Do not treat discovery as script support,
   legality, rules fidelity, or evidence that every opponent was smoke-tested.
+
+For MTG analysis workflows, read [the compact shared Matchlab skill](skills/matchlab-workflow/SKILL.md). It defines task routing, exact-version evidence, and cross-bot handoffs.
