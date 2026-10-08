@@ -49,16 +49,17 @@ def private_assets(session, res, dirs):
         ''.join(f'{key}={str(value).replace(chr(92), chr(92)*2)}\n' for key, value in dirs.items()))
     return assets
 
-def run_series(body, on_game=None, *, stop_path=None):
+def run_series(body, on_game=None, *, stop_path=None, index=None):
     """Return session plus finalized child summaries; callback is called once per started game.
 
     stop_path is a trusted caller-owned file, never accepted from a deck/JSON input.
+    index is an optional prebuilt card index shared by batch callers (see prepare_pair).
     Every game has a fresh Match/RegisteredPlayers/observer and its own incremented RNG seed.
     This explicit process mode retains Forge's initialized card database and static caches.
     """
     import dashboard as d
     count,seed = settings(body)
-    pair = d.prepare_pair(body)  # strict both-seat support preflight before spawning anything
+    pair = d.prepare_pair(body, index)  # strict both-seat support preflight before spawning anything
     session = m.ROOT/'runtime/reuse'/uuid.uuid4().hex
     session.mkdir(parents=True)
     series = {'schema':1,'process_mode':'reuse-independent','seed_policy':'starting seed + game index; reseed before registering each fresh pair',

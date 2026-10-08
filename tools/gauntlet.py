@@ -80,8 +80,11 @@ def main():
     parser.add_argument('--out', required=True, type=Path)
     args = parser.parse_args()
     sys.path.insert(0, str(ROOT))
+    import matchlab
     import reuse_runner
 
+    # One script index (with per-script hashes) for the whole batch instead of one per chunk.
+    index = matchlab.card_index(ROOT / 'vendor/forge/forge-gui/res/cardsfolder')
     deck_text = args.deck.read_text()
     files = {p.name[:-len('.arena.txt')]: p for p in sorted(args.opponents.glob('*.arena.txt'))}
     if args.only:
@@ -102,7 +105,7 @@ def main():
         body = {'a': {'text': deck_text, 'format': 'Standard'},
                 'b': {'text': files[job['opponent']].read_text(), 'format': 'Standard'},
                 'games': job['games'], 'seed': job['seed'], 'alternate': True, 'snapshots': False}
-        return job, reuse_runner.run_series(body)
+        return job, reuse_runner.run_series(body, index=index)
 
     def save():
         args.out.write_text(json.dumps(result, indent=1))

@@ -55,8 +55,9 @@ def resolve(spec, seat):
     info['counts'] = {z: sum(c.values()) for z, c in deck.items()}
     return deck, info
 
-def prepare_pair(body):
-    index = m.card_index(m.ROOT / 'vendor/forge/forge-gui/res/cardsfolder')
+def prepare_pair(body, index=None):
+    """index: optional prebuilt m.card_index for batch callers; built fresh when omitted."""
+    index = index or m.card_index(m.ROOT / 'vendor/forge/forge-gui/res/cardsfolder')
     pair, failures = {}, []
     for key, seat in [('a', 'seat-a'), ('b', 'seat-b')]:
         try:
