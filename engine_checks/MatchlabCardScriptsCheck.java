@@ -87,8 +87,29 @@ public class MatchlabCardScriptsCheck extends MatchlabRulesCheck {
         check(me.getLife()==23,"Cornucopia gains actual two-color spell life in combined board");
         check(ajani.getCounters(CounterEnumType.LOYALTY)==16 && jace.getCounters(CounterEnumType.LOYALTY)==24,"Cornucopia single life event adds one doubled Mentor counter per walker");
     }
+    static void ferocity() {
+        setup(); Card bear=add("Runeclaw Bear",me); Card aura=add("Ferocity of the Hunt",me,ZoneType.Hand);
+        check(aura.getManaCost().getCMC()==2 && aura.getManaCost().toString().contains("{B/G}"),"Ferocity costs actual hybrid {1}{B/G}");
+        check(aura.hasKeyword(forge.game.keyword.Keyword.FLASH),"Ferocity has flash");
+        Card live=add("Ferocity of the Hunt",me); live.attachToEntity(bear,null); settle();
+        check(bear.getNetPower()==3 && bear.getNetToughness()==2 && bear.hasKeyword(forge.game.keyword.Keyword.DEATHTOUCH),"Ferocity grants +1/+0 and deathtouch");
+        resolve(AbilityFactory.getAbility("DB$ Destroy | Defined$ Self",bear)); drain(game); settle();
+        Card back=null;for(Card c:me.getCardsIn(ZoneType.Battlefield))if(c.getName().equals("Runeclaw Bear"))back=c;
+        check(back!=null && back.isTapped(),"Ferocity returns the dead creature to the battlefield tapped");
+    }
+    static void grapple() {
+        setup(); Card mine=add("Runeclaw Bear",me); Card angel=add("Serra Angel",opp); Card green=add("Grizzly Bears",opp);
+        Card spell=add("Flourishing Grapple",me,ZoneType.Hand); settle();
+        SpellAbility sa=spell.getFirstSpellAbility(); sa.setActivatingPlayer(me);
+        check(sa.canTarget(angel) && !sa.canTarget(green) && !sa.canTarget(mine),"Grapple first target is only an opposing red or white permanent");
+        sa.getTargets().add(angel); sa.getSubAbility().getTargets().add(mine);
+        // A real cast remembers targets on the stack (MagicStack -> handleRemembering) before resolving.
+        AbilityUtils.handleRemembering(sa); resolve(sa); drain(game); settle();
+        check(!angel.hasKeyword(forge.game.keyword.Keyword.FLYING) && !angel.hasKeyword(forge.game.keyword.Keyword.VIGILANCE),"Grapple target loses all abilities");
+        check(angel.getDamage()==2,"Grapple deals damage equal to own creature power");
+    }
     public static void main(String[] args) {
-        initialize(); empower(); mentorLifeEvents(); paradoxAllowances(); shaper(); combinedEngineLine();
+        initialize(); empower(); mentorLifeEvents(); paradoxAllowances(); shaper(); combinedEngineLine(); ferocity(); grapple();
         System.out.println("CARD_RULE_SUITE_OK assertions="+assertions);
     }
 }
