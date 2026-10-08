@@ -1,0 +1,394 @@
+[
+  {
+    "name": "Tethermage has no immediate Heartwood refund",
+    "setup": {
+      "permanents": [
+        {
+          "id": "f1",
+          "name": "Forest"
+        },
+        {
+          "id": "f2",
+          "name": "Forest"
+        },
+        {
+          "id": "m",
+          "name": "Mountain"
+        }
+      ],
+      "mana": [],
+      "hand": [
+        "Tenured Tethermage"
+      ]
+    },
+    "actions": [
+      {
+        "op": "tap_mana",
+        "id": "f1",
+        "color": "G"
+      },
+      {
+        "op": "tap_mana",
+        "id": "f2",
+        "color": "G"
+      },
+      {
+        "op": "tap_mana",
+        "id": "m",
+        "color": "R"
+      },
+      {
+        "op": "cast",
+        "name": "Tenured Tethermage",
+        "id": "t",
+        "land": "f1"
+      },
+      {
+        "op": "tap_mana",
+        "id": "token1",
+        "color": "G"
+      }
+    ]
+  },
+  {
+    "name": "Next-turn pump spends both Heartwood taps",
+    "setup": {
+      "permanents": [
+        {
+          "id": "f1",
+          "name": "Forest"
+        },
+        {
+          "id": "f2",
+          "name": "Forest"
+        },
+        {
+          "id": "m",
+          "name": "Mountain"
+        }
+      ],
+      "mana": [],
+      "hand": [
+        "Tenured Tethermage"
+      ]
+    },
+    "actions": [
+      {
+        "op": "tap_mana",
+        "id": "f1",
+        "color": "G"
+      },
+      {
+        "op": "tap_mana",
+        "id": "f2",
+        "color": "G"
+      },
+      {
+        "op": "tap_mana",
+        "id": "m",
+        "color": "R"
+      },
+      {
+        "op": "cast",
+        "name": "Tenured Tethermage",
+        "id": "t",
+        "land": "f1"
+      },
+      {
+        "op": "next_turn"
+      },
+      {
+        "op": "tether_pump",
+        "id": "t",
+        "artifacts": [
+          "token1",
+          "token2"
+        ]
+      },
+      {
+        "op": "tap_mana",
+        "id": "token1",
+        "color": "G"
+      }
+    ]
+  },
+  {
+    "name": "Crafter plus two lands casts Soul Tether then Edge Rover",
+    "setup": {
+      "permanents": [
+        {
+          "id": "c",
+          "name": "Heartwood Crafter"
+        },
+        {
+          "id": "f",
+          "name": "Forest"
+        },
+        {
+          "id": "m",
+          "name": "Mountain"
+        }
+      ],
+      "mana": [],
+      "hand": [
+        "Edge Rover"
+      ]
+    },
+    "actions": [
+      {
+        "op": "tap_mana",
+        "id": "c",
+        "color": "C"
+      },
+      {
+        "op": "tap_mana",
+        "id": "f",
+        "color": "G"
+      },
+      {
+        "op": "tap_mana",
+        "id": "m",
+        "color": "R"
+      },
+      {
+        "op": "prepare_cast",
+        "id": "c"
+      },
+      {
+        "op": "tap_mana",
+        "id": "token1",
+        "color": "G"
+      },
+      {
+        "op": "cast",
+        "name": "Edge Rover",
+        "id": "e"
+      }
+    ]
+  },
+  {
+    "name": "Crafter cannot be fourth mana for hand-cast Solemn",
+    "setup": {
+      "permanents": [
+        {
+          "id": "c",
+          "name": "Heartwood Crafter"
+        }
+      ],
+      "mana": [
+        "G",
+        "R",
+        "C"
+      ],
+      "hand": [
+        "Solemn Simulacrum"
+      ]
+    },
+    "actions": [
+      {
+        "op": "tap_mana",
+        "id": "c",
+        "color": "C"
+      },
+      {
+        "op": "cast",
+        "name": "Solemn Simulacrum",
+        "id": "s"
+      }
+    ]
+  },
+  {
+    "name": "Puppetbeast Heartwood funds its own haste sacrifice",
+    "setup": {
+      "permanents": [],
+      "mana": [
+        "G",
+        "G",
+        "C",
+        "C",
+        "C"
+      ],
+      "hand": [
+        "Hungering Puppetbeast"
+      ]
+    },
+    "actions": [
+      {
+        "op": "cast",
+        "name": "Hungering Puppetbeast",
+        "id": "b"
+      },
+      {
+        "op": "tap_mana",
+        "id": "token1",
+        "color": "G"
+      },
+      {
+        "op": "puppet_sac",
+        "id": "b",
+        "sacrifice": "token1",
+        "mode": "haste"
+      }
+    ]
+  },
+  {
+    "name": "Robots ignores Heartwood entry but triggers for Edge Rover",
+    "setup": {
+      "permanents": [
+        {
+          "id": "r",
+          "name": "Ravenous Robots"
+        },
+        {
+          "id": "c",
+          "name": "Heartwood Crafter"
+        }
+      ],
+      "mana": [
+        "G",
+        "C",
+        "C",
+        "G"
+      ],
+      "hand": [
+        "Edge Rover"
+      ]
+    },
+    "actions": [
+      {
+        "op": "prepare_cast",
+        "id": "c"
+      },
+      {
+        "op": "cast",
+        "name": "Edge Rover",
+        "id": "e"
+      }
+    ]
+  },
+  {
+    "name": "New animated Heartwood mana check",
+    "setup": {
+      "permanents": [
+        {
+          "id": "h",
+          "name": "Heartwood",
+          "new": true
+        }
+      ],
+      "mana": [
+        "G",
+        "C"
+      ],
+      "hand": [
+        "Puppet Crafting"
+      ]
+    },
+    "actions": [
+      {
+        "op": "cast",
+        "name": "Puppet Crafting",
+        "id": "a",
+        "target": "h"
+      },
+      {
+        "op": "tap_mana",
+        "id": "h",
+        "color": "R"
+      }
+    ]
+  },
+  {
+    "name": "Old animated Heartwood mana check",
+    "setup": {
+      "permanents": [
+        {
+          "id": "h",
+          "name": "Heartwood",
+          "new": false
+        }
+      ],
+      "mana": [
+        "G",
+        "C"
+      ],
+      "hand": [
+        "Puppet Crafting"
+      ]
+    },
+    "actions": [
+      {
+        "op": "cast",
+        "name": "Puppet Crafting",
+        "id": "a",
+        "target": "h"
+      },
+      {
+        "op": "tap_mana",
+        "id": "h",
+        "color": "R"
+      }
+    ]
+  },
+  {
+    "name": "Sacrificed Rover gives both players Landers; own fetch costs two",
+    "setup": {
+      "permanents": [
+        {
+          "id": "b",
+          "name": "Hungering Puppetbeast"
+        },
+        {
+          "id": "e",
+          "name": "Edge Rover"
+        }
+      ],
+      "mana": [
+        "C",
+        "C",
+        "C"
+      ],
+      "hand": [],
+      "library_basics": {
+        "Forest": 1
+      }
+    },
+    "actions": [
+      {
+        "op": "puppet_sac",
+        "id": "b",
+        "sacrifice": "e",
+        "mode": "trample"
+      },
+      {
+        "op": "lander_fetch",
+        "id": "token1",
+        "basic": "Forest"
+      }
+    ]
+  },
+  {
+    "name": "Prodigy cannot Soul Tether before its first upkeep",
+    "setup": {
+      "permanents": [
+        {
+          "id": "w",
+          "name": "Woodwork Prodigy",
+          "new": true
+        }
+      ],
+      "mana": [
+        "G",
+        "C",
+        "C"
+      ],
+      "hand": []
+    },
+    "actions": [
+      {
+        "op": "prepare_cast",
+        "id": "w"
+      }
+    ]
+  }
+]

@@ -325,6 +325,8 @@ def main():
     sub = parser.add_subparsers(dest='action', required=True)
     from analysis_tools import add_commands, dispatch
     add_commands(sub)
+    import artifact_audit
+    artifact_audit.add_command(sub)
     discovery = sub.add_parser('decks', help='List hash-verified curated and archived opponent selectors (offline)')
     discovery.add_argument('--json', action='store_true', dest='as_json')
     auditor = sub.add_parser('audit', help='Audit pinned Forge inputs (not legality or gameplay)')
@@ -341,7 +343,14 @@ def main():
     if args.action == 'run':
         return run(args)
     try:
+        if args.action == 'artifact-audit':
+            print(json.dumps(artifact_audit.dispatch(args), indent=2))
+            return 0
         if args.action in ('tools', 'draw', 'mana'):
+            if args.action == 'tools':
+                from analysis_tools import CATALOG
+                if not any(t['command'] == 'artifact-audit' for t in CATALOG['tools']):
+                    CATALOG['tools'].append({'command': 'artifact-audit', 'kind': 'bounded_rules_audit', 'use_for': 'Exact-printing counts, prepared faces and explicit artifact-resource scenarios', 'requires': ['Oracle bundle', 'Optional scenario JSON'], 'limits': 'Declared checkpoints only, not gameplay or draw probabilities; see docs/ARTIFACT_AUDIT.md'})
             report = dispatch(args)
             print(report if isinstance(report, str) else json.dumps(report, indent=2))
             return 0

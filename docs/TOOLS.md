@@ -209,3 +209,20 @@ errors use its usual stderr/exit behavior). Python callers can reuse
 `analysis_tools.hypergeometric`, `validate_config`, `analyze`, and `compare`;
 `minimum_life` is the low-level evaluator for an already validated config and
 valid draw-order indices, not an untrusted-input entrypoint.
+
+## Experimental material / fetch stress tool
+
+`python3 material_opening_audit.py examples/material-basic.json --samples 100 --seed 42 --output /tmp/material-result.json`
+
+See [model and limitations](MATERIAL_OPENING_AUDIT.md). This standalone tool reuses
+opening payment primitives, adds explicit ETB/offspring bodies and library-consuming
+Fabled Passage sequencing, and subjects them to abstract one-body deletions. It is
+NOT full gameplay and omits combat/counter/draw triggers, recursion and spell effects.
+Use separate legal opposing-card fixtures before a construction recommendation.
+The original `mana` model still does NOT support fetches; do not substitute rainbow lands.
+
+## Exact-printing artifact resource audits
+
+`python3 matchlab.py artifact-audit examples/artifact-demo.arena.txt --oracle examples/artifact-oracle.json --scenarios examples/artifact-scenarios.json`
+
+See [Artifact resource audit](ARTIFACT_AUDIT.md) for printing-aware imports, preparation faces, dated legality/platform evidence, and deterministic Heartwood/payment sequences. This command checks declared resource lines, not gameplay, opening probabilities, or win rates. The public demo is intentionally not a complete deck. Existing draw, mana, and Forge contracts remain unchanged.

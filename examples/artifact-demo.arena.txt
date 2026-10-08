@@ -1,0 +1,7 @@
+Deck
+1 Tenured Tethermage (FRA) 154
+2 Forest (HOB) 198
+1 Mountain (HOB) 197
+1 Heartwood Crafter (FRA) 105
+1 Edge Rover (EOE) 179
+1 Ravenous Robots (TMT) 106
