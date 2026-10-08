@@ -226,3 +226,16 @@ The original `mana` model still does NOT support fetches; do not substitute rain
 `python3 matchlab.py artifact-audit examples/artifact-demo.arena.txt --oracle examples/artifact-oracle.json --scenarios examples/artifact-scenarios.json`
 
 See [Artifact resource audit](ARTIFACT_AUDIT.md) for printing-aware imports, preparation faces, dated legality/platform evidence, and deterministic Heartwood/payment sequences. This command checks declared resource lines, not gameplay, opening probabilities, or win rates. The public demo is intentionally not a complete deck. Existing draw, mana, and Forge contracts remain unchanged.
+
+## Arena match review (real games)
+
+`python3 matchlab.py review PLAYER_LOG --player NAME --card-db RAW_CARDDATABASE.mtga [--match latest|INDEX|ID] [--out DIR] [--ledger FILE.jsonl]`
+
+Reads an Arena `Player.log` (Detailed Logs enabled), finds completed matches, detects your seat from
+the match roster, and writes a per-turn timeline (your hand, both boards, life, every land, cast,
+target, attack, block, damage and removal) plus measured stats per game: mana spent vs untapped
+lands on your turns, castable cards held, first removal of an opposing permanent, damage taken by
+source, cards drawn but never cast, and the opponent board at the end. Undone casts are flagged and
+excluded. `--ledger` appends one line per match (deck hash, sideboard changes, results, play/draw,
+mulligans, opponent cards seen) and skips matches already recorded. Keep ledgers and logs in ignored
+private directories. Mana stats count lands only and do not check colors; opponent hands are counts.

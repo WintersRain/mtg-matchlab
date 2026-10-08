@@ -348,6 +348,8 @@ def main():
     add_commands(sub)
     import artifact_audit
     artifact_audit.add_command(sub)
+    import match_review
+    match_review.add_command(sub)
     discovery = sub.add_parser('decks', help='List hash-verified curated and archived opponent selectors (offline)')
     discovery.add_argument('--json', action='store_true', dest='as_json')
     auditor = sub.add_parser('audit', help='Audit pinned Forge inputs (not legality or gameplay)')
@@ -366,6 +368,9 @@ def main():
     try:
         if args.action == 'artifact-audit':
             print(json.dumps(artifact_audit.dispatch(args), indent=2))
+            return 0
+        if args.action == 'review':
+            print(match_review.dispatch(args), end='')
             return 0
         if args.action in ('tools', 'draw', 'mana'):
             if args.action == 'tools':
