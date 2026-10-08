@@ -1,0 +1,138 @@
+{
+  "cards": {
+    "Forest": {
+      "land": true,
+      "mv": 0,
+      "model": "basic",
+      "colors": "G",
+      "types": [
+        "Forest"
+      ]
+    },
+    "Island": {
+      "land": true,
+      "mv": 0,
+      "model": "basic",
+      "colors": "U",
+      "types": [
+        "Island"
+      ]
+    },
+    "Swamp": {
+      "land": true,
+      "mv": 0,
+      "model": "basic",
+      "colors": "B",
+      "types": [
+        "Swamp"
+      ]
+    },
+    "Fabled Passage": {
+      "land": true,
+      "mv": 0,
+      "model": "passage",
+      "colors": "",
+      "types": []
+    },
+    "Pawpatch Recruit": {
+      "land": false,
+      "mv": 1,
+      "cost": "{G}",
+      "body": true,
+      "legendary": false,
+      "tokens": 0,
+      "offspring": true,
+      "anchor": false
+    },
+    "Sandstorm Salvager": {
+      "land": false,
+      "mv": 3,
+      "cost": "{2}{G}",
+      "body": true,
+      "legendary": false,
+      "tokens": 1,
+      "offspring": false,
+      "anchor": false
+    },
+    "Jenova, Ancient Calamity": {
+      "land": false,
+      "mv": 4,
+      "cost": "{2}{B}{G}",
+      "body": true,
+      "legendary": true,
+      "tokens": 0,
+      "offspring": false,
+      "anchor": true
+    },
+    "Inert slot": {
+      "land": false,
+      "mv": 1,
+      "cost": "{1}",
+      "body": false
+    }
+  },
+  "candidates": {
+    "mechanism_fixture": [
+      "Forest",
+      "Forest",
+      "Forest",
+      "Forest",
+      "Forest",
+      "Forest",
+      "Forest",
+      "Forest",
+      "Forest",
+      "Forest",
+      "Forest",
+      "Forest",
+      "Forest",
+      "Forest",
+      "Forest",
+      "Forest",
+      "Forest",
+      "Forest",
+      "Forest",
+      "Forest",
+      "Island",
+      "Island",
+      "Swamp",
+      "Swamp",
+      "Fabled Passage",
+      "Fabled Passage",
+      "Pawpatch Recruit",
+      "Pawpatch Recruit",
+      "Pawpatch Recruit",
+      "Pawpatch Recruit",
+      "Sandstorm Salvager",
+      "Sandstorm Salvager",
+      "Sandstorm Salvager",
+      "Sandstorm Salvager",
+      "Jenova, Ancient Calamity",
+      "Jenova, Ancient Calamity",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot",
+      "Inert slot"
+    ]
+  }
+}

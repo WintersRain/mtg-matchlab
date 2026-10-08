@@ -35,6 +35,18 @@ CATALOG = {'schema_version': 1, 'guide': 'docs/TOOLS.md', 'tools': [
     {'command': 'run', 'kind': 'full_game', 'use_for': 'One preboard Forge Default-AI game',
      'requires': ['Pinned privacy-patched Forge build', 'Java 17', 'Linux/WSL'], 'limits': 'AI/engine outcomes, not human win rates'},
 ]}
+CATALOG['experimental_tools'] = [
+    {'command': 'python3 opening_audit.py', 'kind': 'opening_deployment_audit',
+     'use_for': 'Paired physical-slot actual hands, London-to-five and hidden-future early deployment',
+     'requires': ['Python 3 stdlib', 'Explicit card/slot JSON config'],
+     'limits': 'Experimental standalone command, NOT a matchlab subcommand; three turns, body costs only, no opponent or spell effects; caller-audited models',
+     'example': 'python3 opening_audit.py examples/opening-basic.json --samples 100 --seed 42 --output /tmp/opening-basic-result.json'},
+    {'command': 'python3 material_opening_audit.py', 'kind': 'material_stress_audit',
+     'use_for': 'Four-turn explicit ETB/offspring bodies, hand-aware Passage, London-to-five and abstract body deletions',
+     'requires': ['Python 3 stdlib', 'Explicit physical-slot JSON'],
+     'limits': 'Experimental; no combat/counter/draw triggers, resource spells or recursion; abstract removal not a card or matchup simulator',
+     'example': 'python3 material_opening_audit.py examples/material-basic.json --samples 100 --seed 42 --output /tmp/material-result.json'}
+]
 
 
 def integer(value, name, lo, hi):
