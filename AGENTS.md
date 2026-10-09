@@ -1,6 +1,6 @@
 # Agent entrypoint
 
-Read [docs/TOOLS.md](docs/TOOLS.md) before choosing an analysis. Run
+Read [docs/TOOLS.md](docs/TOOLS.md) before choosing an analysis. Before building or recommending any decklist, apply [docs/DECKBUILDING_GUIDE.md](docs/DECKBUILDING_GUIDE.md) and pass its section 9 gates. Run
 `python3 matchlab.py tools --json` for the machine-readable tool catalog and
 `python3 matchlab.py --help` for commands. Offline examples are checked into
 `examples/`; no private artifacts, external experiments, or Forge install are
