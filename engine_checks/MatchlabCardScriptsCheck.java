@@ -122,8 +122,16 @@ public class MatchlabCardScriptsCheck extends MatchlabRulesCheck {
         resolve(AbilityFactory.getAbility("DB$ DealDamage | Defined$ Valid Creature.OppCtrl | NumDmg$ 1",tomik)); drain(game); settle();
         check(bear.getDamage()==2 || bear.isInZone(ZoneType.Graveyard),"Tomik adds one to noncombat damage dealt to an opposing permanent");
     }
+    static void manipulator() {
+        setup(); int library=me.getCardsIn(ZoneType.Library).size();
+        Card c=enter("Dark Matter Manipulator");
+        check(me.getCardsIn(ZoneType.Library).size()==library-3 && me.getCardsIn(ZoneType.Graveyard).size()==3,"Manipulator mills three on entering");
+        check(c.getNetPower()==1,"Manipulator is 1 power with three cards in graveyard");
+        for(int i=0;i<4;i++)add("Runeclaw Bear",me,ZoneType.Graveyard); settle();
+        check(c.getNetPower()==3 && c.getNetToughness()==2,"Manipulator gets +2/+0 at seven cards in graveyard");
+    }
     public static void main(String[] args) {
-        initialize(); empower(); mentorLifeEvents(); paradoxAllowances(); shaper(); combinedEngineLine(); ferocity(); grapple(); cryomancer(); tomik();
+        initialize(); empower(); mentorLifeEvents(); paradoxAllowances(); shaper(); combinedEngineLine(); ferocity(); grapple(); cryomancer(); tomik(); manipulator();
         System.out.println("CARD_RULE_SUITE_OK assertions="+assertions);
     }
 }
