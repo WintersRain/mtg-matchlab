@@ -196,6 +196,10 @@ Source: Sideboard, Sideboard Plans, Choosing Your Deck.
 
 Every gate is re-run after **any** swap, however small.
 
+`python3 tools/vet.py LIST` automates gates 3-7 from the Forge card scripts in under a second.
+Add `--forge --opponents DIR` to also play 20 Forge AI games per opponent; any matchup under 25% fails the list.
+The thresholds are coarse filters. A PASS is the minimum bar, not proof the deck is good.
+
 1. **Plan:** the one-sentence plan from section 1. The linear or midrange test,
    and the speed test if the deck has an engine.
 2. **Legality:** format legality, and checked oracle text for every card
