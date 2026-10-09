@@ -213,11 +213,17 @@ Every gate is re-run after **any** swap, however small.
 6. **Self-harm:** no sweeper that kills your own board. No card dead against
    common opponents, such as a removal spell restricted by creature type that
    the field avoids.
-7. **Swap discipline:** when replacing a card, match its cost and its role
+7. **Card advantage and recovery:** count the cards that produce more than
+   one card's worth of value. Check what happens when the main plan is
+   answered: if the cheap cards do nothing on their own once the payoff is
+   removed, exiled from the graveyard, or never shows up, the deck fails. A
+   goldfish speed number (how fast the combo assembles with no opponent) does
+   not prove the deck is viable.
+8. **Swap discipline:** when replacing a card, match its cost and its role
    (ramp, blocker, enabler, answer). Then recheck gates 3–5.
-8. **Engine check:** the deck must run in Forge. Any card the engine can't play
+9. **Engine check:** the deck must run in Forge. Any card the engine can't play
    gets an upstream script, or the list doesn't ship.
-9. **Evidence:** label a list as untested until games have been played. Judge
+10. **Evidence:** label a list as untested until games have been played. Judge
    changes over many games, not one bad draw.
 
 ## 10. Lessons from this project
