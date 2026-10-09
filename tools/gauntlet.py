@@ -88,6 +88,7 @@ def main():
     parser.add_argument('--workers', type=int, default=8)
     parser.add_argument('--weights', type=Path, help='JSON {name: share} or gauntlet.json with share fields')
     parser.add_argument('--out', required=True, type=Path)
+    parser.add_argument('--snapshots', action='store_true', help='Record engine snapshots (hands, board) for tools/pilot_audit.py')
     parser.add_argument('--resume', action='store_true',
                         help='Rerun only failed sessions of an existing --out (same seeds), replacing their games')
     args = parser.parse_args()
@@ -126,7 +127,7 @@ def main():
     def run(job):
         body = {'a': {'text': deck_text, 'format': 'Standard'},
                 'b': {'text': files[job['opponent']].read_text(), 'format': 'Standard'},
-                'games': job['games'], 'seed': job['seed'], 'alternate': True, 'snapshots': False}
+                'games': job['games'], 'seed': job['seed'], 'alternate': True, 'snapshots': args.snapshots}
         return job, reuse_runner.run_series(body, index=index)
 
     def save():
