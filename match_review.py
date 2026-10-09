@@ -236,9 +236,13 @@ def review(text, cards, player):
                 zones[z['zoneId']] = z
             # diffDeletedInstanceIds are not dropped: annotations in the same message still refer to them,
             # and current state is read through zones, which only list live objects.
+            # Arena omits lifeTotal when it is 0, so seats without an explicit total in this
+            # message take their ModifiedLife deltas instead (see below).
+            explicit_life = set()
             for p in g.get('players', []):
                 if 'lifeTotal' in p:
                     life[p['systemSeatNumber']] = p['lifeTotal']
+                    explicit_life.add(p['systemSeatNumber'])
             ti = g.get('turnInfo', {})
             if ti.get('turnNumber') and ti['turnNumber'] != turn:
                 turn = ti['turnNumber']
@@ -270,6 +274,13 @@ def review(text, cards, player):
                         if e['category'] == 'Draw' and e['seat'] == 'me' and o.get('type') != 'GameObjectType_Ability':
                             game['seen_in_hand'][e['card']] = 'CardType_Land' not in o.get('cardTypes', [])
                         if e['category'] == 'CastSpell':
+                            # A spell is its caster's (stack controller), which differs from the owner when
+                            # an opponent casts your card (e.g. exiled by Laughing Jasper Flint).
+                            caster, owner = o.get('controllerSeatId'), o.get('ownerSeatId')
+                            if caster:
+                                e['seat'] = label(caster)
+                                if owner and owner != caster:
+                                    e['owner'] = label(owner)
                             e['undone'] = True          # until any later zone event shows the spell went on
                             game['casts'][i] = e
                         elif i in game['casts']:
@@ -296,6 +307,8 @@ def review(text, cards, player):
                         events.append(e)
                 elif t == 'AnnotationType_ModifiedLife':
                     for i in aff:
+                        if i not in explicit_life:
+                            life[i] = life.get(i, 20) + (d.get('life') or 0)
                         events.append({'kind': 'life', 'seat': label(i), 'delta': d.get('life'), 'total': life.get(i)})
                 elif t == 'AnnotationType_ManaPaid':
                     payer = (ident.get(src) or {}).get('controllerSeatId')
@@ -402,6 +415,7 @@ def render(rv):
                 k = e['kind']
                 if k == 'zone' and not (e['category'] == 'Draw' and e['seat'] != 'me'):
                     out.append(f"    {e['seat']:3s} {e['category']}: {e['card']}" + (' [UNDONE]' if e.get('undone') else '')
+                               + (f" [owned by {e['owner']}]" if e.get('owner') else '')
                                + (f"  (by {e['by']})" if e.get('by') and e['category'] not in ('CastSpell', 'Resolve', 'PlayLand') else ''))
                 elif k == 'target':
                     out.append(f"      targets of {e['source']}: {', '.join(e['targets'])}")

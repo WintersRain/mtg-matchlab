@@ -27,7 +27,7 @@ def state(turn=None, active=None, phase=None, objects=(), zones=(), annotations=
 
 
 def obj(iid, grp, owner, types=('CardType_Land',), tapped=False, **kw):
-    return dict(instanceId=iid, grpId=grp, ownerSeatId=owner, controllerSeatId=owner, cardTypes=list(types),
+    return dict(instanceId=iid, grpId=grp, ownerSeatId=owner, controllerSeatId=kw.pop('controllerSeatId', owner), cardTypes=list(types),
                 isTapped=tapped, type=kw.pop('type', 'GameObjectType_Card'), **kw)
 
 
@@ -162,6 +162,29 @@ class MatchReviewTests(unittest.TestCase):
         sac = [e for e in g['turns'][3]['events'] if e['kind'] == 'zone' and e['category'] == 'Sacrifice']
         self.assertNotEqual(sac[0]['seat'], 'opp')
         self.assertEqual(g['stats']['first_interaction_turn'], 3)   # still the Destroy, not the sacrifice
+
+    def test_life_reaching_zero_is_not_left_stale(self):
+        # Arena omits lifeTotal when it is 0; the ModifiedLife delta must still land.
+        log = match_log().replace(
+            gre(state(3, ME, 'Phase_Main1', zones=[zone(1, 'Hand', ME, [102, 103, 104])], stage='GameStage_GameOver',
+                      results=[{'scope': 'MatchScope_Game', 'winningTeamId': ME, 'reason': 'ResultReason_Concede'}])),
+            gre(state(3, ME, 'Phase_Combat', players=[{'systemSeatNumber': ME}],
+                      annotations=[damage(301, ME, 18), {'type': ['AnnotationType_ModifiedLife'], 'affectedIds': [ME],
+                                                          'details': [{'key': 'life', 'valueInt32': [-18]}]}],
+                      stage='GameStage_GameOver', results=[{'scope': 'MatchScope_Game', 'winningTeamId': OPP, 'reason': 'ResultReason_Game'}])))
+        g = r.review(log, self.cards, 'WintersRain')['games'][0]
+        life = [e for e in g['turns'][3]['events'] if e['kind'] == 'life']
+        self.assertEqual((life[-1]['total'], g['result'], g['final']['life']['me']), (0, 'loss', 0))
+
+    def test_spell_is_labeled_by_its_caster_not_its_owner(self):
+        # Opponent casts my exiled card (e.g. via Laughing Jasper Flint): the stack object is controlled by them.
+        stolen = gre(state(2, OPP, 'Phase_Main1', objects=[obj(601, 20, ME, ('CardType_Instant',), controllerSeatId=OPP)],
+                           annotations=[transfer(601, 'CastSpell', 7, 3)]))
+        log = match_log().replace(gre(state(2, OPP, 'Phase_Combat', annotations=[damage(301, ME, 2)], players=[{'systemSeatNumber': ME, 'lifeTotal': 18}])),
+                                  stolen + '\n' + gre(state(2, OPP, 'Phase_Combat', annotations=[damage(301, ME, 2)], players=[{'systemSeatNumber': ME, 'lifeTotal': 18}])))
+        g = r.review(log, self.cards, 'WintersRain')['games'][0]
+        cast = [e for e in g['turns'][2]['events'] if e['kind'] == 'zone' and e['category'] == 'CastSpell'][-1]
+        self.assertEqual((cast['seat'], cast['owner']), ('opp', 'me'))
 
     def test_undone_cast_is_not_counted_as_a_cast(self):
         g = r.review(match_log(undone_cast=True), self.cards, 'WintersRain')['games'][0]
