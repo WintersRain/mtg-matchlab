@@ -83,18 +83,28 @@ def parse_script(text):
     main['text'] = '\n'.join(f['text'] for f in faces)
     if 'Land' in main['types']:
         produced = {BASIC_TYPES[t] for t in main['types'] if t in BASIC_TYPES}
-        for sentence in re.split(r'[.\n]', main['text']):
-            if 'Add' in sentence:
-                produced |= set(re.findall(r'\{([WUBRG])\}', sentence))
-                if 'any color' in sentence:
-                    produced |= set(COLORS)
+        conditional = {}
+        for line in main['text'].split('\n'):
+            if 'Add' not in line:
+                continue
+            if 'Spend this mana only' in line:
+                continue  # restricted mana (Cavern of Souls style) can't cast just anything
+            ability, _, condition = line.partition('Activate only')
+            colors = set(re.findall(r'\{([WUBRG])\}', ability))
+            if 'any color' in ability:
+                colors |= set(COLORS)
+            if 'if you control' in condition:
+                for color in colors - produced:
+                    conditional[color] = re.findall(r'Plains|Island|Swamp|Mountain|Forest', condition)
+            produced |= colors
         main['produces'] = produced
+        main['produces_if'] = conditional  # color -> land types you must control for it
         main['enters_tapped'] = any('enters tapped' in s and not re.search(r'unless|if you don.t|you may', s, re.I)
                                     for s in re.split(r'(?<=\.)\s|\n', main['text']))
     return main
 
 
-def load_cards(names):
+def load_cards(names, strict=True):
     """Read only the scripts these names need: guess the Forge filename, verify Name, fall back to a full scan."""
     folders = [ROOT / 'forge-resources/cardsfolder', ROOT / 'vendor/forge/forge-gui/res/cardsfolder']
     found, missing = {}, []
@@ -119,7 +129,7 @@ def load_cards(names):
                 if name in index:
                     found[name] = parse_script(Path(index[name]['path']).read_text(encoding='utf-8-sig'))
                     missing.remove(name)
-    if missing:
+    if missing and strict:
         raise ValueError('No Forge script (engine cannot play these): ' + ', '.join(missing))
     return found
 
@@ -183,6 +193,23 @@ def vet(deck, cards):
         worst = max(worst, status, key=['PASS', 'WARN', 'FAIL'].index)
         notes.append(f'{color}: {sources} sources, {level} demand needs {need}')
     rows.append(_row('colored sources', worst, None, '; '.join(notes)))
+
+    # Basics alone must cast every card (land destruction, Demolition Field), with a spare.
+    need = {}
+    for n in spells:
+        for f in cards[n]['faces']:
+            for color, count in f['pips'].items():
+                need[color] = max(need.get(color, 0), count)
+    basics = {}
+    for n, q in lands.items():
+        if 'Basic' in cards[n]['types']:
+            for color in cards[n]['produces']:
+                basics[color] = basics.get(color, 0) + q
+    short = [f'{c}: {basics.get(c, 0)} of {k}' for c, k in sorted(need.items()) if basics.get(c, 0) < k]
+    exact = [c for c, k in need.items() if basics.get(c, 0) == k]
+    rows.append(_row('basic lands', 'FAIL' if short else 'WARN' if exact else 'PASS', sum(basics.values()),
+                     ('basics cannot cast: ' + ', '.join(short)) if short else
+                     ('basics cover every card' + (f' with no spare in {"".join(sorted(exact))}' if exact else ' with a spare'))))
 
     tapped = sum(q for n, q in lands.items() if cards[n]['enters_tapped'])
     rows.append(_row('tapped lands', _grade(tapped, 12, 8, low_is_bad=False), tapped, f'{tapped} always-tapped lands (guide: about 8 max for midrange)'))

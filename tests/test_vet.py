@@ -78,6 +78,15 @@ class CheckTests(unittest.TestCase):
         r = vet.vet(deck(Swamp=20, Forest=4, Bear=12, Acolyte=12, Hex=12), cards())
         self.assertEqual(status(r, 'colored sources'), 'FAIL')
 
+    def test_basics_alone_must_cast_every_card(self):
+        # Acolyte needs BB; one Swamp can't cast it if nonbasics get destroyed.
+        r = vet.vet(deck(Swamp=1, Tomb=23, Acolyte=24, Hex=12), cards())
+        self.assertEqual(status(r, 'basic lands'), 'FAIL')
+        r = vet.vet(deck(Swamp=2, Tomb=22, Acolyte=24, Hex=12), cards())
+        self.assertEqual(status(r, 'basic lands'), 'WARN')  # exactly the minimum: no spare
+        r = vet.vet(deck(Swamp=3, Tomb=21, Acolyte=24, Hex=12), cards())
+        self.assertEqual(status(r, 'basic lands'), 'PASS')
+
     def test_too_many_tapped_lands_fails(self):
         r = vet.vet(deck(Cottage=13, Swamp=11, Acolyte=24, Hex=12), cards())
         self.assertEqual(status(r, 'tapped lands'), 'FAIL')

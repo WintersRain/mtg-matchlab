@@ -212,6 +212,10 @@ The thresholds are coarse filters. A PASS is the minimum bar, not proof the deck
    - Cards hand off well from early to late game.
 4. **Mana:** land count, source counts per color against the table, the
    tapped-land count, and `matchlab.py mana` output for each colored cost.
+   **Basic-land rule:** the basics alone must be able to cast every card in
+   the deck (enough of each basic for the largest single-color requirement,
+   such as two Swamps for {B}{B}), plus a little extra. Land destruction and
+   effects like Demolition Field otherwise strand a nonbasic-heavy deck.
 5. **Interaction:** count cheap answers and the probability of having one by
    turn 2–3. Confirm no answer is dead against the expected field.
 6. **Self-harm:** no sweeper that kills your own board. No card dead against
